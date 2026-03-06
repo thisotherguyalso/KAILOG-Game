@@ -1,0 +1,89 @@
+[gd_scene load_steps=10 format=3 uid="uid://bvy1labma5s11"]
+
+[ext_resource type="Texture2D" uid="uid://10erlrmt4bko" path="res://Sprite/ecostore.png" id="1_ibjt2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7v21"]
+size = Vector2(645, 493)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibjt2"]
+size = Vector2(271, 243)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lr16e"]
+size = Vector2(172, 44.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psrrp"]
+size = Vector2(49, 149)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmupf"]
+size = Vector2(39.5, 143.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvpvs"]
+size = Vector2(275.75, 33.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77tjn"]
+size = Vector2(232, 33.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_schhh"]
+
+[node name="Ecostore" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ibjt2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_b7v21")
+debug_color = Color(0.92142564, 5.833447e-05, 0.69313586, 0.41960785)
+
+[node name="Counter" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CounterCol" type="CollisionShape2D" parent="Counter"]
+position = Vector2(-181.5, 121.5)
+shape = SubResource("RectangleShape2D_ibjt2")
+
+[node name="Stock1and2" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="Stock1Col" type="CollisionShape2D" parent="Stock1and2"]
+position = Vector2(198, 56.75)
+shape = SubResource("RectangleShape2D_lr16e")
+
+[node name="Stock2Col" type="CollisionShape2D" parent="Stock1and2"]
+position = Vector2(269.5, 108.5)
+shape = SubResource("RectangleShape2D_psrrp")
+
+[node name="Stock3" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="Stock3Col" type="CollisionShape2D" parent="Stock3"]
+position = Vector2(260.75, -72.25)
+shape = SubResource("RectangleShape2D_vmupf")
+
+[node name="Stock4" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="Stock4Col" type="CollisionShape2D" parent="Stock4"]
+position = Vector2(139.875, -182.875)
+shape = SubResource("RectangleShape2D_jvpvs")
+
+[node name="Stock5" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="Stock5Col" type="CollisionShape2D" parent="Stock5"]
+position = Vector2(-175, -182)
+shape = SubResource("RectangleShape2D_77tjn")
+
+[node name="Exit" type="Area2D" parent="."]
+position = Vector2(-1, 223)
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_schhh")
