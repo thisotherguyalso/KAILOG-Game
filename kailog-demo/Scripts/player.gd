@@ -1,24 +1,25 @@
 extends CharacterBody2D
 
-@export var moveSpeed = 300.0
-@export var isSprinting = false
-
+@export var walkSpeed: float = 300.0
+@export var sprintSpeed: float = 600.0
+@export_range(0.0, 20.0) var slipperiness: float = 14.0
+var isSprinting: bool = false
+var speed: float = 0.0
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	if direction:
-		velocity = direction * moveSpeed
+		velocity = lerp(velocity, direction * speed, delta * slipperiness) 
 	else:
-		velocity.x = move_toward(velocity.x, 0, moveSpeed)
-		velocity.y = move_toward(velocity.y, 0, moveSpeed)
+		velocity = lerp(velocity, Vector2.ZERO, delta * slipperiness) 
 		
 	if Input.get_action_strength("sprint"):
-		velocity = direction * moveSpeed * 2
+		speed = sprintSpeed
 		isSprinting = true
 	else:
-		velocity = direction * moveSpeed
+		speed = walkSpeed
 		isSprinting = false
-
+	
 	move_and_slide()
