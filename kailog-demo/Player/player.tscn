@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://djbhktkxeugd"]
 
-[ext_resource type="Script" uid="uid://bjvob2mft23r7" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://bjvob2mft23r7" path="res://Player/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://blpwy0wf60sa8" path="res://Sprite/icon.svg" id="1_v0iea"]
-[ext_resource type="PackedScene" uid="uid://ds8nayxi0t6ix" path="res://Scenes/ui.tscn" id="3_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://brptlm60s6jo5" path="res://Player/player_ui.tscn" id="3_btcbx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
 
@@ -29,4 +29,4 @@ drag_bottom_margin = 0.1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1949154919]
 
-[node name="UI" parent="CanvasLayer" unique_id=455204936 instance=ExtResource("3_6t5aa")]
+[node name="Player UI" parent="CanvasLayer" unique_id=434432760 instance=ExtResource("3_btcbx")]

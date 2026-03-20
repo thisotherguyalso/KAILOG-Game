@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="KAILOG demo"
-run/main_scene="uid://b5o2sjxyv2fwf"
+run/main_scene="uid://delt2n6e6qijq"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Sprite/icon.svg"
 
