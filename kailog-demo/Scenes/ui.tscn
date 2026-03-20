@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds8nayxi0t6ix"]
+
+[ext_resource type="Script" uid="uid://p7olyj7apuuu" path="res://Scripts/flood.gd" id="1_jxero"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wviqb"]
+bg_color = Color(0.124262534, 0.624369, 0.69628596, 1)
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jxero")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_right = 125.0
+offset_bottom = 209.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_wviqb")
+fill_mode = 3
+show_percentage = false
