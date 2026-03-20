@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://delt2n6e6qijq"]
 
 [ext_resource type="Texture2D" uid="uid://dxq8w1vkpbnox" path="res://Sprite/street.png" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://cgp716rgontld" path="res://Items/plastic.tscn" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://djbhktkxeugd" path="res://Player/player.tscn" id="3_lquwl"]
+[ext_resource type="PackedScene" uid="uid://brh0vntjhoxje" path="res://Items/pickup_item.tscn" id="4_1bvp3"]
 
 [node name="Main" type="Node2D" unique_id=1783095803]
 
@@ -10,7 +10,7 @@
 scale = Vector2(2, 2)
 texture = ExtResource("1_h2yge")
 
-[node name="Plastic" parent="." unique_id=2057827008 instance=ExtResource("2_1bvp3")]
-position = Vector2(-380, -181)
-
 [node name="Player" parent="." unique_id=1861928323 instance=ExtResource("3_lquwl")]
+
+[node name="ItemContainer" parent="." unique_id=234542647 instance=ExtResource("4_1bvp3")]
+position = Vector2(-394, 10)

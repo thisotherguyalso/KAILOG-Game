@@ -3,19 +3,20 @@
 [ext_resource type="Script" uid="uid://bjvob2mft23r7" path="res://Player/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://blpwy0wf60sa8" path="res://Sprite/icon.svg" id="1_v0iea"]
 [ext_resource type="PackedScene" uid="uid://brptlm60s6jo5" path="res://Player/player_ui.tscn" id="3_btcbx"]
+[ext_resource type="Script" uid="uid://dfju0tl5ha7qc" path="res://Player/movement_component.gd" id="4_gwnis"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
+radius = 60.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1861928323]
 collision_layer = 2
-collision_mask = 28
+collision_mask = 4
 script = ExtResource("1_cvnsp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=19887267]
 texture = ExtResource("1_v0iea")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1652575677]
-scale = Vector2(6, 6)
 shape = SubResource("CircleShape2D_cvnsp")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=984114381]
@@ -30,3 +31,6 @@ drag_bottom_margin = 0.1
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1949154919]
 
 [node name="Player UI" parent="CanvasLayer" unique_id=434432760 instance=ExtResource("3_btcbx")]
+
+[node name="MovementComponent" type="Node" parent="." unique_id=1528758551]
+script = ExtResource("4_gwnis")

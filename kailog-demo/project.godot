@@ -63,6 +63,4 @@ sprint={
 
 2d_physics/layer_1="world"
 2d_physics/layer_2="player"
-2d_physics/layer_3="walls"
-2d_physics/layer_4="door"
-2d_physics/layer_5="plastics"
+2d_physics/layer_3="pickup_items"
