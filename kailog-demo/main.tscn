@@ -14,3 +14,9 @@ texture = ExtResource("1_h2yge")
 
 [node name="ItemContainer" parent="." unique_id=234542647 instance=ExtResource("4_1bvp3")]
 position = Vector2(-394, 10)
+
+[node name="ItemContainer2" parent="." unique_id=162863624 instance=ExtResource("4_1bvp3")]
+position = Vector2(-532, 217)
+
+[node name="ItemContainer3" parent="." unique_id=1560730913 instance=ExtResource("4_1bvp3")]
+position = Vector2(-83, 304)

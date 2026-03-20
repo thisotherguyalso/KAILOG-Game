@@ -8,6 +8,7 @@
 script = ExtResource("1_t2k4s")
 contents = "Water"
 item_name = "Bottle"
+icon = ExtResource("3_eaqdd")
 metadata/_custom_type_script = "uid://cq05cnjdmwdea"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t2k4s"]
