@@ -38,4 +38,3 @@ script = ExtResource("4_gwnis")
 
 [node name="InventoryComponent" type="Node" parent="." unique_id=1940238054]
 script = ExtResource("5_k53q1")
-capacity = null
