@@ -24,24 +24,41 @@ var player: Player:
 
 var _hover_tween: Tween = null
 var _progress_bar: ProgressBar = null
+var _is_hovered := false
 
 
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
-	area_exited.connect(_on_area_exited)
 
 
-# ── Hover tween ──────────────────────────────────────────────────────────────
+# ── Mouse hover ──────────────────────────────────────────────────────────────
 
-func _on_area_entered(area: Area2D) -> void:
-	if area.has_method("get_item"):
+func _process(_delta: float) -> void:
+	var mouse_screen := get_viewport().get_mouse_position()
+	var mouse_world := get_canvas_transform().affine_inverse() * mouse_screen
+	var is_over := _is_mouse_over(mouse_world)
+
+	if is_over and not _is_hovered:
+		_is_hovered = true
 		_tween_scale(HOVER_SCALE)
-		_try_consume(area)
-	
-
-func _on_area_exited(area: Area2D) -> void:
-	if area.has_method("get_item"):
+	elif not is_over and _is_hovered:
+		_is_hovered = false
 		_tween_scale(NORMAL_SCALE)
+
+
+func _is_mouse_over(world_pos: Vector2) -> bool:
+	var shape_node := $CollisionShape2D as CollisionShape2D
+	if shape_node == null or shape_node.shape == null:
+		return false
+	var local := world_pos - global_position
+	if shape_node.shape is RectangleShape2D:
+		var rect := shape_node.shape as RectangleShape2D
+		var half := rect.size / 2.0
+		return Rect2(-half, rect.size).has_point(local)
+	elif shape_node.shape is CircleShape2D:
+		var circle := shape_node.shape as CircleShape2D
+		return local.length() <= circle.radius
+	return false
 
 
 func _tween_scale(target: Vector2) -> void:
@@ -74,6 +91,10 @@ func _hide_progress() -> void:
 
 
 # ── Pickup detection ─────────────────────────────────────────────────────────
+
+func _on_area_entered(area: Area2D) -> void:
+	_try_consume(area)
+
 
 func check_for_overlapping_pickups() -> void:
 	await get_tree().physics_frame
