@@ -18,7 +18,7 @@ func receive_item(item: Item) -> void:
 	_is_busy = true
 	var container := item as ItemContainer
 
-	# TODO: play cleaning animation / particles.
+	_show_progress(clean_duration)
 	await get_tree().create_timer(clean_duration).timeout
 
 	container.clean()
