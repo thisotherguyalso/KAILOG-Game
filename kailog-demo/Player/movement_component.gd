@@ -13,6 +13,20 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
+	
+	var velocity = Vector2.ZERO
+	velocity.x = Input.get_axis("ui_left", "ui_right")
+	velocity.y = Input.get_axis("ui_up", "ui_down")
+	
+	if velocity.x < 0:
+		$"../Sprite2D".play('left')
+	elif velocity.x > 0:
+		$"../Sprite2D".play('right')
+	elif velocity.y < 0:
+		$"../Sprite2D".play('up')
+	else:
+		$"../Sprite2D".play('down')
+
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	if direction:
 		player.velocity = lerp(player.velocity, direction * speed, delta * slipperiness) 
