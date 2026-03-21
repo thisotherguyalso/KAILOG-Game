@@ -124,6 +124,7 @@ collision_mask = 5
 script = ExtResource("1_cvnsp")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1933894566]
+texture_filter = 1
 position = Vector2(-0.99999994, -19.999998)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_b1ygp")
