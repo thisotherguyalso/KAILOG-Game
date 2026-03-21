@@ -31,4 +31,4 @@ func _spawn_pickup(item: Item, world_pos: Vector2) -> void:
 	player.get_parent().add_child(pickup)
 
 func _on_money_changed(new_amount: float) -> void:
-	money_label.text = "$%.2f" % new_amount
+	money_label.text = "₱%.2f" % new_amount
