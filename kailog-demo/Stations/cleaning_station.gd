@@ -10,7 +10,8 @@ var _is_busy := false
 func can_receive(item: Item) -> bool:
 	if _is_busy:
 		return false
-	return item is ItemContainer and item.state == ItemContainer.ContainerState.DIRTY
+	return (item is ItemContainer
+			and item.state != ItemContainer.ContainerState.CLEAN)
 
 
 func receive_item(item: Item) -> void:
@@ -29,5 +30,5 @@ func receive_item(item: Item) -> void:
 func _spawn_pickup(item: Item) -> void:
 	var pickup := preload("res://Items/pickup_item.tscn").instantiate()
 	pickup.item = item
-	pickup.global_position = global_position + Vector2(randi_range(-100, 100), randi_range(-100, 100))
+	pickup.global_position = global_position + Vector2(0, 40)
 	get_parent().add_child(pickup)

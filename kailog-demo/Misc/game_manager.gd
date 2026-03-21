@@ -55,7 +55,7 @@ func _evaluate() -> RoundResults:
 	var results := RoundResults.new()
 	results.round_number = current_round
 	results.time_remaining = timer.get_seconds_left()
-	results.money = player.inventory.money
+	results.money = player.money.amount
 	results.grocery_complete = grocery_list.is_complete(player)
 
 	# Score each item in the player's inventory.

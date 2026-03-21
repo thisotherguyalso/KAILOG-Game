@@ -21,10 +21,10 @@ shape = SubResource("RectangleShape2D_ajrjd")
 modulate = Color(0.77096444, 0, 0.31792608, 1)
 texture = ExtResource("2_5jkxk")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=148367841]
+[node name="StationWall" type="StaticBody2D" parent="." unique_id=148367841]
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1054573748]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StationWall" unique_id=1054573748]
 position = Vector2(0, 32)
 shape = SubResource("RectangleShape2D_5jkxk")
 debug_color = Color(0.19791797, 0.6415829, 0, 0.41960785)

@@ -15,23 +15,20 @@ func can_receive(item: Item) -> bool:
 
 
 func receive_item(item: Item) -> void:
-	if _nearby_player == null:
-		return
-	var price := _get_sell_price(item)
-	_nearby_player.inventory.money += price
+	player.money.add(_get_sell_price(item))
 	# TODO: show floating "+$X" feedback.
 
 
 # ── Buying (click) ───────────────────────────────────────────────────────────
 
-func interact(player: Player) -> void:
+func interact() -> void:
 	if item_for_sale == null:
 		return
-	if player.inventory.money < buy_price:
+	if not player.money.can_afford(buy_price):
 		# TODO: show "not enough money" feedback.
 		return
 	if player.inventory.add_item(item_for_sale):
-		player.inventory.money -= buy_price
+		player.money.deduct(buy_price)
 
 
 # ── Helpers ──────────────────────────────────────────────────────────────────

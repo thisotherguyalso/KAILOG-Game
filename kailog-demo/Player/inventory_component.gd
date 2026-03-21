@@ -6,8 +6,6 @@ signal inventory_changed
 @export var capacity: int = 5
 
 var player: Player
-var money: float = 100.0
-
 
 func _ready():
 	player = owner

@@ -26,6 +26,7 @@ metadata/_custom_type_script = "uid://cq05cnjdmwdea"
 radius = 85.052925
 
 [node name="PickupItem" type="Area2D" unique_id=234542647]
+z_index = 1
 collision_layer = 4
 collision_mask = 10
 script = ExtResource("1_2vssv")
