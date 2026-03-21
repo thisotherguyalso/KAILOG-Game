@@ -44,8 +44,10 @@ item_name = "Bottle"
 metadata/_custom_type_script = "uid://cq05cnjdmwdea"
 
 [node name="Main" type="Node2D" unique_id=1783095803]
+y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2003187732]
+z_index = -1
 scale = Vector2(2, 2)
 texture = ExtResource("1_h2yge")
 

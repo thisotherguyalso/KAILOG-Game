@@ -23,7 +23,7 @@ item_name = "Bottle"
 metadata/_custom_type_script = "uid://cq05cnjdmwdea"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t2k4s"]
-radius = 70.0
+radius = 85.052925
 
 [node name="PickupItem" type="Area2D" unique_id=234542647]
 collision_layer = 4

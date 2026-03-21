@@ -6,19 +6,22 @@
 [ext_resource type="Script" uid="uid://dfju0tl5ha7qc" path="res://Player/movement_component.gd" id="4_gwnis"]
 [ext_resource type="Script" uid="uid://ca8wbfsruak5y" path="res://Player/inventory_component.gd" id="5_k53q1"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
-radius = 60.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k53q1"]
+radius = 30.0
+height = 116.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1861928323]
 collision_layer = 2
-collision_mask = 4
+collision_mask = 5
 script = ExtResource("1_cvnsp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=19887267]
 texture = ExtResource("1_v0iea")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1652575677]
-shape = SubResource("CircleShape2D_cvnsp")
+position = Vector2(0, 32)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_k53q1")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=984114381]
 position_smoothing_enabled = true

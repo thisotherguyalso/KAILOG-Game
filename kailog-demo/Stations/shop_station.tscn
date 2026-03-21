@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_d5fem"]
 [ext_resource type="Script" uid="uid://btxvkhako7h7j" path="res://Stations/shop_station.gd" id="2_bvvwf"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5fem"]
+size = Vector2(128, 64)
+
 [node name="ShopStation" unique_id=1300298490 instance=ExtResource("1_d5fem")]
 script = ExtResource("2_bvvwf")
 item_for_sale = null
@@ -12,3 +15,10 @@ buy_price = 15.0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "shop"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="3" unique_id=283617943]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0" unique_id=1444622586]
+position = Vector2(0, 32)
+shape = SubResource("RectangleShape2D_d5fem")
+debug_color = Color(0.19791797, 0.6415829, 0, 0.41960785)
