@@ -25,7 +25,7 @@
 [ext_resource type="Script" uid="uid://bsdbajlhhfbja" path="res://Misc/timer_label.gd" id="18_074og"]
 [ext_resource type="PackedScene" uid="uid://0ith6mc8winc" path="res://Stations/cooking_oil_refill_station.tscn" id="20_0odxb"]
 [ext_resource type="PackedScene" uid="uid://c0su22eradkp2" path="res://Stations/rice_refill_station.tscn" id="20_lswn8"]
-[ext_resource type="PackedScene" path="res://Stations/dishwashing_refill_station.tscn" id="21_a6jrf"]
+[ext_resource type="PackedScene" uid="uid://dewc78ookudj1" path="res://Stations/dishwashing_refill_station.tscn" id="21_a6jrf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1u8w0"]
 texture = ExtResource("1_ycdy4")
@@ -227,7 +227,7 @@ player = NodePath("../Player")
 evaluation_screen = NodePath("../CanvasLayer/EvaluationScreen")
 
 [node name="RoundTimer" type="Timer" parent="GameManager" unique_id=1519411665]
-wait_time = 30.0
+wait_time = 90.0
 script = ExtResource("14_w48qg")
 
 [node name="GroceryList" type="Node" parent="GameManager" unique_id=240641678]
@@ -265,8 +265,6 @@ position = Vector2(1134, -132)
 
 [node name="DLRefillStation3" parent="." unique_id=1055301813 instance=ExtResource("21_a6jrf")]
 position = Vector2(924, -132)
-fill_contents = "Dishwashing Liquid"
-required_container_name = "Bottle"
 
 [node name="ShopStation" parent="." unique_id=1971240148 instance=ExtResource("6_kek77")]
 position = Vector2(1022, 64)

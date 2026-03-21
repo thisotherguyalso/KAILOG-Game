@@ -24,8 +24,10 @@ func _physics_process(delta: float) -> void:
 		$"../Sprite2D".play('right')
 	elif velocity.y < 0:
 		$"../Sprite2D".play('up')
-	else:
+	elif velocity.y > 0:
 		$"../Sprite2D".play('down')
+	else:
+		$"../Sprite2D".play('idle')
 
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	if direction:
