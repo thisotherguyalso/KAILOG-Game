@@ -1,12 +1,8 @@
 [gd_scene format=3 uid="uid://brptlm60s6jo5"]
 
 [ext_resource type="Script" uid="uid://b4rsh1fhflpog" path="res://Player/player_ui.gd" id="1_m5vge"]
-[ext_resource type="Script" uid="uid://c5hn1x1ucwovq" path="res://Player/flood_bar.gd" id="2_6noqq"]
 [ext_resource type="Script" uid="uid://b0ou8di157j2c" path="res://Player/inventory_grid.gd" id="3_r1esw"]
 [ext_resource type="Script" uid="uid://cg0yng6eqd2mg" path="res://Player/inventory_slot.gd" id="4_m5vge"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wviqb"]
-bg_color = Color(0.124262534, 0.624369, 0.69628596, 1)
 
 [node name="Player UI" type="Control" unique_id=434432760]
 layout_mode = 3
@@ -16,17 +12,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m5vge")
-
-[node name="FloodBar" type="ProgressBar" parent="." unique_id=1650831132]
-layout_mode = 0
-offset_left = 53.0
-offset_top = 47.0
-offset_right = 178.0
-offset_bottom = 256.0
-theme_override_styles/fill = SubResource("StyleBoxFlat_wviqb")
-fill_mode = 3
-show_percentage = false
-script = ExtResource("2_6noqq")
 
 [node name="InventoryGrid" type="HBoxContainer" parent="." unique_id=1844786044]
 layout_mode = 1

@@ -12,6 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://dvb76mf62aqm2" path="res://Sprite/Bottle/bottle_dirty.png" id="6_w48qg"]
 [ext_resource type="PackedScene" uid="uid://b8ckmdt8a8x60" path="res://Stations/trash_station.tscn" id="7_4c57u"]
 [ext_resource type="Texture2D" uid="uid://bs4cf82pu7qla" path="res://Sprite/Bottle/bottle_refilled.png" id="7_vivmo"]
+[ext_resource type="Script" uid="uid://dkgcutmupgan0" path="res://Misc/game_manager.gd" id="13_ycdy4"]
+[ext_resource type="Script" uid="uid://5p78j5p5it3o" path="res://Misc/round_timer.gd" id="14_w48qg"]
+[ext_resource type="Script" uid="uid://cgb7wre7pd5tl" path="res://Misc/grocery_list.gd" id="15_vivmo"]
+[ext_resource type="Script" uid="uid://bbd5cpak4rhr6" path="res://Misc/grocery_list_ui.gd" id="16_2cqfq"]
+[ext_resource type="Script" uid="uid://b6msaa8uum8ft" path="res://Misc/evaluation_screen.gd" id="16_yaehf"]
+[ext_resource type="Script" uid="uid://bsdbajlhhfbja" path="res://Misc/timer_label.gd" id="18_074og"]
 
 [sub_resource type="Resource" id="Resource_ycdy4"]
 script = ExtResource("5_4c57u")
@@ -46,12 +52,27 @@ metadata/_custom_type_script = "uid://cq05cnjdmwdea"
 [node name="Main" type="Node2D" unique_id=1783095803]
 y_sort_enabled = true
 
+[node name="GameManager" type="Node" parent="." unique_id=479567949 node_paths=PackedStringArray("player", "evaluation_screen")]
+script = ExtResource("13_ycdy4")
+player = NodePath("../Player")
+evaluation_screen = NodePath("../CanvasLayer/EvaluationScreen")
+
+[node name="RoundTimer" type="Timer" parent="GameManager" unique_id=1519411665]
+wait_time = 30.0
+script = ExtResource("14_w48qg")
+
+[node name="GroceryList" type="Node" parent="GameManager" unique_id=240641678]
+script = ExtResource("15_vivmo")
+possible_items = Array[String](["Dishwashing Liquid", "Cooking Oil", "Rice"])
+max_entries = 5
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2003187732]
 z_index = -1
 scale = Vector2(2, 2)
 texture = ExtResource("1_h2yge")
 
-[node name="Player" parent="." unique_id=1861928323 instance=ExtResource("3_lquwl")]
+[node name="Player" parent="." unique_id=1861928323 node_paths=PackedStringArray("game_manager") instance=ExtResource("3_lquwl")]
+game_manager = NodePath("../GameManager")
 
 [node name="ItemContainer" parent="." unique_id=234542647 instance=ExtResource("4_1bvp3")]
 position = Vector2(-394, 10)
@@ -77,3 +98,82 @@ position = Vector2(1022, 64)
 
 [node name="TrashStation" parent="." unique_id=681390836 instance=ExtResource("7_4c57u")]
 position = Vector2(1283, 64)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=523352363]
+
+[node name="EvaluationScreen" type="Control" parent="CanvasLayer" unique_id=1675867458 node_paths=PackedStringArray("game_manager")]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16_yaehf")
+game_manager = NodePath("../../GameManager")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/EvaluationScreen" unique_id=862927993]
+custom_minimum_size = Vector2(1080, 720)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/EvaluationScreen/Panel" unique_id=2009208088]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -31.0
+offset_right = 20.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/EvaluationScreen/Panel/VBoxContainer" unique_id=1896172325]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "TODAY'S RESULTS"
+
+[node name="ResultsLabel" type="Label" parent="CanvasLayer/EvaluationScreen/Panel/VBoxContainer" unique_id=655471966]
+layout_mode = 2
+
+[node name="NextRoundButton" type="Button" parent="CanvasLayer/EvaluationScreen/Panel/VBoxContainer" unique_id=1783255026]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+text = "NEXT ROUND"
+
+[node name="GroceryListUI" type="VBoxContainer" parent="CanvasLayer" unique_id=82261651 node_paths=PackedStringArray("game_manager")]
+custom_minimum_size = Vector2(200, 300)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+grow_vertical = 2
+script = ExtResource("16_2cqfq")
+game_manager = NodePath("../../GameManager")
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer" unique_id=1298061006 node_paths=PackedStringArray("timer")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.0
+offset_top = 47.0
+offset_right = 12.0
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+script = ExtResource("18_074og")
+timer = NodePath("../../GameManager/RoundTimer")
+
+[connection signal="pressed" from="CanvasLayer/EvaluationScreen/Panel/VBoxContainer/NextRoundButton" to="GameManager" method="proceed_to_next_round"]
