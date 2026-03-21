@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://688p861i1tfi"]
+
+[ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_mqdyq"]
+[ext_resource type="Script" uid="uid://d4bht54jje4cf" path="res://Stations/cleaning_station.gd" id="2_ayto0"]
+
+[node name="CleaningStation" unique_id=1300298490 instance=ExtResource("1_mqdyq")]
+script = ExtResource("2_ayto0")
+clean_duration = 3.0
+
+[node name="Label" type="Label" parent="." index="2" unique_id=769079110]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "cleaning
+"

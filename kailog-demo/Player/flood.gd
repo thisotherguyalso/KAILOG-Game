@@ -1,26 +1,26 @@
-class_name PlayerUI
 extends Control
 
-@onready var flood_bar: ProgressBar = $FloodBar
-@onready var inventory_grid: InventoryGrid = $InventoryGrid
+@onready var flood_bar: ProgressBar = $ProgressBar
 
-var player: Player
+# variables for the flood bar
+var flood: float = 0.0
+var max_flood: float = 100.0
+var flood_rate: float = 2.0
 
-func _ready():
-	player = owner
+func _ready() -> void:
+	update_flood_bar()
 
-## Called by InventoryGrid when a drag ends outside any slot.
-## Spawns the item as a pickup in the world.
-func handle_world_drop(item: Item, screen_pos: Vector2) -> void:
-	var world_pos := _screen_to_world(screen_pos)
-	_spawn_pickup(item, world_pos)
-	player.inventory.remove_item(item)
+func _process(delta: float) -> void:
+	if flood < max_flood:
+		flooding(delta)
 
-func _screen_to_world(screen_pos: Vector2) -> Vector2:
-	return player.get_canvas_transform().affine_inverse() * screen_pos
+# updates the flood bar
+func update_flood_bar() -> void:
+	flood_bar.value = flood
 
-func _spawn_pickup(item: Item, world_pos: Vector2) -> void:
-	var pickup := preload("res://Items/pickup_item.tscn").instantiate()
-	pickup.item = item
-	pickup.global_position = world_pos
-	player.get_parent().add_child(pickup)
+# increases the flood bar every second
+func flooding(delta) -> void:
+	flood += flood_rate * delta
+	flood = min(flood, max_flood)
+	
+	update_flood_bar()

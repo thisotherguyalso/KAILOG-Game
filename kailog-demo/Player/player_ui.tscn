@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://brptlm60s6jo5"]
 
-[ext_resource type="Script" uid="uid://p7olyj7apuuu" path="res://Player/flood.gd" id="1_ohrjl"]
+[ext_resource type="Script" uid="uid://b4rsh1fhflpog" path="res://Player/player_ui.gd" id="1_m5vge"]
 [ext_resource type="Script" uid="uid://c5hn1x1ucwovq" path="res://Player/flood_bar.gd" id="2_6noqq"]
 [ext_resource type="Script" uid="uid://b0ou8di157j2c" path="res://Player/inventory_grid.gd" id="3_r1esw"]
 [ext_resource type="Script" uid="uid://cg0yng6eqd2mg" path="res://Player/inventory_slot.gd" id="4_m5vge"]
@@ -15,7 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ohrjl")
+script = ExtResource("1_m5vge")
 
 [node name="FloodBar" type="ProgressBar" parent="." unique_id=1650831132]
 layout_mode = 0

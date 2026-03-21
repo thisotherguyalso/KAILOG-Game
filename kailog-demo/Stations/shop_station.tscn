@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b378nrs2qcsni"]
+
+[ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_d5fem"]
+[ext_resource type="Script" uid="uid://btxvkhako7h7j" path="res://Stations/shop_station.gd" id="2_bvvwf"]
+
+[node name="ShopStation" unique_id=1300298490 instance=ExtResource("1_d5fem")]
+script = ExtResource("2_bvvwf")
+item_for_sale = null
+buy_price = 15.0
+
+[node name="Label" type="Label" parent="." index="2" unique_id=953993225]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "shop"

@@ -92,7 +92,7 @@ func get_all_items() -> Array[Item]:
 
 func _move_floating_icon(pos: Vector2) -> void:
 	if _drag and _drag.floating_icon:
-		_drag.floating_icon.global_position = pos - Vector2(128, 128)
+		_drag.floating_icon.global_position = pos - Vector2(64, 64)
 
 
 func _finish_drag(pos: Vector2) -> void:

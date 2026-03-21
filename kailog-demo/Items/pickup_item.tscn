@@ -2,14 +2,24 @@
 
 [ext_resource type="Script" uid="uid://i0psuntsaij7" path="res://Items/pickup_item.gd" id="1_2vssv"]
 [ext_resource type="Script" uid="uid://cq05cnjdmwdea" path="res://Items/item_container.gd" id="1_t2k4s"]
+[ext_resource type="Texture2D" uid="uid://cvlevy7h0pa3c" path="res://Sprite/Bottle/bottle_bought.png" id="2_mx0qn"]
 [ext_resource type="Texture2D" uid="uid://blpwy0wf60sa8" path="res://Sprite/icon.svg" id="3_eaqdd"]
+[ext_resource type="Texture2D" uid="uid://g15cojoxw1lh" path="res://Sprite/Bottle/bottle_clean.png" id="3_uvhwl"]
+[ext_resource type="Texture2D" uid="uid://dvb76mf62aqm2" path="res://Sprite/Bottle/bottle_dirty.png" id="4_sm0wa"]
+[ext_resource type="Texture2D" uid="uid://bs4cf82pu7qla" path="res://Sprite/Bottle/bottle_refilled.png" id="5_aqxjh"]
 
-[sub_resource type="Resource" id="Resource_ypqt7"]
+[sub_resource type="Resource" id="Resource_eaqdd"]
 script = ExtResource("1_t2k4s")
 contents = "Water"
+icon_bought = ExtResource("2_mx0qn")
+icon_clean = ExtResource("3_uvhwl")
+icon_dirty = ExtResource("4_sm0wa")
+icon_refilled = ExtResource("5_aqxjh")
+sprite_bought = ExtResource("2_mx0qn")
+sprite_clean = ExtResource("3_uvhwl")
+sprite_dirty = ExtResource("4_sm0wa")
+sprite_refilled = ExtResource("5_aqxjh")
 item_name = "Bottle"
-icon = ExtResource("3_eaqdd")
-sprite = ExtResource("3_eaqdd")
 metadata/_custom_type_script = "uid://cq05cnjdmwdea"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t2k4s"]
@@ -17,9 +27,9 @@ radius = 70.0
 
 [node name="PickupItem" type="Area2D" unique_id=234542647]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 10
 script = ExtResource("1_2vssv")
-item = SubResource("Resource_ypqt7")
+item = SubResource("Resource_eaqdd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=379439190]
 position = Vector2(2, -3)

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c2ojepxwqsf0i"]
+
+[ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_g7uyg"]
+[ext_resource type="Script" uid="uid://b0p6moybyptcp" path="res://Stations/refill_station.gd" id="2_wdgps"]
+
+[node name="RefillStation" unique_id=1300298490 instance=ExtResource("1_g7uyg")]
+script = ExtResource("2_wdgps")
+fill_contents = ""
+required_container_name = ""
+refill_duration = 2.0
+
+[node name="Label" type="Label" parent="." index="2" unique_id=1265903786]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "refill"

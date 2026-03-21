@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://xtlr2ado4iyg"]
+
+[ext_resource type="Script" uid="uid://dn87ximbynkbs" path="res://Stations/station.gd" id="1_ajrjd"]
+[ext_resource type="Texture2D" uid="uid://blpwy0wf60sa8" path="res://Sprite/icon.svg" id="2_5jkxk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ajrjd"]
+size = Vector2(128, 128)
+
+[node name="Station" type="Area2D" unique_id=1300298490]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_ajrjd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1778666264]
+shape = SubResource("RectangleShape2D_ajrjd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=760885286]
+modulate = Color(0.77096444, 0, 0.31792608, 1)
+texture = ExtResource("2_5jkxk")

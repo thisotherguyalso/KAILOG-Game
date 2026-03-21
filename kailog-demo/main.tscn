@@ -3,6 +3,45 @@
 [ext_resource type="Texture2D" uid="uid://dxq8w1vkpbnox" path="res://Sprite/street.png" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://djbhktkxeugd" path="res://Player/player.tscn" id="3_lquwl"]
 [ext_resource type="PackedScene" uid="uid://brh0vntjhoxje" path="res://Items/pickup_item.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://688p861i1tfi" path="res://Stations/cleaning_station.tscn" id="4_272bh"]
+[ext_resource type="Texture2D" uid="uid://cvlevy7h0pa3c" path="res://Sprite/Bottle/bottle_bought.png" id="4_dg77c"]
+[ext_resource type="Script" uid="uid://cq05cnjdmwdea" path="res://Items/item_container.gd" id="5_4c57u"]
+[ext_resource type="PackedScene" uid="uid://c2ojepxwqsf0i" path="res://Stations/refill_station.tscn" id="5_5vw27"]
+[ext_resource type="Texture2D" uid="uid://g15cojoxw1lh" path="res://Sprite/Bottle/bottle_clean.png" id="5_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://b378nrs2qcsni" path="res://Stations/shop_station.tscn" id="6_kek77"]
+[ext_resource type="Texture2D" uid="uid://dvb76mf62aqm2" path="res://Sprite/Bottle/bottle_dirty.png" id="6_w48qg"]
+[ext_resource type="PackedScene" uid="uid://b8ckmdt8a8x60" path="res://Stations/trash_station.tscn" id="7_4c57u"]
+[ext_resource type="Texture2D" uid="uid://bs4cf82pu7qla" path="res://Sprite/Bottle/bottle_refilled.png" id="7_vivmo"]
+
+[sub_resource type="Resource" id="Resource_ycdy4"]
+script = ExtResource("5_4c57u")
+contents = "Water"
+state = 2
+icon_bought = ExtResource("4_dg77c")
+icon_clean = ExtResource("5_ycdy4")
+icon_dirty = ExtResource("6_w48qg")
+icon_refilled = ExtResource("7_vivmo")
+sprite_bought = ExtResource("4_dg77c")
+sprite_clean = ExtResource("5_ycdy4")
+sprite_dirty = ExtResource("6_w48qg")
+sprite_refilled = ExtResource("7_vivmo")
+item_name = "Bottle"
+metadata/_custom_type_script = "uid://cq05cnjdmwdea"
+
+[sub_resource type="Resource" id="Resource_dg77c"]
+script = ExtResource("5_4c57u")
+contents = "Water"
+state = 1
+icon_bought = ExtResource("4_dg77c")
+icon_clean = ExtResource("5_ycdy4")
+icon_dirty = ExtResource("6_w48qg")
+icon_refilled = ExtResource("7_vivmo")
+sprite_bought = ExtResource("4_dg77c")
+sprite_clean = ExtResource("5_ycdy4")
+sprite_dirty = ExtResource("6_w48qg")
+sprite_refilled = ExtResource("7_vivmo")
+item_name = "Bottle"
+metadata/_custom_type_script = "uid://cq05cnjdmwdea"
 
 [node name="Main" type="Node2D" unique_id=1783095803]
 
@@ -16,7 +55,23 @@ texture = ExtResource("1_h2yge")
 position = Vector2(-394, 10)
 
 [node name="ItemContainer2" parent="." unique_id=162863624 instance=ExtResource("4_1bvp3")]
+modulate = Color(0.3426953, 0.16039622, 0.056640334, 1)
 position = Vector2(-532, 217)
+item = SubResource("Resource_ycdy4")
 
 [node name="ItemContainer3" parent="." unique_id=1560730913 instance=ExtResource("4_1bvp3")]
+modulate = Color(0.51422155, 0.07976628, 0.55103964, 1)
 position = Vector2(-83, 304)
+item = SubResource("Resource_dg77c")
+
+[node name="CleaningStation" parent="." unique_id=1300298490 instance=ExtResource("4_272bh")]
+position = Vector2(512, 64)
+
+[node name="RefillStation" parent="." unique_id=39202334 instance=ExtResource("5_5vw27")]
+position = Vector2(762, 64)
+
+[node name="ShopStation" parent="." unique_id=1971240148 instance=ExtResource("6_kek77")]
+position = Vector2(1022, 64)
+
+[node name="TrashStation" parent="." unique_id=681390836 instance=ExtResource("7_4c57u")]
+position = Vector2(1283, 64)
