@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bn1p700ob65g0"]
+[gd_scene format=3 uid="uid://0ith6mc8winc"]
 
 [ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_0a2gd"]
 [ext_resource type="Script" uid="uid://b0p6moybyptcp" path="res://Stations/refill_station.gd" id="2_g0qco"]
@@ -6,8 +6,8 @@
 
 [node name="RefillStation" unique_id=1300298490 instance=ExtResource("1_0a2gd")]
 script = ExtResource("2_g0qco")
-fill_contents = ""
-required_container_name = ""
+fill_contents = "Cooking Oil"
+required_container_name = "Bottle"
 refill_duration = 2.0
 refill_price = 5.0
 
