@@ -261,19 +261,18 @@ fill_contents = "Cooking Oil"
 required_container_name = "Bottle"
 
 [node name="DLRefillStation" parent="." unique_id=1737180864 instance=ExtResource("5_5vw27")]
-z_index = 1
 position = Vector2(922, -138)
 fill_contents = "Dishwashing Liquid"
 required_container_name = "Bottle"
 
 [node name="RRefillStation" parent="." unique_id=381054757 instance=ExtResource("5_5vw27")]
-z_index = 1
 position = Vector2(1139, -138)
 fill_contents = "Rice"
 required_container_name = "Tupperware"
 
 [node name="ShopStation" parent="." unique_id=1971240148 instance=ExtResource("6_kek77")]
 position = Vector2(1022, 64)
+item_for_sale = ExtResource("7_w48qg")
 
 [node name="TrashStation" parent="." unique_id=681390836 instance=ExtResource("7_4c57u")]
 position = Vector2(1283, 64)
@@ -288,6 +287,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("16_yaehf")
 game_manager = NodePath("../../GameManager")
 
@@ -339,6 +339,7 @@ offset_top = -150.0
 offset_right = 200.0
 offset_bottom = 150.0
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("16_2cqfq")
 game_manager = NodePath("../../GameManager")
 

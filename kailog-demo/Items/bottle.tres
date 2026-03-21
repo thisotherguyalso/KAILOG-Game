@@ -8,7 +8,6 @@
 
 [resource]
 script = ExtResource("5_p354d")
-state = 1
 icon_bought = ExtResource("1_efekc")
 icon_clean = ExtResource("2_uoh5o")
 icon_dirty = ExtResource("3_ddq4b")

@@ -1,5 +1,5 @@
 ## Buy station. Click/tap to purchase the configured item.
-## Each click buys one. Click multiple times for multiple.
+## Each click buys one and spawns it as a pickup.
 class_name ShopStation
 extends Station
 
@@ -27,9 +27,18 @@ func interact() -> void:
 	if not player.money.can_afford(buy_price):
 		# TODO: show "not enough money" feedback.
 		return
-	if player.inventory.add_item(item_for_sale):
-		player.money.deduct(buy_price)
-		# Quick feedback pulse on purchase.
-		_tween_scale(HOVER_SCALE)
-		await get_tree().create_timer(0.1).timeout
-		_tween_scale(NORMAL_SCALE)
+
+	player.money.deduct(buy_price)
+	_spawn_pickup(item_for_sale.duplicate())
+
+	# Quick feedback pulse on purchase.
+	_tween_scale(HOVER_SCALE)
+	await get_tree().create_timer(0.1).timeout
+	_tween_scale(NORMAL_SCALE)
+
+
+func _spawn_pickup(item: Item) -> void:
+	var pickup := preload("res://Items/pickup_item.tscn").instantiate()
+	pickup.item = item
+	pickup.global_position = global_position + Vector2(randi_range(-50, 50), 40)
+	get_parent().add_child(pickup)
