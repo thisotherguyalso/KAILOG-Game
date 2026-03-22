@@ -18,6 +18,11 @@ func _physics_process(delta: float) -> void:
 	velocity.x = Input.get_axis("ui_left", "ui_right")
 	velocity.y = Input.get_axis("ui_up", "ui_down")
 	
+	if velocity and !$"../WalkingSFX".playing:
+		$"../WalkingSFX".play()
+	elif not velocity:
+		$"../WalkingSFX".stop()
+	
 	if velocity.x < 0:
 		$"../Sprite2D".play('left')
 	elif velocity.x > 0:

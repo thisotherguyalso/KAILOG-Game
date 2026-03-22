@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_chlia"]
 [ext_resource type="Script" uid="uid://b0p6moybyptcp" path="res://Stations/refill_station.gd" id="2_jup2v"]
 [ext_resource type="Texture2D" uid="uid://dpjnhq22hae3e" path="res://Sprite/Stations/rice.png" id="3_ltlip"]
+[ext_resource type="AudioStream" uid="uid://c7ufr1jbke4nr" path="res://Sounds/pouring.mp3" id="4_jup2v"]
 
 [node name="RefillStation" unique_id=1300298490 instance=ExtResource("1_chlia")]
 script = ExtResource("2_jup2v")
@@ -28,3 +29,6 @@ visible = false
 
 [node name="CollisionShape2D" parent="StationWall" index="0" unique_id=1054573748]
 visible = false
+
+[node name="PouringSFX" type="AudioStreamPlayer2D" parent="." index="4" unique_id=205142379]
+stream = ExtResource("4_jup2v")

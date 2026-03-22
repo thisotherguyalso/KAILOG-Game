@@ -23,6 +23,7 @@ func add_item(item: Item) -> bool:
 	var unique_item := item.duplicate() as Item
 	var success := player.ui.inventory_grid.add_to_first_empty_slot(unique_item)
 	if success:
+		$PickupSFX.play()
 		inventory_changed.emit()
 	return success
 

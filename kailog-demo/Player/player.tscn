@@ -5,7 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://brptlm60s6jo5" path="res://Player/player_ui.tscn" id="3_btcbx"]
 [ext_resource type="Script" uid="uid://dfju0tl5ha7qc" path="res://Player/movement_component.gd" id="4_gwnis"]
 [ext_resource type="Script" uid="uid://ca8wbfsruak5y" path="res://Player/inventory_component.gd" id="5_k53q1"]
+[ext_resource type="AudioStream" uid="uid://bcfnekkb7s3bs" path="res://Sounds/pickup.mp3" id="5_od3ui"]
 [ext_resource type="Script" uid="uid://xdb8r0rbno84" path="res://Player/money_component.gd" id="6_fhl08"]
+[ext_resource type="AudioStream" uid="uid://cil7ybifqbc8a" path="res://Sounds/walking.mp3" id="7_vtle1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fhl08"]
 atlas = ExtResource("2_k53q1")
@@ -159,6 +161,9 @@ script = ExtResource("4_gwnis")
 [node name="InventoryComponent" type="Node" parent="." unique_id=1940238054]
 script = ExtResource("5_k53q1")
 
+[node name="PickupSFX" type="AudioStreamPlayer" parent="InventoryComponent" unique_id=536234921]
+stream = ExtResource("5_od3ui")
+
 [node name="MoneyComponent" type="Node" parent="." unique_id=161918027]
 script = ExtResource("6_fhl08")
 
@@ -166,3 +171,8 @@ script = ExtResource("6_fhl08")
 
 [node name="Player UI" parent="CanvasLayer" unique_id=434432760 instance=ExtResource("3_btcbx")]
 mouse_filter = 2
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=238252444]
+
+[node name="WalkingSFX" type="AudioStreamPlayer2D" parent="." unique_id=1709712345]
+stream = ExtResource("7_vtle1")

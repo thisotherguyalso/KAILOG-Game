@@ -2,13 +2,23 @@
 
 [ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_mqdyq"]
 [ext_resource type="Script" uid="uid://d4bht54jje4cf" path="res://Stations/cleaning_station.gd" id="2_ayto0"]
+[ext_resource type="Texture2D" uid="uid://cqworieilr8gm" path="res://Sprite/cleanstation.jpg" id="3_6nxiw"]
+[ext_resource type="AudioStream" uid="uid://dtd42ape1rj3u" path="res://Sounds/cleaning.mp3" id="3_ayto0"]
 
 [node name="CleaningStation" unique_id=1300298490 instance=ExtResource("1_mqdyq")]
 script = ExtResource("2_ayto0")
 clean_duration = 3.0
+
+[node name="Sprite2D" parent="." index="1" unique_id=760885286]
+modulate = Color(1, 1, 1, 1)
+scale = Vector2(0.56, 0.56)
+texture = ExtResource("3_6nxiw")
 
 [node name="Label" type="Label" parent="." index="2" unique_id=769079110]
 offset_right = 40.0
 offset_bottom = 23.0
 text = "cleaning
 "
+
+[node name="CleaningSFX" type="AudioStreamPlayer2D" parent="." index="4" unique_id=573593518]
+stream = ExtResource("3_ayto0")

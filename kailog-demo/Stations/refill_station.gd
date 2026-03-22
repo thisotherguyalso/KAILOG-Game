@@ -31,9 +31,13 @@ func receive_item(item: Item) -> void:
 
 	_is_busy = true
 	var container := item as ItemContainer
+	
+	$PouringSFX.play()
 
 	_show_progress(refill_duration)
 	await get_tree().create_timer(refill_duration).timeout
+
+	$PouringSFX.stop()
 
 	container.refill(fill_contents)
 	_spawn_pickup(container)

@@ -93,6 +93,9 @@ func _hide_progress() -> void:
 # ── Pickup detection ─────────────────────────────────────────────────────────
 
 func _on_area_entered(area: Area2D) -> void:
+	print("Area entered: ", area.name, " has get_item: ", area.has_method("get_item"))
+	if area.has_method("get_item"):
+		print("  item: ", area.get_item(), " can_receive: ", can_receive(area.get_item()))
 	_try_consume(area)
 
 

@@ -17,10 +17,13 @@ func can_receive(item: Item) -> bool:
 func receive_item(item: Item) -> void:
 	_is_busy = true
 	var container := item as ItemContainer
+	
+	$CleaningSFX.play(2.0)
 
 	_show_progress(clean_duration)
 	await get_tree().create_timer(clean_duration).timeout
-
+	
+	$CleaningSFX.stop()
 	container.clean()
 	_spawn_pickup(container)
 	_is_busy = false

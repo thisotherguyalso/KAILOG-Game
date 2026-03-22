@@ -2,13 +2,25 @@
 
 [ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_d5fem"]
 [ext_resource type="Script" uid="uid://btxvkhako7h7j" path="res://Stations/shop_station.gd" id="2_bvvwf"]
+[ext_resource type="AudioStream" uid="uid://bo1ysylxr0fwy" path="res://Sounds/cha ching.mp3" id="3_bvvwf"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bvvwf"]
+load_path = "res://.godot/imported/shop.jpg-f0b5b168ff684c3a7ed0bbaddbc89492.ctex"
 
 [node name="ShopStation" unique_id=1300298490 instance=ExtResource("1_d5fem")]
 script = ExtResource("2_bvvwf")
 item_for_sale = null
 buy_price = 15.0
 
+[node name="Sprite2D" parent="." index="1" unique_id=760885286]
+modulate = Color(1, 1, 1, 1)
+scale = Vector2(0.17, 0.17)
+texture = SubResource("CompressedTexture2D_bvvwf")
+
 [node name="Label" type="Label" parent="." index="2" unique_id=953993225]
 offset_right = 40.0
 offset_bottom = 23.0
 text = "shop"
+
+[node name="MoneySFX" type="AudioStreamPlayer2D" parent="." index="4" unique_id=2105323708]
+stream = ExtResource("3_bvvwf")

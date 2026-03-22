@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_g7uyg"]
 [ext_resource type="Script" uid="uid://b0p6moybyptcp" path="res://Stations/refill_station.gd" id="2_wdgps"]
+[ext_resource type="AudioStream" uid="uid://c7ufr1jbke4nr" path="res://Sounds/pouring.mp3" id="3_wdgps"]
 
 [node name="RefillStation" unique_id=1300298490 instance=ExtResource("1_g7uyg")]
 script = ExtResource("2_wdgps")
@@ -14,3 +15,6 @@ refill_price = 5.0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "refill"
+
+[node name="PouringSFX" type="AudioStreamPlayer2D" parent="." index="4" unique_id=770487740]
+stream = ExtResource("3_wdgps")
