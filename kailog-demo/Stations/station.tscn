@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://xtlr2ado4iyg"]
 
 [ext_resource type="Script" uid="uid://dn87ximbynkbs" path="res://Stations/station.gd" id="1_ajrjd"]
-[ext_resource type="Texture2D" uid="uid://blpwy0wf60sa8" path="res://Sprite/icon.svg" id="2_5jkxk"]
+[ext_resource type="Texture2D" uid="uid://blpwy0wf60sa8" path="res://Assets/icon.svg" id="2_5jkxk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ajrjd"]
 size = Vector2(128, 128)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jkxk"]
-size = Vector2(128, 64)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5jkxk"]
+radius = 19.0
+height = 128.0
 
 [node name="Station" type="Area2D" unique_id=1300298490]
 collision_layer = 8
@@ -24,7 +25,8 @@ texture = ExtResource("2_5jkxk")
 [node name="StationWall" type="StaticBody2D" parent="." unique_id=148367841]
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StationWall" unique_id=1054573748]
-position = Vector2(0, 32)
-shape = SubResource("RectangleShape2D_5jkxk")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StationWall" unique_id=346114296]
+position = Vector2(0, 45)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_5jkxk")
 debug_color = Color(0.19791797, 0.6415829, 0, 0.41960785)

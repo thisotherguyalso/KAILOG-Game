@@ -21,16 +21,16 @@ enum ContainerState {
 
 ## Per-state icons (shown in inventory). Falls back to base `icon` if not set.
 @export_group("State Visuals")
-@export var icon_bought: Texture2D
+@export var icon_bought_map: Dictionary[String, Texture2D] = {}
 @export var icon_clean: Texture2D
 @export var icon_dirty: Texture2D
-@export var icon_refilled: Texture2D
+@export var icon_refilled_map: Dictionary[String, Texture2D] = {}
 
 ## Per-state world sprites. Falls back to base `sprite` if not set.
-@export var sprite_bought: Texture2D
+@export var sprite_bought_map: Dictionary[String, Texture2D] = {}
 @export var sprite_clean: Texture2D
 @export var sprite_dirty: Texture2D
-@export var sprite_refilled: Texture2D
+@export var sprite_refilled_map: Dictionary[String, Texture2D] = {}
 
 # ── Visuals ──────────────────────────────────────────────────────────────────
 
@@ -49,21 +49,20 @@ func get_sprite_for_state(s: ContainerState) -> Texture2D:
 	return tex if tex else sprite
 
 
-func _state_icon(s: ContainerState) -> Texture2D:
-	match s:
-		ContainerState.BOUGHT:   return icon_bought
-		ContainerState.CLEAN:    return icon_clean
-		ContainerState.DIRTY:    return icon_dirty
-		ContainerState.REFILLED: return icon_refilled
-	return null
-
-
 func _state_sprite(s: ContainerState) -> Texture2D:
 	match s:
-		ContainerState.BOUGHT:   return sprite_bought
+		ContainerState.BOUGHT:   return sprite_bought_map.get(contents, null)
 		ContainerState.CLEAN:    return sprite_clean
 		ContainerState.DIRTY:    return sprite_dirty
-		ContainerState.REFILLED: return sprite_refilled
+		ContainerState.REFILLED: return sprite_refilled_map.get(contents, null)
+	return null
+
+func _state_icon(s: ContainerState) -> Texture2D:
+	match s:
+		ContainerState.BOUGHT:   return icon_bought_map.get(contents, null)
+		ContainerState.CLEAN:    return icon_clean
+		ContainerState.DIRTY:    return icon_dirty
+		ContainerState.REFILLED: return icon_refilled_map.get(contents, null)
 	return null
 
 

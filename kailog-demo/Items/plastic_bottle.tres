@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="ItemContainer" format=3 uid="uid://cw6mafibssohk"]
+
+[ext_resource type="Texture2D" uid="uid://dgk0ooffg6sd8" path="res://Assets/Items/plastic bottle clean.png" id="1_ew4cb"]
+[ext_resource type="Texture2D" uid="uid://cre8qm8w7ao5c" path="res://Assets/Items/plastic bottle dirty.png" id="2_p261g"]
+[ext_resource type="Texture2D" uid="uid://snnih0w5wewj" path="res://Assets/Items/plastic bottle dishwashing bought.png" id="2_upsdv"]
+[ext_resource type="Script" uid="uid://cq05cnjdmwdea" path="res://Items/item_container.gd" id="3_upsdv"]
+[ext_resource type="Texture2D" uid="uid://bed48k4naf1q3" path="res://Assets/Items/plastic bottle dishwashing.png" id="4_3dw7i"]
+
+[resource]
+script = ExtResource("3_upsdv")
+state = 1
+sell_price_clean = 5.0
+sell_price_dirty = 3.0
+icon_bought_map = Dictionary[String, Texture2D]({
+"Dishwashing Liquid": ExtResource("2_upsdv")
+})
+icon_clean = ExtResource("1_ew4cb")
+icon_dirty = ExtResource("2_p261g")
+icon_refilled_map = Dictionary[String, Texture2D]({
+"Dishwashing Liquid": ExtResource("4_3dw7i")
+})
+sprite_bought_map = Dictionary[String, Texture2D]({
+"Dishwashing Liquid": ExtResource("2_upsdv")
+})
+sprite_clean = ExtResource("1_ew4cb")
+sprite_dirty = ExtResource("2_p261g")
+sprite_refilled_map = Dictionary[String, Texture2D]({
+"Dishwashing Liquid": ExtResource("4_3dw7i")
+})
+item_name = "plastic_bottle"
+icon = ExtResource("1_ew4cb")
+sprite = ExtResource("1_ew4cb")
+metadata/_custom_type_script = "uid://cq05cnjdmwdea"

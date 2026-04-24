@@ -19,10 +19,12 @@ func receive_item(item: Item) -> void:
 	var container := item as ItemContainer
 	
 	$CleaningSFX.play(2.0)
-
+	$AnimatedSprite2D.play("cleaning")
+	
 	_show_progress(clean_duration)
 	await get_tree().create_timer(clean_duration).timeout
 	
+	$AnimatedSprite2D.play("default")
 	$CleaningSFX.stop()
 	container.clean()
 	_spawn_pickup(container)

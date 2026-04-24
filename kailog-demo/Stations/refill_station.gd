@@ -33,11 +33,13 @@ func receive_item(item: Item) -> void:
 	var container := item as ItemContainer
 	
 	$PouringSFX.play()
+	$AnimatedSprite2D.play("refilling")
 
 	_show_progress(refill_duration)
 	await get_tree().create_timer(refill_duration).timeout
 
 	$PouringSFX.stop()
+	$AnimatedSprite2D.play("default")
 
 	container.refill(fill_contents)
 	_spawn_pickup(container)
@@ -48,5 +50,5 @@ func receive_item(item: Item) -> void:
 func _spawn_pickup(item: Item) -> void:
 	var pickup := preload("res://Items/pickup_item.tscn").instantiate()
 	pickup.item = item
-	pickup.global_position = global_position + Vector2(randi_range(-100, 100), randi_range(-100, 100))
+	pickup.global_position = global_position + Vector2(randi_range(-100, 100), 100)
 	get_parent().add_child(pickup)

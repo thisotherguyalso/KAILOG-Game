@@ -2,33 +2,73 @@
 
 [ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_urh61"]
 [ext_resource type="Script" uid="uid://b0p6moybyptcp" path="res://Stations/refill_station.gd" id="2_q5n7t"]
-[ext_resource type="Texture2D" uid="uid://cr0kyt4rjlgcq" path="res://Sprite/Stations/dishwashing.png" id="3_ngmce"]
+[ext_resource type="Texture2D" uid="uid://cr0kyt4rjlgcq" path="res://Assets/Stations/dishwashing.png" id="3_ngmce"]
 [ext_resource type="AudioStream" uid="uid://c7ufr1jbke4nr" path="res://Sounds/pouring.mp3" id="4_q5n7t"]
+[ext_resource type="Texture2D" uid="uid://beynxuh06tefw" path="res://Assets/Stations/Jar1.png" id="4_x135g"]
+[ext_resource type="Texture2D" uid="uid://byvjbj278py7a" path="res://Assets/Stations/Jar2.png" id="5_1svr3"]
+[ext_resource type="Texture2D" uid="uid://breth4ms7506f" path="res://Assets/Stations/Jar3.png" id="6_sun5l"]
+[ext_resource type="Texture2D" uid="uid://yrny3tb43po1" path="res://Assets/Items/circle_tag.png" id="7_sun5l"]
+[ext_resource type="Texture2D" uid="uid://dvrgy8av5mqh4" path="res://Assets/price_tag_dishwashing.png" id="7_w8q41"]
+[ext_resource type="Texture2D" uid="uid://dgk0ooffg6sd8" path="res://Assets/Items/plastic bottle clean.png" id="8_sun5l"]
 
-[node name="RefillStation" unique_id=1300298490 instance=ExtResource("1_urh61")]
+[sub_resource type="SpriteFrames" id="SpriteFrames_r0h2o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_x135g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_1svr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sun5l")
+}],
+"loop": true,
+"name": &"refilling",
+"speed": 5.0
+}]
+
+[node name="DishwashingRefill" unique_id=1300298490 instance=ExtResource("1_urh61")]
 script = ExtResource("2_q5n7t")
 fill_contents = "Dishwashing Liquid"
-required_container_name = "Bottle"
+required_container_name = "plastic_bottle"
 refill_duration = 2.0
 refill_price = 5.0
 
-[node name="CollisionShape2D" parent="." index="0" unique_id=1778666264]
-visible = false
-
 [node name="Sprite2D" parent="." index="1" unique_id=760885286]
+visible = false
 modulate = Color(1, 1, 1, 1)
 texture = ExtResource("3_ngmce")
 
-[node name="Label" type="Label" parent="." index="2" unique_id=1265903786]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "refill"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2" unique_id=1043749519]
+texture_filter = 1
+position = Vector2(0, -21.000002)
+scale = Vector2(1.75, 1.7500002)
+sprite_frames = SubResource("SpriteFrames_r0h2o")
+animation = &"refilling"
 
-[node name="StationWall" parent="." index="3" unique_id=148367841]
-visible = false
+[node name="Needs" type="Sprite2D" parent="." index="3" unique_id=1169951821]
+texture_filter = 1
+position = Vector2(1, -36)
+scale = Vector2(0.21621622, 0.21621622)
+texture = ExtResource("7_sun5l")
 
-[node name="CollisionShape2D" parent="StationWall" index="0" unique_id=1054573748]
-visible = false
+[node name="Container" type="Sprite2D" parent="Needs" index="0" unique_id=1625521679]
+texture_filter = 1
+position = Vector2(-4.6250005, 4.625)
+scale = Vector2(1.6621094, 1.6621094)
+texture = ExtResource("8_sun5l")
 
-[node name="PouringSFX" type="AudioStreamPlayer2D" parent="." index="4" unique_id=173352803]
+[node name="Tag" type="Sprite2D" parent="." index="4" unique_id=381118975]
+texture_filter = 1
+position = Vector2(80, -37.000004)
+scale = Vector2(3.6874995, 3.6874998)
+texture = ExtResource("7_w8q41")
+
+[node name="PouringSFX" type="AudioStreamPlayer2D" parent="." index="6" unique_id=173352803]
 stream = ExtResource("4_q5n7t")

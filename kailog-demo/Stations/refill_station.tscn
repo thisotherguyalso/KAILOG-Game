@@ -4,6 +4,10 @@
 [ext_resource type="Script" uid="uid://b0p6moybyptcp" path="res://Stations/refill_station.gd" id="2_wdgps"]
 [ext_resource type="AudioStream" uid="uid://c7ufr1jbke4nr" path="res://Sounds/pouring.mp3" id="3_wdgps"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wdgps"]
+radius = 19.0
+height = 128.0
+
 [node name="RefillStation" unique_id=1300298490 instance=ExtResource("1_g7uyg")]
 script = ExtResource("2_wdgps")
 fill_contents = ""
@@ -15,6 +19,11 @@ refill_price = 5.0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "refill"
+
+[node name="CollisionShape2D" parent="StationWall" parent_id_path=PackedInt32Array(148367841) index="0" unique_id=1054573748]
+position = Vector2(0, 45)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_wdgps")
 
 [node name="PouringSFX" type="AudioStreamPlayer2D" parent="." index="4" unique_id=770487740]
 stream = ExtResource("3_wdgps")

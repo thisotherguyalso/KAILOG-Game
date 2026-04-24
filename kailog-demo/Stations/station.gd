@@ -76,7 +76,7 @@ func _show_progress(duration: float) -> void:
 	_progress_bar.value = 0.0
 	_progress_bar.show_percentage = false
 	_progress_bar.custom_minimum_size = Vector2(80, 10)
-	_progress_bar.position = Vector2(-40, -50)
+	_progress_bar.position = Vector2(-40, 80)
 	add_child(_progress_bar)
 
 	var tween := create_tween()
@@ -93,9 +93,6 @@ func _hide_progress() -> void:
 # ── Pickup detection ─────────────────────────────────────────────────────────
 
 func _on_area_entered(area: Area2D) -> void:
-	print("Area entered: ", area.name, " has get_item: ", area.has_method("get_item"))
-	if area.has_method("get_item"):
-		print("  item: ", area.get_item(), " can_receive: ", can_receive(area.get_item()))
 	_try_consume(area)
 
 

@@ -1,21 +1,28 @@
 [gd_resource type="Resource" script_class="ItemContainer" format=3 uid="uid://cls214sdx0dxj"]
 
-[ext_resource type="Texture2D" uid="uid://clxlfle745ylb" path="res://Sprite/Tupperware/tupperware_bought.png" id="1_cxnt5"]
-[ext_resource type="Texture2D" uid="uid://b51jqy0ve1wtt" path="res://Sprite/Tupperware/tupperware_clean.png" id="2_xlvfe"]
-[ext_resource type="Texture2D" uid="uid://dijjmmtwcij6" path="res://Sprite/Tupperware/tupperware_dirty.png" id="3_p1o7k"]
-[ext_resource type="Texture2D" uid="uid://docdpuynpgey1" path="res://Sprite/Tupperware/tupperware_refilled.png" id="4_18pxe"]
+[ext_resource type="Texture2D" uid="uid://cpis6ya4s133s" path="res://Assets/Items/tupperware clean.png" id="1_kt6ue"]
+[ext_resource type="Texture2D" uid="uid://dvpy451uh53qm" path="res://Assets/Items/tupperware rice bought.png" id="2_cxnt5"]
+[ext_resource type="Texture2D" uid="uid://bjhqe5krrv1b3" path="res://Assets/Items/tupperware dirty.png" id="2_v2h2l"]
+[ext_resource type="Texture2D" uid="uid://dwq6at53ann6s" path="res://Assets/Items/tupperware rice.png" id="4_xlvfe"]
 [ext_resource type="Script" uid="uid://cq05cnjdmwdea" path="res://Items/item_container.gd" id="5_fnigd"]
 
 [resource]
 script = ExtResource("5_fnigd")
-contents = "Rice"
-icon_bought = ExtResource("1_cxnt5")
-icon_clean = ExtResource("2_xlvfe")
-icon_dirty = ExtResource("3_p1o7k")
-icon_refilled = ExtResource("4_18pxe")
-sprite_bought = ExtResource("1_cxnt5")
-sprite_clean = ExtResource("2_xlvfe")
-sprite_dirty = ExtResource("3_p1o7k")
-sprite_refilled = ExtResource("4_18pxe")
-item_name = "Tupperware"
+state = 1
+icon_bought_map = Dictionary[String, Texture2D]({
+"Bigas": ExtResource("2_cxnt5")
+})
+icon_clean = ExtResource("1_kt6ue")
+icon_dirty = ExtResource("2_v2h2l")
+icon_refilled_map = Dictionary[String, Texture2D]({
+"Bigas": ExtResource("4_xlvfe")
+})
+sprite_bought_map = Dictionary[String, Texture2D]({
+"Bigas": ExtResource("2_cxnt5")
+})
+sprite_clean = ExtResource("1_kt6ue")
+sprite_dirty = ExtResource("2_v2h2l")
+item_name = "tupperware"
+icon = ExtResource("1_kt6ue")
+sprite = ExtResource("1_kt6ue")
 metadata/_custom_type_script = "uid://cq05cnjdmwdea"

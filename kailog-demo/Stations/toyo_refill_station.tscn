@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dvjqn8mya81or"]
+
+[ext_resource type="PackedScene" uid="uid://c2ojepxwqsf0i" path="res://Stations/refill_station.tscn" id="1_3n7tc"]
+[ext_resource type="Texture2D" uid="uid://beynxuh06tefw" path="res://Assets/Stations/Jar1.png" id="2_ox84b"]
+[ext_resource type="Texture2D" uid="uid://byvjbj278py7a" path="res://Assets/Stations/Jar2.png" id="3_tq0m1"]
+[ext_resource type="Texture2D" uid="uid://breth4ms7506f" path="res://Assets/Stations/Jar3.png" id="4_vufi0"]
+[ext_resource type="Texture2D" uid="uid://yrny3tb43po1" path="res://Assets/Items/circle_tag.png" id="5_nmqij"]
+[ext_resource type="Texture2D" uid="uid://dhwyuqnivxrj0" path="res://Assets/Items/glass bottle clean.png" id="6_5bo5t"]
+[ext_resource type="Texture2D" uid="uid://dyu61mjwnfn3d" path="res://Assets/price_tag_toyo.png" id="7_ox84b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rlmdv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ox84b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tq0m1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vufi0")
+}],
+"loop": true,
+"name": &"refilling",
+"speed": 5.0
+}]
+
+[node name="ToyoRefill" unique_id=1300298490 instance=ExtResource("1_3n7tc")]
+fill_contents = "Toyo"
+required_container_name = "glass_bottle"
+
+[node name="Label" parent="." index="2" unique_id=1265903786]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="5" unique_id=1177744905]
+texture_filter = 1
+position = Vector2(0, -21.000002)
+scale = Vector2(1.75, 1.7500002)
+sprite_frames = SubResource("SpriteFrames_rlmdv")
+animation = &"refilling"
+
+[node name="Needs" type="Sprite2D" parent="." index="6" unique_id=1727158328]
+texture_filter = 1
+position = Vector2(1, -36)
+scale = Vector2(0.21621622, 0.21621622)
+texture = ExtResource("5_nmqij")
+
+[node name="Container" type="Sprite2D" parent="Needs" index="0" unique_id=855353155]
+texture_filter = 1
+position = Vector2(-4.6250005, 4.625)
+scale = Vector2(1.6621094, 1.6621094)
+texture = ExtResource("6_5bo5t")
+
+[node name="Tag" type="Sprite2D" parent="." index="7" unique_id=390243961]
+texture_filter = 1
+position = Vector2(80, -37.000004)
+scale = Vector2(3.6874995, 3.6874998)
+texture = ExtResource("7_ox84b")

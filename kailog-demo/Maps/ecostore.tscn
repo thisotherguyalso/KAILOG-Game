@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvy1labma5s11"]
+[gd_scene format=3 uid="uid://bvy1labma5s11"]
 
-[ext_resource type="Texture2D" uid="uid://10erlrmt4bko" path="res://Sprite/ecostore.png" id="1_ibjt2"]
+[ext_resource type="Texture2D" uid="uid://10erlrmt4bko" path="res://Assets/ecostore.png" id="1_ibjt2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b7v21"]
 size = Vector2(645, 493)

@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://i0psuntsaij7" path="res://Items/pickup_item.gd" id="1_2vssv"]
 [ext_resource type="Script" uid="uid://cq05cnjdmwdea" path="res://Items/item_container.gd" id="1_t2k4s"]
-[ext_resource type="Texture2D" uid="uid://cvlevy7h0pa3c" path="res://Sprite/Bottle/bottle_bought.png" id="2_mx0qn"]
-[ext_resource type="Texture2D" uid="uid://blpwy0wf60sa8" path="res://Sprite/icon.svg" id="3_eaqdd"]
-[ext_resource type="Texture2D" uid="uid://g15cojoxw1lh" path="res://Sprite/Bottle/bottle_clean.png" id="3_uvhwl"]
-[ext_resource type="Texture2D" uid="uid://dvb76mf62aqm2" path="res://Sprite/Bottle/bottle_dirty.png" id="4_sm0wa"]
-[ext_resource type="Texture2D" uid="uid://bs4cf82pu7qla" path="res://Sprite/Bottle/bottle_refilled.png" id="5_aqxjh"]
+[ext_resource type="Texture2D" uid="uid://cvlevy7h0pa3c" path="res://Assets/Bottle/bottle_bought.png" id="2_mx0qn"]
+[ext_resource type="Texture2D" uid="uid://g15cojoxw1lh" path="res://Assets/Bottle/bottle_clean.png" id="3_uvhwl"]
+[ext_resource type="Texture2D" uid="uid://dvb76mf62aqm2" path="res://Assets/Bottle/bottle_dirty.png" id="4_sm0wa"]
+[ext_resource type="Texture2D" uid="uid://bs4cf82pu7qla" path="res://Assets/Bottle/bottle_refilled.png" id="5_aqxjh"]
+[ext_resource type="Texture2D" uid="uid://dhwyuqnivxrj0" path="res://Assets/Items/glass bottle clean.png" id="7_mx0qn"]
 
 [sub_resource type="Resource" id="Resource_eaqdd"]
 script = ExtResource("1_t2k4s")
@@ -38,6 +38,6 @@ shape = SubResource("CircleShape2D_t2k4s")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=59006318]
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_eaqdd")
+texture = ExtResource("7_mx0qn")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

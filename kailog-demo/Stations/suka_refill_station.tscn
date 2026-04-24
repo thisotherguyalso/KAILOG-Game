@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://d1d8bbtsvfpxb"]
+
+[ext_resource type="PackedScene" uid="uid://c2ojepxwqsf0i" path="res://Stations/refill_station.tscn" id="1_hmact"]
+[ext_resource type="Texture2D" uid="uid://beynxuh06tefw" path="res://Assets/Stations/Jar1.png" id="2_a03dt"]
+[ext_resource type="Texture2D" uid="uid://byvjbj278py7a" path="res://Assets/Stations/Jar2.png" id="3_2ofks"]
+[ext_resource type="Texture2D" uid="uid://breth4ms7506f" path="res://Assets/Stations/Jar3.png" id="4_memqt"]
+[ext_resource type="Texture2D" uid="uid://yrny3tb43po1" path="res://Assets/Items/circle_tag.png" id="5_bcras"]
+[ext_resource type="Texture2D" uid="uid://dhwyuqnivxrj0" path="res://Assets/Items/glass bottle clean.png" id="6_my3gr"]
+[ext_resource type="Texture2D" uid="uid://d36tenhtsagfp" path="res://Assets/price_tag_suka.png" id="7_hmact"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7v3om"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_a03dt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2ofks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_memqt")
+}],
+"loop": true,
+"name": &"refilling",
+"speed": 5.0
+}]
+
+[node name="RefillStation" unique_id=1300298490 instance=ExtResource("1_hmact")]
+fill_contents = "Suka"
+required_container_name = "glass_bottle"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="5" unique_id=467712087]
+texture_filter = 1
+position = Vector2(0, -21.000002)
+scale = Vector2(1.75, 1.7500002)
+sprite_frames = SubResource("SpriteFrames_7v3om")
+animation = &"refilling"
+
+[node name="Needs" type="Sprite2D" parent="." index="6" unique_id=633387442]
+texture_filter = 1
+position = Vector2(1, -36)
+scale = Vector2(0.21621622, 0.21621622)
+texture = ExtResource("5_bcras")
+
+[node name="Container" type="Sprite2D" parent="Needs" index="0" unique_id=769511791]
+texture_filter = 1
+position = Vector2(-4.6250005, 4.625)
+scale = Vector2(1.6621094, 1.6621094)
+texture = ExtResource("6_my3gr")
+
+[node name="Tag" type="Sprite2D" parent="." index="7" unique_id=977418938]
+texture_filter = 1
+position = Vector2(80, -37.000004)
+scale = Vector2(3.6874995, 3.6874998)
+texture = ExtResource("7_hmact")
