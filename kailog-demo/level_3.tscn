@@ -12,6 +12,11 @@
 [ext_resource type="Script" uid="uid://dkgcutmupgan0" path="res://Misc/game_manager.gd" id="9_wnq0t"]
 [ext_resource type="Script" uid="uid://5p78j5p5it3o" path="res://Misc/round_timer.gd" id="10_ra6nl"]
 [ext_resource type="Script" uid="uid://cgb7wre7pd5tl" path="res://Misc/grocery_list.gd" id="11_gxey3"]
+[ext_resource type="PackedScene" uid="uid://brh0vntjhoxje" path="res://Items/pickup_item.tscn" id="13_joegk"]
+[ext_resource type="Texture2D" uid="uid://bjhqe5krrv1b3" path="res://Assets/Items/tupperware dirty.png" id="14_m8gss"]
+[ext_resource type="Script" uid="uid://cq05cnjdmwdea" path="res://Items/item_container.gd" id="15_wnq0t"]
+[ext_resource type="Texture2D" uid="uid://bh7s6ueijtq6l" path="res://Assets/Items/glass bottle dirty.png" id="16_ra6nl"]
+[ext_resource type="Texture2D" uid="uid://cre8qm8w7ao5c" path="res://Assets/Items/plastic bottle dirty.png" id="17_gxey3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4hpui"]
 texture = ExtResource("1_kmy7e")
@@ -193,6 +198,30 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_4hpui")
 
+[sub_resource type="Resource" id="Resource_4hpui"]
+script = ExtResource("15_wnq0t")
+state = 2
+sell_price_clean = 15.0
+item_name = "tupperware"
+icon = ExtResource("14_m8gss")
+sprite = ExtResource("14_m8gss")
+metadata/_custom_type_script = "uid://cq05cnjdmwdea"
+
+[sub_resource type="Resource" id="Resource_g005c"]
+script = ExtResource("15_wnq0t")
+state = 2
+sell_price_clean = 15.0
+icon = ExtResource("16_ra6nl")
+sprite = ExtResource("17_gxey3")
+metadata/_custom_type_script = "uid://cq05cnjdmwdea"
+
+[sub_resource type="Resource" id="Resource_dhf26"]
+script = ExtResource("15_wnq0t")
+state = 2
+icon = ExtResource("17_gxey3")
+sprite = ExtResource("17_gxey3")
+metadata/_custom_type_script = "uid://cq05cnjdmwdea"
+
 [node name="Level 3" type="Node2D" unique_id=1859089200]
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=1302501162]
@@ -207,25 +236,25 @@ occlusion_enabled = false
 game_manager = NodePath("")
 
 [node name="CleaningStation" parent="." unique_id=1300298490 instance=ExtResource("3_ghrvs")]
-position = Vector2(384, 276)
+position = Vector2(-692, 499)
 
 [node name="CORefillStation2" parent="." unique_id=1302101164 instance=ExtResource("4_jvy75")]
-position = Vector2(640, -132)
+position = Vector2(-1061, 810)
 
 [node name="RRefillStation" parent="." unique_id=1468583802 instance=ExtResource("5_g0tlw")]
-position = Vector2(1152, -132)
+position = Vector2(1883, 455)
 
 [node name="ToyoRefill" parent="." unique_id=16039446 instance=ExtResource("9_833wy")]
-position = Vector2(1405, -132)
+position = Vector2(1270, -662)
 
 [node name="DLRefillStation3" parent="." unique_id=518478048 instance=ExtResource("6_keufu")]
-position = Vector2(896, -132)
+position = Vector2(1492, -286)
 
 [node name="ShopStation" parent="." unique_id=1147317362 instance=ExtResource("7_joegk")]
 position = Vector2(901, 320)
 
 [node name="TrashStation" parent="." unique_id=1502452151 instance=ExtResource("8_m8gss")]
-position = Vector2(1344, 288)
+position = Vector2(-68, -663)
 
 [node name="GameManager" type="Node" parent="." unique_id=244441220 node_paths=PackedStringArray("player", "evaluation_screen")]
 script = ExtResource("9_wnq0t")
@@ -240,5 +269,53 @@ script = ExtResource("10_ra6nl")
 script = ExtResource("11_gxey3")
 possible_items = Array[String](["Dishwashing Liquid", "Cooking Oil", "Bigas", "Toyo", "Suka"])
 min_entries = 4
-max_entries = 8
+max_entries = 7
 max_quantity = 5
+
+[node name="DTupperware" parent="." unique_id=234542647 instance=ExtResource("13_joegk")]
+position = Vector2(2449, -7)
+item = SubResource("Resource_4hpui")
+
+[node name="DTupperware3" parent="." unique_id=1046418757 instance=ExtResource("13_joegk")]
+position = Vector2(-579, 280)
+item = SubResource("Resource_4hpui")
+
+[node name="DTupperware2" parent="." unique_id=673434200 instance=ExtResource("13_joegk")]
+position = Vector2(311, -855)
+item = SubResource("Resource_4hpui")
+
+[node name="DTupperware4" parent="." unique_id=1386238291 instance=ExtResource("13_joegk")]
+position = Vector2(224, 1079)
+item = SubResource("Resource_4hpui")
+
+[node name="DBottle" parent="." unique_id=1160804337 instance=ExtResource("13_joegk")]
+position = Vector2(-1036, -570)
+item = SubResource("Resource_g005c")
+
+[node name="DBottle3" parent="." unique_id=1335766859 instance=ExtResource("13_joegk")]
+position = Vector2(1521, 412)
+item = SubResource("Resource_g005c")
+
+[node name="DBottle2" parent="." unique_id=63932625 instance=ExtResource("13_joegk")]
+position = Vector2(1734, -661)
+item = SubResource("Resource_g005c")
+
+[node name="DBottle4" parent="." unique_id=1925469715 instance=ExtResource("13_joegk")]
+position = Vector2(1527, 897)
+item = SubResource("Resource_g005c")
+
+[node name="DPBottle" parent="." unique_id=1140379712 instance=ExtResource("13_joegk")]
+position = Vector2(11, 463)
+item = SubResource("Resource_dhf26")
+
+[node name="DPBottle3" parent="." unique_id=526133505 instance=ExtResource("13_joegk")]
+position = Vector2(990, -814)
+item = SubResource("Resource_dhf26")
+
+[node name="DPBottle4" parent="." unique_id=1649612150 instance=ExtResource("13_joegk")]
+position = Vector2(-568, -984)
+item = SubResource("Resource_dhf26")
+
+[node name="DPBottle2" parent="." unique_id=1622609451 instance=ExtResource("13_joegk")]
+position = Vector2(-672, -345)
+item = SubResource("Resource_dhf26")
