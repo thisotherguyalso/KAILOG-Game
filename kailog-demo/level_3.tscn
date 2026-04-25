@@ -79,6 +79,7 @@ position = Vector2(1152, 256)
 position = Vector2(25, -586)
 
 [node name="TrashStation" parent="." unique_id=1502452151 instance=ExtResource("8_m8gss")]
+y_sort_enabled = true
 position = Vector2(-609, -642)
 
 [node name="GameManager" type="Node" parent="." unique_id=244441220 node_paths=PackedStringArray("player", "evaluation_screen")]

@@ -48,6 +48,7 @@ metadata/_custom_type_script = "uid://cq05cnjdmwdea"
 texture = ExtResource("21_cuxq2")
 
 [node name="Level 2" type="Node2D" unique_id=1614781572]
+y_sort_enabled = true
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=1998284938]
 z_index = -1

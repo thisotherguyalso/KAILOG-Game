@@ -265,7 +265,6 @@ position = Vector2(-330, -32)
 item = SubResource("Resource_notaq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1174869586]
-visible = false
 
 [node name="EvaluationScreen" type="Control" parent="CanvasLayer" unique_id=1499103593 node_paths=PackedStringArray("game_manager")]
 layout_mode = 3
