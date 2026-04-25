@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="KAILOG demo"
-run/main_scene="uid://delt2n6e6qijq"
+run/main_scene="uid://clkrj8b2qapyq"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
@@ -23,6 +23,7 @@ config/icon="res://Assets/icon.svg"
 
 window/size/viewport_width=1080
 window/size/viewport_height=720
+window/stretch/mode="canvas_items"
 
 [global_group]
 
