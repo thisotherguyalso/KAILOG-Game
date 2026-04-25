@@ -21,6 +21,8 @@
 [ext_resource type="Script" uid="uid://b6msaa8uum8ft" path="res://Misc/evaluation_screen.gd" id="19_00ld1"]
 [ext_resource type="Texture2D" uid="uid://b6qju5nw71l5p" path="res://Assets/Endscreen.png" id="20_kb5eu"]
 [ext_resource type="FontFile" uid="uid://dsn5vn2lq43nb" path="res://SuperPixel-m2L8j.ttf" id="21_lfy8a"]
+[ext_resource type="Script" uid="uid://bbd5cpak4rhr6" path="res://Misc/grocery_list_ui.gd" id="22_ethxx"]
+[ext_resource type="Script" uid="uid://bsdbajlhhfbja" path="res://Misc/timer_label.gd" id="23_3o2xh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3qmij"]
 texture = ExtResource("1_gjkv5")
@@ -416,11 +418,13 @@ position = Vector2(901, 320)
 [node name="TrashStation" parent="." unique_id=1341456136 instance=ExtResource("8_gjkv5")]
 position = Vector2(-669, -342)
 
-[node name="GameManager" type="Node" parent="." unique_id=367071667]
+[node name="GameManager" type="Node" parent="." unique_id=367071667 node_paths=PackedStringArray("player", "evaluation_screen")]
 script = ExtResource("9_00ld1")
+player = NodePath("../Player")
+evaluation_screen = NodePath("../CanvasLayer/EvaluationScreen")
 
 [node name="RoundTimer" type="Timer" parent="GameManager" unique_id=1405312718]
-wait_time = 90.0
+wait_time = 10.0
 script = ExtResource("10_3qmij")
 
 [node name="GroceryList" type="Node" parent="GameManager" unique_id=576209549]
@@ -452,7 +456,9 @@ item = SubResource("Resource_sof0w")
 position = Vector2(-1943, 795)
 item = SubResource("Resource_sof0w")
 
-[node name="EvaluationScreen" type="Control" parent="." unique_id=1499103593]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1174869586]
+
+[node name="EvaluationScreen" type="Control" parent="CanvasLayer" unique_id=1499103593 node_paths=PackedStringArray("game_manager")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -461,8 +467,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("19_00ld1")
+game_manager = NodePath("../../GameManager")
 
-[node name="Panel" type="Panel" parent="EvaluationScreen" unique_id=1488726014]
+[node name="Panel" type="Panel" parent="CanvasLayer/EvaluationScreen" unique_id=1488726014]
 custom_minimum_size = Vector2(1080, 720)
 layout_mode = 1
 anchors_preset = 15
@@ -472,7 +479,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ethxx")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="EvaluationScreen/Panel" unique_id=712526648]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/EvaluationScreen/Panel" unique_id=712526648]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -486,49 +493,52 @@ offset_bottom = 147.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TitleLabel" type="Label" parent="EvaluationScreen/Panel/VBoxContainer" unique_id=727972948]
+[node name="TitleLabel" type="Label" parent="CanvasLayer/EvaluationScreen/Panel/VBoxContainer" unique_id=727972948]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("21_lfy8a")
 theme_override_font_sizes/font_size = 80
 text = "TODAY'S RESULTS"
 
-[node name="FloodContainer" type="HBoxContainer" parent="EvaluationScreen/Panel/VBoxContainer" unique_id=142227479]
+[node name="FloodContainer" type="HBoxContainer" parent="CanvasLayer/EvaluationScreen/Panel/VBoxContainer" unique_id=323351340]
 layout_direction = 2
 layout_mode = 2
+alignment = 1
 
-[node name="FloodLabel" type="Label" parent="EvaluationScreen/Panel/VBoxContainer/FloodContainer" unique_id=476854161]
+[node name="FloodLabel" type="Label" parent="CanvasLayer/EvaluationScreen/Panel/VBoxContainer/FloodContainer" unique_id=476854161]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("21_lfy8a")
 theme_override_font_sizes/font_size = 30
 text = "Flood Meter"
 
-[node name="FloodBar" type="ProgressBar" parent="EvaluationScreen/Panel/VBoxContainer/FloodContainer" unique_id=1185468638]
+[node name="FloodBar" type="ProgressBar" parent="CanvasLayer/EvaluationScreen/Panel/VBoxContainer/FloodContainer" unique_id=1185468638]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+show_percentage = false
+
+[node name="ResultsContainer" type="VBoxContainer" parent="CanvasLayer/EvaluationScreen/Panel/VBoxContainer" unique_id=2144531050]
 layout_mode = 2
 
-[node name="ResultsContainer" type="VBoxContainer" parent="EvaluationScreen/Panel/VBoxContainer" unique_id=2144531050]
-layout_mode = 2
-
-[node name="GroceryLabel" type="Label" parent="EvaluationScreen/Panel/VBoxContainer/ResultsContainer" unique_id=1704979523]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("21_lfy8a")
-horizontal_alignment = 1
-
-[node name="TimeLabel" type="Label" parent="EvaluationScreen/Panel/VBoxContainer/ResultsContainer" unique_id=274968877]
+[node name="GroceryLabel" type="Label" parent="CanvasLayer/EvaluationScreen/Panel/VBoxContainer/ResultsContainer" unique_id=1704979523]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("21_lfy8a")
 horizontal_alignment = 1
 
-[node name="MoneySpentLabel" type="Label" parent="EvaluationScreen/Panel/VBoxContainer/ResultsContainer" unique_id=441247389]
+[node name="TimeLabel" type="Label" parent="CanvasLayer/EvaluationScreen/Panel/VBoxContainer/ResultsContainer" unique_id=274968877]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("21_lfy8a")
 horizontal_alignment = 1
 
-[node name="MoneySavedLabel" type="Label" parent="EvaluationScreen/Panel/VBoxContainer/ResultsContainer" unique_id=1163498317]
+[node name="MoneySpentLabel" type="Label" parent="CanvasLayer/EvaluationScreen/Panel/VBoxContainer/ResultsContainer" unique_id=441247389]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("21_lfy8a")
 horizontal_alignment = 1
 
-[node name="NextRoundButton" type="Button" parent="EvaluationScreen/Panel/VBoxContainer" unique_id=796985064]
+[node name="MoneySavedLabel" type="Label" parent="CanvasLayer/EvaluationScreen/Panel/VBoxContainer/ResultsContainer" unique_id=1163498317]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("21_lfy8a")
+horizontal_alignment = 1
+
+[node name="NextRoundButton" type="Button" parent="CanvasLayer/EvaluationScreen/Panel/VBoxContainer" unique_id=796985064]
 custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -537,4 +547,30 @@ theme_override_fonts/font = ExtResource("21_lfy8a")
 theme_override_font_sizes/font_size = 32
 text = "NEXT ROUND"
 
-[connection signal="pressed" from="EvaluationScreen/Panel/VBoxContainer/NextRoundButton" to="EvaluationScreen" method="_on_next_round_button_pressed"]
+[node name="GroceryListUI" type="VBoxContainer" parent="CanvasLayer" unique_id=14194155 node_paths=PackedStringArray("game_manager")]
+custom_minimum_size = Vector2(200, 300)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("22_ethxx")
+game_manager = NodePath("../../GameManager")
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer" unique_id=111849704 node_paths=PackedStringArray("timer")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.0
+offset_top = 47.0
+offset_right = 12.0
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+script = ExtResource("23_3o2xh")
+timer = NodePath("../../GameManager/RoundTimer")
+
+[connection signal="pressed" from="CanvasLayer/EvaluationScreen/Panel/VBoxContainer/NextRoundButton" to="CanvasLayer/EvaluationScreen" method="_on_next_round_button_pressed"]
