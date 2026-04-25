@@ -392,7 +392,7 @@ player = NodePath("../Player")
 evaluation_screen = NodePath("../CanvasLayer/EvaluationScreen")
 
 [node name="RoundTimer" type="Timer" parent="GameManager" unique_id=1519411665]
-wait_time = 90.0
+wait_time = 10.0
 script = ExtResource("14_w48qg")
 
 [node name="GroceryList" type="Node" parent="GameManager" unique_id=240641678]

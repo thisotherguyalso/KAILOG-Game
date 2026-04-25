@@ -652,10 +652,10 @@ position = Vector2(-736, -70)
 script = ExtResource("9_00ld1")
 player = NodePath("../Player")
 evaluation_screen = NodePath("../CanvasLayer/EvaluationScreen")
-next_level = "res://Levels/level_2.tscn"
+next_level = "1"
 
 [node name="RoundTimer" type="Timer" parent="GameManager" unique_id=1405312718]
-wait_time = 10.0
+wait_time = 5.0
 script = ExtResource("10_3qmij")
 
 [node name="GroceryList" type="Node" parent="GameManager" unique_id=576209549]
@@ -688,7 +688,6 @@ position = Vector2(-330, -32)
 item = SubResource("Resource_notaq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1174869586]
-visible = false
 
 [node name="EvaluationScreen" type="Control" parent="CanvasLayer" unique_id=1499103593 node_paths=PackedStringArray("game_manager")]
 layout_mode = 3

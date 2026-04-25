@@ -11,9 +11,9 @@ signal round_ended(results: RoundResults)
 @onready var grocery_list: GroceryList = $GroceryList
 
 @export var levels: Array[String] = [
-	"res://Levels/level_1.tscn",
-	"res://Levels/level_2.tscn",
-	"res://Levels/level_3.tscn"
+	"res://level_1.tscn",
+	"res://level_2.tscn",
+	"res://level_3.tscn"
 ]
 @export var next_level: String = ""
 
@@ -87,5 +87,5 @@ func proceed_to_next_round() -> void:
 	for item in player.inventory.get_items():
 		player.inventory.remove_item(item)	
 	if next_level != "":
-		get_tree().change_scene_to_file(next_level)
+		get_tree().change_scene_to_file(levels[int(next_level)])
 		start_round()
