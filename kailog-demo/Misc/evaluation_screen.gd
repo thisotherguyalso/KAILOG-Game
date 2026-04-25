@@ -46,3 +46,7 @@ func _on_next_round() -> void:
 func _format_time(seconds: float) -> String:
 	var total := ceili(seconds)
 	return "%d:%02d" % [total / 60, total % 60]
+
+
+func _on_next_round_button_pressed() -> void:
+	game_manager.proceed_to_next_round()
