@@ -5,6 +5,7 @@ extends Control
 @onready var money_label: Label = $MoneyLabel
 
 var player: Player
+var flood_node: Node
 
 func _ready():
 	player = owner
@@ -13,6 +14,8 @@ func _ready():
 func _connect_signals() -> void:
 	player.money.money_changed.connect(_on_money_changed)
 	_on_money_changed(player.money.amount)
+	
+	flood_node = get_tree().get_first_node_in_group("flood")
 
 ## Called by InventoryGrid when a drag ends outside any slot.
 ## Always spawns a pickup. Stations detect it via area overlap.

@@ -4,8 +4,13 @@ extends Control
 @export var game_manager: GameManager
 
 @onready var title_label: Label = $Panel/VBoxContainer/TitleLabel
-@onready var results_label: Label = $Panel/VBoxContainer/ResultsLabel
+@onready var flood_bar: ProgressBar = $Panel/VBoxContainer/FloodContainer/FloodBar
+@onready var results_container: VBoxContainer = $Panel/VBoxContainer/ResultsContainer
 @onready var next_round_button: Button = $Panel/VBoxContainer/NextRoundButton
+
+const FLOOD_MAX := 100.0
+const METER_DURATION := 1.2
+const TEXT_STAGGER := 0.3
 
 
 func _ready() -> void:
@@ -15,32 +20,54 @@ func _ready() -> void:
 
 func show_results(results: RoundResults) -> void:
 	visible = true
+	next_round_button.modulate.a = 0.0
 
 	if results.grocery_complete:
 		title_label.text = "Round %d Complete!" % results.round_number
 	else:
-		title_label.text = "Round %d - Time's Up!" % results.round_number
+		title_label.text = "Round %d — Time's Up!" % results.round_number
 
-	var lines: PackedStringArray = []
+	for child in results_container.get_children():
+		child.modulate.a = 0.0
 
-	lines.append("Grocery list: %s" % ("Completed" if results.grocery_complete else "Incomplete"))
-	lines.append("Time remaining: %s" % _format_time(results.time_remaining))
-	lines.append("Money: $%.2f" % results.money)
-	lines.append("")
+	flood_bar.max_value = FLOOD_MAX
+	flood_bar.value = results.flood_level_before
+	var flood_target := clampf(results.flood_level_before + results.flood_delta * 5.0, 0.0, FLOOD_MAX)
 
-	# Flood impact breakdown.
-	if results.flood_delta < 0.0:
-		lines.append("Flood impact: %.1f (Good!)" % results.flood_delta)
-	elif results.flood_delta > 0.0:
-		lines.append("Flood impact: +%.1f (Bad!)" % results.flood_delta)
+	var labels: Array[Label] = []
+	for child in results_container.get_children():
+		if child is Label:
+			labels.append(child)
+
+	if labels.size() >= 4:
+		labels[0].text = "Grocery list: %s" % ("✓ Completed" if results.grocery_complete else "✗ Incomplete")
+		labels[1].text = "Time remaining: %s" % _format_time(results.time_remaining)
+		labels[2].text = "Money spent: $%.2f" % (100.0 - results.money)
+		labels[3].text = "Money saved: $%.2f" % results.money
+
+	var flood_tween := create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+	flood_tween.tween_property(flood_bar, "value", flood_target, METER_DURATION)
+
+	if flood_target > results.flood_level_before:
+		flood_bar.modulate = Color(1.0, 0.4, 0.2)
 	else:
-		lines.append("Flood impact: 0 (Neutral)")
+		flood_bar.modulate = Color(0.3, 0.85, 0.4)
 
-	results_label.text = "\n".join(lines)
+	var delay := METER_DURATION + 0.2
+	for label in labels:
+		var t := create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+		t.tween_interval(delay)
+		t.tween_property(label, "modulate:a", 1.0, 0.25)
+		delay += TEXT_STAGGER
+
+	var btn_tween := create_tween()
+	btn_tween.tween_interval(delay)
+	btn_tween.tween_property(next_round_button, "modulate:a", 1.0, 0.3)
 
 
 func _on_next_round() -> void:
 	game_manager.proceed_to_next_round()
+	visible = false
 
 
 func _format_time(seconds: float) -> String:
