@@ -12,7 +12,7 @@
 
 [resource]
 script = ExtResource("8_qvgii")
-state = 1
+state = 2
 icon_bought_map = Dictionary[String, Texture2D]({
 "Cooking Oil": ExtResource("4_1gr7q"),
 "Suka": ExtResource("3_ffjk4"),
