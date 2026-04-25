@@ -564,7 +564,7 @@ item = SubResource("Resource_dhf26")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1184618506]
 
-[node name="EvaluationScreen" type="Control" parent="CanvasLayer" unique_id=713449393]
+[node name="EvaluationScreen" type="Control" parent="CanvasLayer" unique_id=713449393 node_paths=PackedStringArray("game_manager")]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -574,6 +574,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("21_gxey3")
+game_manager = NodePath("../../GameManager")
 
 [node name="Panel" type="Panel" parent="CanvasLayer/EvaluationScreen" unique_id=920621780]
 custom_minimum_size = Vector2(1080, 720)

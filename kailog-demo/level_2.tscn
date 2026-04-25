@@ -553,7 +553,7 @@ item = SubResource("Resource_sgm4o")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1413305802]
 
-[node name="EvaluationScreen" type="Control" parent="CanvasLayer" unique_id=97352096]
+[node name="EvaluationScreen" type="Control" parent="CanvasLayer" unique_id=97352096 node_paths=PackedStringArray("game_manager")]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -563,6 +563,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("20_i558w")
+game_manager = NodePath("../../GameManager")
 
 [node name="Panel" type="Panel" parent="CanvasLayer/EvaluationScreen" unique_id=1319962114]
 custom_minimum_size = Vector2(1080, 720)
