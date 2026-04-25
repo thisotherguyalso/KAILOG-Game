@@ -429,7 +429,8 @@ position = Vector2(-1140, 1481)
 [node name="GameManager" type="Node" parent="." unique_id=1056035235 node_paths=PackedStringArray("player", "evaluation_screen")]
 script = ExtResource("9_5kfcu")
 player = NodePath("../Player")
-evaluation_screen = NodePath("")
+evaluation_screen = NodePath("../EvaluationScreen")
+next_level = "2"
 
 [node name="RoundTimer" type="Timer" parent="GameManager" unique_id=883896250]
 wait_time = 90.0
@@ -482,7 +483,7 @@ item = SubResource("Resource_sgm4o")
 position = Vector2(146, 1945)
 item = SubResource("Resource_sgm4o")
 
-[node name="EvaluationScreen" type="Control" parent="." unique_id=97352096 node_paths=PackedStringArray("game_manager")]
+[node name="EvaluationScreen" type="Control" parent="." unique_id=97352096]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -492,7 +493,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("20_i558w")
-game_manager = NodePath("../GameManager")
 
 [node name="Panel" type="Panel" parent="EvaluationScreen" unique_id=1319962114]
 custom_minimum_size = Vector2(1080, 720)

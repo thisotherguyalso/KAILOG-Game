@@ -406,8 +406,7 @@ tile_map_data = PackedByteArray("AADX/+P/AAADAAcAAADX/+T/AAACAAYAAADY/+P/AAADAAc
 tile_set = SubResource("TileSet_dhf26")
 occlusion_enabled = false
 
-[node name="Player" parent="." unique_id=1861928323 node_paths=PackedStringArray("game_manager") instance=ExtResource("2_833wy")]
-game_manager = NodePath("")
+[node name="Player" parent="." unique_id=1861928323 instance=ExtResource("2_833wy")]
 
 [node name="CleaningStation" parent="." unique_id=1300298490 instance=ExtResource("3_ghrvs")]
 position = Vector2(1092, -1477)
@@ -432,8 +431,9 @@ position = Vector2(-1747, -2150)
 
 [node name="GameManager" type="Node" parent="." unique_id=244441220 node_paths=PackedStringArray("player", "evaluation_screen")]
 script = ExtResource("9_wnq0t")
-player = NodePath("")
-evaluation_screen = NodePath("")
+player = NodePath("../Player")
+evaluation_screen = NodePath("../EvaluationScreen")
+next_level = "3"
 
 [node name="RoundTimer" type="Timer" parent="GameManager" unique_id=11605783]
 wait_time = 90.0
@@ -494,7 +494,7 @@ item = SubResource("Resource_dhf26")
 position = Vector2(-785, -1866)
 item = SubResource("Resource_dhf26")
 
-[node name="EvaluationScreen" type="Control" parent="." unique_id=713449393 node_paths=PackedStringArray("game_manager")]
+[node name="EvaluationScreen" type="Control" parent="." unique_id=713449393]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -504,7 +504,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("21_gxey3")
-game_manager = NodePath("../GameManager")
 
 [node name="Panel" type="Panel" parent="EvaluationScreen" unique_id=920621780]
 custom_minimum_size = Vector2(1080, 720)

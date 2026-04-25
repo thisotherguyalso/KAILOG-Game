@@ -10,7 +10,14 @@ signal round_ended(results: RoundResults)
 @onready var timer: RoundTimer = $RoundTimer
 @onready var grocery_list: GroceryList = $GroceryList
 
-var current_round: int = 0
+@export var levels: Array[String] = [
+	"res://Levels/level_1.tscn",
+	"res://Levels/level_2.tscn",
+	"res://Levels/level_3.tscn"
+]
+@export var next_level: String = ""
+
+var current_round: int = 1
 var current_flood_level: float = 50.0
 
 
@@ -78,5 +85,7 @@ func _show_evaluation(results: RoundResults) -> void:
 
 func proceed_to_next_round() -> void:
 	for item in player.inventory.get_items():
-		player.inventory.remove_item(item)
-	start_round()
+		player.inventory.remove_item(item)	
+	if next_level != "":
+		get_tree().change_scene_to_file(next_level)
+		start_round()
