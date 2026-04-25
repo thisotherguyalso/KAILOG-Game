@@ -229,10 +229,10 @@ position = Vector2(-672, -35)
 script = ExtResource("9_00ld1")
 player = NodePath("../Player")
 evaluation_screen = NodePath("../CanvasLayer/EvaluationScreen")
-next_level = "1"
+next_level = "res://level_2.tscn"
 
 [node name="RoundTimer" type="Timer" parent="GameManager" unique_id=1405312718]
-wait_time = 5.0
+wait_time = 90.0
 script = ExtResource("10_3qmij")
 
 [node name="GroceryList" type="Node" parent="GameManager" unique_id=576209549]
@@ -261,10 +261,36 @@ position = Vector2(-330, -32)
 item = SubResource("Resource_ett8d")
 
 [node name="DBottle4" parent="." unique_id=261579858 instance=ExtResource("10_1pe0h")]
-position = Vector2(-330, -32)
+position = Vector2(96, 157)
 item = SubResource("Resource_notaq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1174869586]
+
+[node name="GroceryListUI" type="VBoxContainer" parent="CanvasLayer" unique_id=14194155 node_paths=PackedStringArray("game_manager")]
+custom_minimum_size = Vector2(200, 300)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("22_ethxx")
+game_manager = NodePath("../../GameManager")
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer" unique_id=111849704 node_paths=PackedStringArray("timer")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.0
+offset_top = 47.0
+offset_right = 12.0
+offset_bottom = 135.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+script = ExtResource("23_3o2xh")
+timer = NodePath("../../GameManager/RoundTimer")
 
 [node name="EvaluationScreen" type="Control" parent="CanvasLayer" unique_id=1499103593 node_paths=PackedStringArray("game_manager")]
 layout_mode = 3
@@ -304,8 +330,9 @@ grow_vertical = 2
 [node name="TitleLabel" type="Label" parent="CanvasLayer/EvaluationScreen/Panel/VBoxContainer" unique_id=727972948]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("21_lfy8a")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 60
 text = "TODAY'S RESULTS"
+horizontal_alignment = 1
 
 [node name="FloodContainer" type="HBoxContainer" parent="CanvasLayer/EvaluationScreen/Panel/VBoxContainer" unique_id=323351340]
 layout_direction = 2
@@ -354,31 +381,5 @@ size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("21_lfy8a")
 theme_override_font_sizes/font_size = 32
 text = "NEXT ROUND"
-
-[node name="GroceryListUI" type="VBoxContainer" parent="CanvasLayer" unique_id=14194155 node_paths=PackedStringArray("game_manager")]
-custom_minimum_size = Vector2(200, 300)
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -150.0
-offset_right = 200.0
-offset_bottom = 150.0
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("22_ethxx")
-game_manager = NodePath("../../GameManager")
-
-[node name="TimerLabel" type="Label" parent="CanvasLayer" unique_id=111849704 node_paths=PackedStringArray("timer")]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -28.0
-offset_top = 47.0
-offset_right = 12.0
-offset_bottom = 70.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 64
-script = ExtResource("23_3o2xh")
-timer = NodePath("../../GameManager/RoundTimer")
 
 [connection signal="pressed" from="CanvasLayer/EvaluationScreen/Panel/VBoxContainer/NextRoundButton" to="CanvasLayer/EvaluationScreen" method="_on_next_round_button_pressed"]

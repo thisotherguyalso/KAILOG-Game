@@ -22,10 +22,17 @@ func show_results(results: RoundResults) -> void:
 	visible = true
 	next_round_button.modulate.a = 0.0
 
-	if results.grocery_complete:
-		title_label.text = "Round %d Complete!" % results.round_number
+	var is_last_level := game_manager.next_level == "" or not game_manager.next_level in game_manager.levels
+
+	if is_last_level:
+		title_label.text = "You saved the planet!"
+		next_round_button.text = "Back to Menu"
+	elif results.grocery_complete:
+		title_label.text = "Complete!"
+		next_round_button.text = "Next Round"
 	else:
-		title_label.text = "Round %d — Time's Up!" % results.round_number
+		title_label.text = "Time's Up!"
+		next_round_button.text = "Next Round"
 
 	for child in results_container.get_children():
 		child.modulate.a = 0.0

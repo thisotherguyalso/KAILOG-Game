@@ -83,9 +83,11 @@ func _show_evaluation(results: RoundResults) -> void:
 		evaluation_screen.show_results(results)
 
 
+# GameManager - proceed_to_next_round updated
 func proceed_to_next_round() -> void:
 	for item in player.inventory.get_items():
-		player.inventory.remove_item(item)	
-	if next_level != "":
-		get_tree().change_scene_to_file(levels[int(next_level)])
-		start_round()
+		player.inventory.remove_item(item)
+	if next_level != "" and next_level in levels:
+		get_tree().change_scene_to_file(next_level)
+	else:
+		get_tree().change_scene_to_file("res://main_menu.tscn")

@@ -4,6 +4,10 @@
 [ext_resource type="FontFile" uid="uid://dsn5vn2lq43nb" path="res://SuperPixel-m2L8j.ttf" id="2_7vrkn"]
 [ext_resource type="PackedScene" uid="uid://bjx5ug00ial51" path="res://level_1.tscn" id="2_jix8l"]
 [ext_resource type="FontFile" uid="uid://dx1xhjwepc4x1" path="res://Assets/SuperPixel-m2L8j.ttf" id="3_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://b6qju5nw71l5p" path="res://Assets/Endscreen.png" id="3_glbon"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlkkf"]
+texture = ExtResource("3_glbon")
 
 [node name="MainMenu" type="Control" unique_id=799832283]
 layout_mode = 3
@@ -14,6 +18,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_06t4h")
 game_scene = ExtResource("2_jix8l")
+
+[node name="Panel" type="Panel" parent="." unique_id=1767145757]
+custom_minimum_size = Vector2(1080, 720)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_nlkkf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=679666372]
 layout_mode = 1
