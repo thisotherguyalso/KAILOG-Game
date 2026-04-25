@@ -416,8 +416,11 @@ position = Vector2(901, 320)
 [node name="TrashStation" parent="." unique_id=1341456136 instance=ExtResource("8_gjkv5")]
 position = Vector2(-669, -342)
 
-[node name="GameManager" type="Node" parent="." unique_id=367071667]
+[node name="GameManager" type="Node" parent="." unique_id=367071667 node_paths=PackedStringArray("player", "evaluation_screen")]
 script = ExtResource("9_00ld1")
+player = NodePath("../Player")
+evaluation_screen = NodePath("../EvaluationScreen")
+next_level = "1"
 
 [node name="RoundTimer" type="Timer" parent="GameManager" unique_id=1405312718]
 wait_time = 90.0
