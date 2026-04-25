@@ -64,19 +64,19 @@ game_manager = NodePath("../GameManager")
 position = Vector2(1574, -85)
 
 [node name="RRefillStation" parent="." unique_id=768337826 instance=ExtResource("5_5hnhx")]
-position = Vector2(640, 846)
+position = Vector2(704, 695)
 
 [node name="ToyoRefill" parent="." unique_id=1576256345 instance=ExtResource("11_eoq84")]
 position = Vector2(-621, -647)
 
 [node name="DLRefillStation3" parent="." unique_id=114821419 instance=ExtResource("6_78pok")]
-position = Vector2(314, -150)
+position = Vector2(359, -32)
 
 [node name="ShopStation" parent="." unique_id=250907620 instance=ExtResource("7_lvfll")]
 position = Vector2(-761, 214)
 
 [node name="TrashStation" parent="." unique_id=1377731027 instance=ExtResource("8_jcnlr")]
-position = Vector2(-150, 836)
+position = Vector2(-96, 771)
 
 [node name="GameManager" type="Node" parent="." unique_id=1056035235 node_paths=PackedStringArray("player", "evaluation_screen")]
 script = ExtResource("9_5kfcu")

@@ -61,25 +61,25 @@ occlusion_enabled = false
 collision_mask = 21
 
 [node name="CleaningStation" parent="." unique_id=1300298490 instance=ExtResource("3_ghrvs")]
-position = Vector2(811, -364)
+position = Vector2(768, -384)
 
 [node name="CORefillStation2" parent="." unique_id=1302101164 instance=ExtResource("4_jvy75")]
-position = Vector2(-586, 285)
+position = Vector2(-650, 219)
 
 [node name="RRefillStation" parent="." unique_id=1468583802 instance=ExtResource("5_g0tlw")]
-position = Vector2(279, -392)
+position = Vector2(236, -288)
 
 [node name="ToyoRefill" parent="." unique_id=16039446 instance=ExtResource("9_833wy")]
-position = Vector2(-193, 338)
+position = Vector2(-81, 219)
 
 [node name="DLRefillStation3" parent="." unique_id=518478048 instance=ExtResource("6_keufu")]
-position = Vector2(1194, 283)
+position = Vector2(1152, 256)
 
 [node name="ShopStation" parent="." unique_id=1147317362 instance=ExtResource("7_joegk")]
 position = Vector2(25, -586)
 
 [node name="TrashStation" parent="." unique_id=1502452151 instance=ExtResource("8_m8gss")]
-position = Vector2(-574, -665)
+position = Vector2(-609, -642)
 
 [node name="GameManager" type="Node" parent="." unique_id=244441220 node_paths=PackedStringArray("player", "evaluation_screen")]
 script = ExtResource("9_wnq0t")
