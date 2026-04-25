@@ -22,6 +22,8 @@
 [ext_resource type="Script" uid="uid://b6msaa8uum8ft" path="res://Misc/evaluation_screen.gd" id="20_i558w"]
 [ext_resource type="Texture2D" uid="uid://b6qju5nw71l5p" path="res://Assets/Endscreen.png" id="21_cuxq2"]
 [ext_resource type="FontFile" uid="uid://dx1xhjwepc4x1" path="res://Assets/SuperPixel-m2L8j.ttf" id="22_wvr33"]
+[ext_resource type="Script" uid="uid://bbd5cpak4rhr6" path="res://Misc/grocery_list_ui.gd" id="23_6r3eb"]
+[ext_resource type="Script" uid="uid://bsdbajlhhfbja" path="res://Misc/timer_label.gd" id="24_2pufk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5kfcu"]
 texture = ExtResource("1_5kfcu")
@@ -429,7 +431,7 @@ position = Vector2(-1140, 1481)
 [node name="GameManager" type="Node" parent="." unique_id=1056035235 node_paths=PackedStringArray("player", "evaluation_screen")]
 script = ExtResource("9_5kfcu")
 player = NodePath("../Player")
-evaluation_screen = NodePath("../EvaluationScreen")
+evaluation_screen = NodePath("../CanvasLayer/EvaluationScreen")
 next_level = "2"
 
 [node name="RoundTimer" type="Timer" parent="GameManager" unique_id=883896250]
@@ -483,7 +485,9 @@ item = SubResource("Resource_sgm4o")
 position = Vector2(146, 1945)
 item = SubResource("Resource_sgm4o")
 
-[node name="EvaluationScreen" type="Control" parent="." unique_id=97352096]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1413305802]
+
+[node name="EvaluationScreen" type="Control" parent="CanvasLayer" unique_id=97352096]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -494,7 +498,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("20_i558w")
 
-[node name="Panel" type="Panel" parent="EvaluationScreen" unique_id=1319962114]
+[node name="Panel" type="Panel" parent="CanvasLayer/EvaluationScreen" unique_id=1319962114]
 custom_minimum_size = Vector2(1080, 720)
 layout_mode = 1
 anchors_preset = 15
@@ -504,7 +508,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_wvr33")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="EvaluationScreen/Panel" unique_id=18442458]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/EvaluationScreen/Panel" unique_id=18442458]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -518,16 +522,16 @@ offset_bottom = 31.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TitleLabel" type="Label" parent="EvaluationScreen/Panel/VBoxContainer" unique_id=1785646714]
+[node name="TitleLabel" type="Label" parent="CanvasLayer/EvaluationScreen/Panel/VBoxContainer" unique_id=1785646714]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("22_wvr33")
 theme_override_font_sizes/font_size = 80
 text = "TODAY'S RESULTS"
 
-[node name="ResultsLabel" type="Label" parent="EvaluationScreen/Panel/VBoxContainer" unique_id=1833538751]
+[node name="ResultsLabel" type="Label" parent="CanvasLayer/EvaluationScreen/Panel/VBoxContainer" unique_id=1833538751]
 layout_mode = 2
 
-[node name="NextRoundButton" type="Button" parent="EvaluationScreen/Panel/VBoxContainer" unique_id=1725381691]
+[node name="NextRoundButton" type="Button" parent="CanvasLayer/EvaluationScreen/Panel/VBoxContainer" unique_id=1725381691]
 custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -536,4 +540,30 @@ theme_override_fonts/font = ExtResource("22_wvr33")
 theme_override_font_sizes/font_size = 32
 text = "NEXT ROUND"
 
-[connection signal="pressed" from="EvaluationScreen/Panel/VBoxContainer/NextRoundButton" to="EvaluationScreen" method="_on_next_round_button_pressed"]
+[node name="GroceryListUI" type="VBoxContainer" parent="CanvasLayer" unique_id=837444075 node_paths=PackedStringArray("game_manager")]
+custom_minimum_size = Vector2(200, 300)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("23_6r3eb")
+game_manager = NodePath("")
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer" unique_id=1998584089 node_paths=PackedStringArray("timer")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.0
+offset_top = 47.0
+offset_right = 12.0
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+script = ExtResource("24_2pufk")
+timer = NodePath("")
+
+[connection signal="pressed" from="CanvasLayer/EvaluationScreen/Panel/VBoxContainer/NextRoundButton" to="CanvasLayer/EvaluationScreen" method="_on_next_round_button_pressed"]
