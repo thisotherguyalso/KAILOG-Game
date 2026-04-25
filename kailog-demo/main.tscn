@@ -412,11 +412,11 @@ position = Vector2(-677, -93)
 item = SubResource("Resource_4lmeg")
 
 [node name="PlasticBottle" parent="." unique_id=258955449 instance=ExtResource("4_1bvp3")]
-position = Vector2(-1024, -138)
+position = Vector2(-749, -320)
 item = SubResource("Resource_b1qrp")
 
 [node name="PlasticBottle2" parent="." unique_id=2056483364 instance=ExtResource("4_1bvp3")]
-position = Vector2(-896, 186)
+position = Vector2(-704, 224)
 item = SubResource("Resource_come4")
 
 [node name="Tupperware" parent="." unique_id=1020449756 instance=ExtResource("4_1bvp3")]

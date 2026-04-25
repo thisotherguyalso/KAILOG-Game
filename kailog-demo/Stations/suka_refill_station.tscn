@@ -30,7 +30,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="RefillStation" unique_id=1300298490 instance=ExtResource("1_hmact")]
+[node name="SukaRefill" unique_id=1300298490 instance=ExtResource("1_hmact")]
 fill_contents = "Suka"
 required_container_name = "glass_bottle"
 
