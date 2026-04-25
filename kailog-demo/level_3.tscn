@@ -495,6 +495,7 @@ position = Vector2(-785, -1866)
 item = SubResource("Resource_dhf26")
 
 [node name="EvaluationScreen" type="Control" parent="." unique_id=713449393 node_paths=PackedStringArray("game_manager")]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

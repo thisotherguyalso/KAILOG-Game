@@ -416,10 +416,8 @@ position = Vector2(901, 320)
 [node name="TrashStation" parent="." unique_id=1341456136 instance=ExtResource("8_gjkv5")]
 position = Vector2(-669, -342)
 
-[node name="GameManager" type="Node" parent="." unique_id=367071667 node_paths=PackedStringArray("player", "evaluation_screen")]
+[node name="GameManager" type="Node" parent="." unique_id=367071667]
 script = ExtResource("9_00ld1")
-player = NodePath("../Player")
-evaluation_screen = NodePath("../EvaluationScreen")
 
 [node name="RoundTimer" type="Timer" parent="GameManager" unique_id=1405312718]
 wait_time = 90.0
@@ -454,7 +452,7 @@ item = SubResource("Resource_sof0w")
 position = Vector2(-1943, 795)
 item = SubResource("Resource_sof0w")
 
-[node name="EvaluationScreen" type="Control" parent="." unique_id=1499103593 node_paths=PackedStringArray("game_manager")]
+[node name="EvaluationScreen" type="Control" parent="." unique_id=1499103593]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -463,7 +461,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("19_00ld1")
-game_manager = NodePath("../GameManager")
 
 [node name="Panel" type="Panel" parent="EvaluationScreen" unique_id=1488726014]
 custom_minimum_size = Vector2(1080, 720)
@@ -482,10 +479,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -31.0
-offset_right = 20.0
-offset_bottom = 31.0
+offset_left = -452.0
+offset_top = -156.0
+offset_right = 455.0
+offset_bottom = 147.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -495,8 +492,41 @@ theme_override_fonts/font = ExtResource("21_lfy8a")
 theme_override_font_sizes/font_size = 80
 text = "TODAY'S RESULTS"
 
-[node name="ResultsLabel" type="Label" parent="EvaluationScreen/Panel/VBoxContainer" unique_id=1542612626]
+[node name="FloodContainer" type="HBoxContainer" parent="EvaluationScreen/Panel/VBoxContainer" unique_id=142227479]
+layout_direction = 2
 layout_mode = 2
+
+[node name="FloodLabel" type="Label" parent="EvaluationScreen/Panel/VBoxContainer/FloodContainer" unique_id=476854161]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("21_lfy8a")
+theme_override_font_sizes/font_size = 30
+text = "Flood Meter"
+
+[node name="FloodBar" type="ProgressBar" parent="EvaluationScreen/Panel/VBoxContainer/FloodContainer" unique_id=1185468638]
+layout_mode = 2
+
+[node name="ResultsContainer" type="VBoxContainer" parent="EvaluationScreen/Panel/VBoxContainer" unique_id=2144531050]
+layout_mode = 2
+
+[node name="GroceryLabel" type="Label" parent="EvaluationScreen/Panel/VBoxContainer/ResultsContainer" unique_id=1704979523]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("21_lfy8a")
+horizontal_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="EvaluationScreen/Panel/VBoxContainer/ResultsContainer" unique_id=274968877]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("21_lfy8a")
+horizontal_alignment = 1
+
+[node name="MoneySpentLabel" type="Label" parent="EvaluationScreen/Panel/VBoxContainer/ResultsContainer" unique_id=441247389]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("21_lfy8a")
+horizontal_alignment = 1
+
+[node name="MoneySavedLabel" type="Label" parent="EvaluationScreen/Panel/VBoxContainer/ResultsContainer" unique_id=1163498317]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("21_lfy8a")
+horizontal_alignment = 1
 
 [node name="NextRoundButton" type="Button" parent="EvaluationScreen/Panel/VBoxContainer" unique_id=796985064]
 custom_minimum_size = Vector2(250, 80)
