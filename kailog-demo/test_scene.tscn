@@ -2,7 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://dnu7owqmlf0q4" path="res://UI/inventory_ui.tscn" id="1_ia1lp"]
 [ext_resource type="PackedScene" uid="uid://djbhktkxeugd" path="res://Player/player.tscn" id="1_uhqqe"]
-[ext_resource type="PackedScene" uid="uid://bmpp8rqiljegs" path="res://Pickups/pickup.tscn" id="3_sasra"]
+[ext_resource type="PackedScene" uid="uid://dso3mgafdk2v0" path="res://Pickups/pickup_dirty_glass_bottle.tscn" id="3_2nij2"]
+[ext_resource type="PackedScene" uid="uid://doj87k5vv6hlq" path="res://Pickups/pickup_dirty_plastic_bottle.tscn" id="4_7cbxl"]
+[ext_resource type="PackedScene" uid="uid://bedkowog44pxi" path="res://Pickups/pickup_dirty_tupperware.tscn" id="5_8pr8v"]
 
 [node name="TestScene" type="Node2D" unique_id=129317555]
 
@@ -12,5 +14,11 @@
 
 [node name="Player" parent="." unique_id=1861928323 instance=ExtResource("1_uhqqe")]
 
-[node name="Pickup" parent="." unique_id=258515556 instance=ExtResource("3_sasra")]
-position = Vector2(386, 271)
+[node name="Pickup_DirtyGlassBottle" parent="." unique_id=258515556 instance=ExtResource("3_2nij2")]
+position = Vector2(496, 292)
+
+[node name="Pickup_DirtyPlasticBottle" parent="." unique_id=944719853 instance=ExtResource("4_7cbxl")]
+position = Vector2(904, 85)
+
+[node name="Pickup_DirtyTupperware" parent="." unique_id=554186743 instance=ExtResource("5_8pr8v")]
+position = Vector2(-160, 294)

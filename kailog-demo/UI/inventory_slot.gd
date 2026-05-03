@@ -13,7 +13,8 @@ func _ready():
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			_spawn_floating_item()
+			if not is_empty:
+				_spawn_floating_item()
 
 func _spawn_floating_item():
 	var floating_item : FloatingItem = preload("res://FloatingItem/floating_item.tscn").instantiate()
