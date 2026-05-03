@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bmpp8rqiljegs"]
+
+[ext_resource type="Texture2D" uid="uid://dhwyuqnivxrj0" path="res://Assets/Items/glass bottle clean.png" id="1_0pywb"]
+[ext_resource type="Script" uid="uid://bx7skdn2ktfw0" path="res://Pickups/pickup.gd" id="1_vx7qd"]
+[ext_resource type="Resource" uid="uid://cw6mafibssohk" path="res://Items/plastic_bottle.tres" id="2_x5h4h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j6dbu"]
+radius = 80.0
+
+[node name="Pickup" type="Area2D" unique_id=258515556]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_vx7qd")
+item = ExtResource("2_x5h4h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=825462697]
+shape = SubResource("CircleShape2D_j6dbu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=19652079]
+texture = ExtResource("1_0pywb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

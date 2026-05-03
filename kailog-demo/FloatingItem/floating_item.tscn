@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c0jco8cslyrs5"]
+
+[ext_resource type="Script" uid="uid://dllqkeb1egoag" path="res://FloatingItem/floating_item.gd" id="1_8frwa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sweiw"]
+radius = 80.0
+
+[node name="FloatingItem" type="Area2D" unique_id=1402307360]
+script = ExtResource("1_8frwa")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2005357338]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1810602279]
+shape = SubResource("CircleShape2D_sweiw")

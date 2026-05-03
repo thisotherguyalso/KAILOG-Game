@@ -1,7 +1,6 @@
 class_name PlayerUI
 extends Control
 
-@onready var inventory_grid: InventoryGrid = $InventoryGrid
 @onready var money_label: Label = $MoneyLabel
 
 var player: Player
@@ -22,7 +21,6 @@ func _connect_signals() -> void:
 func handle_world_drop(item: Item, screen_pos: Vector2) -> void:
 	var world_pos := _screen_to_world(screen_pos)
 	_spawn_pickup(item, world_pos)
-	player.inventory.remove_item(item)
 
 func _screen_to_world(screen_pos: Vector2) -> Vector2:
 	return player.get_canvas_transform().affine_inverse() * screen_pos

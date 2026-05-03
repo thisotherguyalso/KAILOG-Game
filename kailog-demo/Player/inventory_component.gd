@@ -1,37 +1,37 @@
 class_name InventoryComponent
 extends Node
 
-signal inventory_changed
+signal item_added(inventory: Array[Item])
+signal item_removed(inventory: Array[Item])
 
-@export var capacity: int = 5
-
-var player: Player
+var inventory : Array[Item] = [null, null, null, null, null]
 
 func _ready():
-	player = owner
+	EventBus.item_move_requested.connect(_on_item_move)
+	EventBus.item_removed.connect(remove_item)
 
+func add_item(item : Item):
+	inventory[_find_first_slot()] = item
+	item_added.emit(inventory)
+	EventBus.inventory_changed.emit(inventory)
 
-## Returns all items currently in the inventory grid.
-func get_items() -> Array[Item]:
-	return player.ui.inventory_grid.get_all_items()
+func add_item_to_index(item : Item, index : int):
+	inventory[index] = item
+	item_added.emit(inventory)
+	EventBus.inventory_changed.emit(inventory)
 
+func remove_item(index : int):
+	inventory[index] = null
+	item_removed.emit(inventory)
+	EventBus.inventory_changed.emit(inventory)
 
-func add_item(item: Item) -> bool:
-	# Duplicate so each slot holds a unique Resource instance.
-	# Without this, preloaded .tres files share the same object
-	# and clear_slot_with_item can't distinguish between them.
-	var unique_item := item.duplicate() as Item
-	var success := player.ui.inventory_grid.add_to_first_empty_slot(unique_item)
-	if success:
-		$PickupSFX.play()
-		inventory_changed.emit()
-	return success
+func _on_item_move(origin_slot_index, slot_index):
+	var temp = inventory[origin_slot_index]
+	remove_item(origin_slot_index)
+	add_item_to_index(temp, slot_index)
 
-
-func remove_item(item: Item) -> void:
-	player.ui.inventory_grid.clear_slot_with_item(item)
-	inventory_changed.emit()
-
-
-func has_item(item: Item) -> bool:
-	return item in get_items()
+func _find_first_slot() -> int:
+	for i in range(inventory.size()):
+		if not inventory[i]:
+			return i
+	return 0

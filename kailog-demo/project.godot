@@ -19,15 +19,14 @@ run/main_scene="uid://clkrj8b2qapyq"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
-[display]
+[autoload]
 
-window/size/viewport_width=1080
-window/size/viewport_height=720
-window/stretch/mode="canvas_items"
+EventBus="*uid://drlhajd00mg76"
 
 [global_group]
 
 Player="The player instance."
+"Inventory Slot"=""
 
 [input]
 

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://djoreradn574t"]
+
+[ext_resource type="PackedScene" uid="uid://dnu7owqmlf0q4" path="res://UI/inventory_ui.tscn" id="1_ia1lp"]
+[ext_resource type="PackedScene" uid="uid://djbhktkxeugd" path="res://Player/player.tscn" id="1_uhqqe"]
+[ext_resource type="PackedScene" uid="uid://bmpp8rqiljegs" path="res://Pickups/pickup.tscn" id="3_sasra"]
+
+[node name="TestScene" type="Node2D" unique_id=129317555]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=863897339]
+
+[node name="InventoryUI" parent="CanvasLayer" unique_id=67015634 instance=ExtResource("1_ia1lp")]
+
+[node name="Player" parent="." unique_id=1861928323 instance=ExtResource("1_uhqqe")]
+
+[node name="Pickup" parent="." unique_id=258515556 instance=ExtResource("3_sasra")]
+position = Vector2(386, 271)
