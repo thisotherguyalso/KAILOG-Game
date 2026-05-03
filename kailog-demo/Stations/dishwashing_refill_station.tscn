@@ -7,8 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://beynxuh06tefw" path="res://Assets/Stations/Jar1.png" id="4_x135g"]
 [ext_resource type="Texture2D" uid="uid://byvjbj278py7a" path="res://Assets/Stations/Jar2.png" id="5_1svr3"]
 [ext_resource type="Texture2D" uid="uid://breth4ms7506f" path="res://Assets/Stations/Jar3.png" id="6_sun5l"]
-[ext_resource type="Texture2D" uid="uid://yrny3tb43po1" path="res://Assets/Items/circle_tag.png" id="7_sun5l"]
-[ext_resource type="Texture2D" uid="uid://dvrgy8av5mqh4" path="res://Assets/price_tag_dishwashing.png" id="7_w8q41"]
+[ext_resource type="Texture2D" uid="uid://dvrgy8av5mqh4" path="res://Assets/Tags/price_tag_dishwashing.png" id="7_w8q41"]
 [ext_resource type="Texture2D" uid="uid://dgk0ooffg6sd8" path="res://Assets/Items/plastic bottle clean.png" id="8_sun5l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r0h2o"]
@@ -33,6 +32,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1gurw"]
+load_path = "res://.godot/imported/circle_tag.png-c08ff72d81e7038f27c68c1500f20cce.ctex"
+
 [node name="DishwashingRefill" unique_id=1300298490 instance=ExtResource("1_urh61")]
 script = ExtResource("2_q5n7t")
 fill_contents = "Dishwashing Liquid"
@@ -56,7 +58,7 @@ animation = &"refilling"
 texture_filter = 1
 position = Vector2(1, -36)
 scale = Vector2(0.21621622, 0.21621622)
-texture = ExtResource("7_sun5l")
+texture = SubResource("CompressedTexture2D_1gurw")
 
 [node name="Container" type="Sprite2D" parent="Needs" index="0" unique_id=1625521679]
 texture_filter = 1

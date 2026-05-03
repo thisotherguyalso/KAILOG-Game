@@ -7,8 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://beynxuh06tefw" path="res://Assets/Stations/Jar1.png" id="4_ogr8j"]
 [ext_resource type="Texture2D" uid="uid://byvjbj278py7a" path="res://Assets/Stations/Jar2.png" id="5_1bvfb"]
 [ext_resource type="Texture2D" uid="uid://breth4ms7506f" path="res://Assets/Stations/Jar3.png" id="6_n2sa2"]
-[ext_resource type="Texture2D" uid="uid://yrny3tb43po1" path="res://Assets/Items/circle_tag.png" id="7_7nm2t"]
-[ext_resource type="Texture2D" uid="uid://cwbe6bdv3m3d2" path="res://Assets/price_tag_oil.png" id="7_n2sa2"]
+[ext_resource type="Texture2D" uid="uid://cwbe6bdv3m3d2" path="res://Assets/Tags/price_tag_oil.png" id="7_n2sa2"]
 [ext_resource type="Texture2D" uid="uid://dhwyuqnivxrj0" path="res://Assets/Items/glass bottle clean.png" id="8_64wxr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_68uxb"]
@@ -32,6 +31,9 @@ animations = [{
 "name": &"refilling",
 "speed": 5.0
 }]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1gurw"]
+load_path = "res://.godot/imported/circle_tag.png-c08ff72d81e7038f27c68c1500f20cce.ctex"
 
 [node name="CookingOilRefill" unique_id=1300298490 instance=ExtResource("1_0a2gd")]
 script = ExtResource("2_g0qco")
@@ -57,7 +59,7 @@ frame_progress = 0.62990034
 texture_filter = 1
 position = Vector2(1, -36)
 scale = Vector2(0.21621622, 0.21621622)
-texture = ExtResource("7_7nm2t")
+texture = SubResource("CompressedTexture2D_1gurw")
 
 [node name="Container" type="Sprite2D" parent="Needs" index="0" unique_id=59159243]
 position = Vector2(-4.6250005, 4.625)

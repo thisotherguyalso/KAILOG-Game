@@ -8,7 +8,7 @@
 
 [resource]
 script = ExtResource("3_upsdv")
-state = 1
+state = 2
 sell_price_clean = 5.0
 sell_price_dirty = 3.0
 icon_bought_map = Dictionary[String, Texture2D]({

@@ -25,9 +25,9 @@
 [ext_resource type="Texture2D" uid="uid://f0qtkpti2yjw" path="res://Assets/Items/glass bottle toyo bought.png" id="18_51w4t"]
 [ext_resource type="Texture2D" uid="uid://civivny72dd6k" path="res://Assets/Items/glass bottle oil.png" id="20_ddgyg"]
 [ext_resource type="Script" uid="uid://b6msaa8uum8ft" path="res://Misc/evaluation_screen.gd" id="20_i558w"]
-[ext_resource type="Texture2D" uid="uid://b6qju5nw71l5p" path="res://Assets/Endscreen.png" id="21_cuxq2"]
+[ext_resource type="Texture2D" uid="uid://b6qju5nw71l5p" path="res://Assets/UI/Endscreen.png" id="21_cuxq2"]
 [ext_resource type="Texture2D" uid="uid://bnkse1taix27b" path="res://Assets/Items/glass bottle suka.png" id="21_qh630"]
-[ext_resource type="FontFile" uid="uid://dsn5vn2lq43nb" path="res://SuperPixel-m2L8j.ttf" id="22_6r3eb"]
+[ext_resource type="FontFile" uid="uid://dsn5vn2lq43nb" path="res://Assets/Fonts/SuperPixel-m2L8j.ttf" id="22_6r3eb"]
 [ext_resource type="Texture2D" uid="uid://b4it642kqpl31" path="res://Assets/Items/glass bottle toyo.png" id="22_uv8er"]
 [ext_resource type="Script" uid="uid://bbd5cpak4rhr6" path="res://Misc/grocery_list_ui.gd" id="23_6r3eb"]
 [ext_resource type="Texture2D" uid="uid://dgk0ooffg6sd8" path="res://Assets/Items/plastic bottle clean.png" id="23_653n8"]
@@ -227,6 +227,7 @@ position = Vector2(-761, 214)
 
 [node name="TrashStation" parent="." unique_id=1377731027 instance=ExtResource("8_jcnlr")]
 position = Vector2(-96, 771)
+dirty_pickups = Array[PackedScene]([])
 
 [node name="DTupperware" parent="." unique_id=234542647 instance=ExtResource("12_78pok")]
 position = Vector2(1408, 640)

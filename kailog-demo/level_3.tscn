@@ -21,8 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://dvpy451uh53qm" path="res://Assets/Items/tupperware rice bought.png" id="20_x8t0u"]
 [ext_resource type="Script" uid="uid://b6msaa8uum8ft" path="res://Misc/evaluation_screen.gd" id="21_gxey3"]
 [ext_resource type="Texture2D" uid="uid://dwq6at53ann6s" path="res://Assets/Items/tupperware rice.png" id="22_6ricy"]
-[ext_resource type="Texture2D" uid="uid://b6qju5nw71l5p" path="res://Assets/Endscreen.png" id="22_g005c"]
-[ext_resource type="FontFile" uid="uid://dsn5vn2lq43nb" path="res://SuperPixel-m2L8j.ttf" id="23_dhf26"]
+[ext_resource type="Texture2D" uid="uid://b6qju5nw71l5p" path="res://Assets/UI/Endscreen.png" id="22_g005c"]
+[ext_resource type="FontFile" uid="uid://dsn5vn2lq43nb" path="res://Assets/Fonts/SuperPixel-m2L8j.ttf" id="23_dhf26"]
 [ext_resource type="Script" uid="uid://bbd5cpak4rhr6" path="res://Misc/grocery_list_ui.gd" id="24_ox7xt"]
 [ext_resource type="Texture2D" uid="uid://dhwyuqnivxrj0" path="res://Assets/Items/glass bottle clean.png" id="24_rvuvc"]
 [ext_resource type="Texture2D" uid="uid://b7gvj14lck7pu" path="res://Assets/Items/glass bottle oil bought.png" id="25_cqks1"]
@@ -231,6 +231,7 @@ position = Vector2(25, -586)
 [node name="TrashStation" parent="." unique_id=1502452151 instance=ExtResource("8_m8gss")]
 y_sort_enabled = true
 position = Vector2(-609, -642)
+dirty_pickups = Array[PackedScene]([])
 
 [node name="GameManager" type="Node" parent="." unique_id=244441220 node_paths=PackedStringArray("player", "evaluation_screen")]
 script = ExtResource("9_wnq0t")

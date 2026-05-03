@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://c3mntyg8syuew"]
+
+[ext_resource type="PackedScene" uid="uid://brh0vntjhoxje" path="res://Items/pickup_item.tscn" id="1_g001u"]
+[ext_resource type="Texture2D" uid="uid://dhwyuqnivxrj0" path="res://Assets/Items/glass bottle clean.png" id="2_okquk"]
+[ext_resource type="Texture2D" uid="uid://b7gvj14lck7pu" path="res://Assets/Items/glass bottle oil bought.png" id="3_h6vl1"]
+[ext_resource type="Texture2D" uid="uid://w14b2728omkx" path="res://Assets/Items/glass bottle suka bought.png" id="4_unym2"]
+[ext_resource type="Texture2D" uid="uid://f0qtkpti2yjw" path="res://Assets/Items/glass bottle toyo bought.png" id="5_thi6b"]
+[ext_resource type="Texture2D" uid="uid://bh7s6ueijtq6l" path="res://Assets/Items/glass bottle dirty.png" id="6_1mg1y"]
+[ext_resource type="Texture2D" uid="uid://civivny72dd6k" path="res://Assets/Items/glass bottle oil.png" id="7_ty3ym"]
+[ext_resource type="Texture2D" uid="uid://bnkse1taix27b" path="res://Assets/Items/glass bottle suka.png" id="8_ksly5"]
+[ext_resource type="Texture2D" uid="uid://b4it642kqpl31" path="res://Assets/Items/glass bottle toyo.png" id="9_iwdqd"]
+[ext_resource type="Script" uid="uid://cq05cnjdmwdea" path="res://Items/item_container.gd" id="10_b2824"]
+
+[sub_resource type="Resource" id="Resource_6qnvt"]
+script = ExtResource("10_b2824")
+state = 2
+icon_bought_map = Dictionary[String, Texture2D]({
+"Cooking Oil": ExtResource("3_h6vl1"),
+"Suka": ExtResource("4_unym2"),
+"Toyo": ExtResource("5_thi6b")
+})
+icon_clean = ExtResource("2_okquk")
+icon_dirty = ExtResource("6_1mg1y")
+icon_refilled_map = Dictionary[String, Texture2D]({
+"Cooking Oil": ExtResource("7_ty3ym"),
+"Suka": ExtResource("8_ksly5"),
+"Toyo": ExtResource("9_iwdqd")
+})
+sprite_bought_map = Dictionary[String, Texture2D]({
+"Cooking Oil": ExtResource("3_h6vl1"),
+"Suka": ExtResource("4_unym2"),
+"Toyo": ExtResource("5_thi6b")
+})
+sprite_clean = ExtResource("2_okquk")
+sprite_dirty = ExtResource("6_1mg1y")
+sprite_refilled_map = Dictionary[String, Texture2D]({
+"Cooking Oil": ExtResource("7_ty3ym"),
+"Suka": ExtResource("8_ksly5"),
+"Toyo": ExtResource("9_iwdqd")
+})
+item_name = "glass_bottle"
+icon = ExtResource("2_okquk")
+sprite = ExtResource("2_okquk")
+metadata/_custom_type_script = "uid://cq05cnjdmwdea"
+
+[node name="DirtyGlassBottlePickup" unique_id=234542647 instance=ExtResource("1_g001u")]
+item = SubResource("Resource_6qnvt")

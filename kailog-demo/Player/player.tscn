@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://djbhktkxeugd"]
 
 [ext_resource type="Script" uid="uid://bjvob2mft23r7" path="res://Player/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://celh7tsst8ax3" path="res://Assets/player.png" id="2_k53q1"]
+[ext_resource type="Texture2D" uid="uid://celh7tsst8ax3" path="res://Assets/Player/player.png" id="2_k53q1"]
 [ext_resource type="PackedScene" uid="uid://brptlm60s6jo5" path="res://Player/player_ui.tscn" id="3_btcbx"]
 [ext_resource type="Script" uid="uid://dfju0tl5ha7qc" path="res://Player/movement_component.gd" id="4_gwnis"]
 [ext_resource type="Script" uid="uid://ca8wbfsruak5y" path="res://Player/inventory_component.gd" id="5_k53q1"]
@@ -173,7 +173,7 @@ script = ExtResource("6_fhl08")
 [node name="Player UI" parent="CanvasLayer" unique_id=434432760 instance=ExtResource("3_btcbx")]
 mouse_filter = 2
 
-[node name="MobileJoystick" parent="CanvasLayer" instance=ExtResource("8_joystick")]
+[node name="MobileJoystick" parent="CanvasLayer" unique_id=108036293 instance=ExtResource("8_joystick")]
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=238252444]
 

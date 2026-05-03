@@ -4,9 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://beynxuh06tefw" path="res://Assets/Stations/Jar1.png" id="2_ox84b"]
 [ext_resource type="Texture2D" uid="uid://byvjbj278py7a" path="res://Assets/Stations/Jar2.png" id="3_tq0m1"]
 [ext_resource type="Texture2D" uid="uid://breth4ms7506f" path="res://Assets/Stations/Jar3.png" id="4_vufi0"]
-[ext_resource type="Texture2D" uid="uid://yrny3tb43po1" path="res://Assets/Items/circle_tag.png" id="5_nmqij"]
 [ext_resource type="Texture2D" uid="uid://dhwyuqnivxrj0" path="res://Assets/Items/glass bottle clean.png" id="6_5bo5t"]
-[ext_resource type="Texture2D" uid="uid://dyu61mjwnfn3d" path="res://Assets/price_tag_toyo.png" id="7_ox84b"]
+[ext_resource type="Texture2D" uid="uid://dyu61mjwnfn3d" path="res://Assets/Tags/price_tag_toyo.png" id="7_ox84b"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rlmdv"]
 animations = [{
@@ -30,6 +29,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1gurw"]
+load_path = "res://.godot/imported/circle_tag.png-c08ff72d81e7038f27c68c1500f20cce.ctex"
+
 [node name="ToyoRefill" unique_id=1300298490 instance=ExtResource("1_3n7tc")]
 fill_contents = "Toyo"
 required_container_name = "glass_bottle"
@@ -48,7 +50,7 @@ animation = &"refilling"
 texture_filter = 1
 position = Vector2(1, -36)
 scale = Vector2(0.21621622, 0.21621622)
-texture = ExtResource("5_nmqij")
+texture = SubResource("CompressedTexture2D_1gurw")
 
 [node name="Container" type="Sprite2D" parent="Needs" index="0" unique_id=855353155]
 texture_filter = 1

@@ -8,7 +8,7 @@
 
 [resource]
 script = ExtResource("5_fnigd")
-state = 1
+state = 2
 icon_bought_map = Dictionary[String, Texture2D]({
 "Bigas": ExtResource("2_cxnt5")
 })
@@ -22,6 +22,9 @@ sprite_bought_map = Dictionary[String, Texture2D]({
 })
 sprite_clean = ExtResource("1_kt6ue")
 sprite_dirty = ExtResource("2_v2h2l")
+sprite_refilled_map = Dictionary[String, Texture2D]({
+"Bigas": ExtResource("4_xlvfe")
+})
 item_name = "tupperware"
 icon = ExtResource("1_kt6ue")
 sprite = ExtResource("1_kt6ue")

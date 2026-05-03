@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b7gvj14lck7pu" path="res://Assets/Items/glass bottle oil bought.png" id="4_3f1rb"]
 [ext_resource type="Texture2D" uid="uid://w14b2728omkx" path="res://Assets/Items/glass bottle suka bought.png" id="5_c822b"]
 [ext_resource type="Texture2D" uid="uid://f0qtkpti2yjw" path="res://Assets/Items/glass bottle toyo bought.png" id="6_a2iwf"]
-[ext_resource type="Texture2D" uid="uid://d36tenhtsagfp" path="res://Assets/price_tag_suka.png" id="6_vyort"]
+[ext_resource type="Texture2D" uid="uid://d36tenhtsagfp" path="res://Assets/Tags/price_tag_suka.png" id="6_vyort"]
 [ext_resource type="Texture2D" uid="uid://bh7s6ueijtq6l" path="res://Assets/Items/glass bottle dirty.png" id="7_6db20"]
 [ext_resource type="Texture2D" uid="uid://civivny72dd6k" path="res://Assets/Items/glass bottle oil.png" id="8_5pkmj"]
 [ext_resource type="Texture2D" uid="uid://bnkse1taix27b" path="res://Assets/Items/glass bottle suka.png" id="9_284yv"]

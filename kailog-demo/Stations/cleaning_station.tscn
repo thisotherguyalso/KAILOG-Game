@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_mqdyq"]
 [ext_resource type="Script" uid="uid://d4bht54jje4cf" path="res://Stations/cleaning_station.gd" id="2_ayto0"]
-[ext_resource type="Texture2D" uid="uid://cqworieilr8gm" path="res://Assets/cleanstation.jpg" id="3_6nxiw"]
 [ext_resource type="AudioStream" uid="uid://dtd42ape1rj3u" path="res://Sounds/cleaning.mp3" id="3_ayto0"]
 [ext_resource type="Texture2D" uid="uid://buw3po4xm565n" path="res://Assets/Stations/Faucet2.png" id="4_bx035"]
 [ext_resource type="Texture2D" uid="uid://bw88nxbch547t" path="res://Assets/Stations/Faucet3.png" id="5_jeyok"]
@@ -46,7 +45,6 @@ clean_duration = 3.0
 visible = false
 modulate = Color(1, 1, 1, 1)
 scale = Vector2(0.56, 0.56)
-texture = ExtResource("3_6nxiw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2" unique_id=1193646284]
 texture_filter = 1
@@ -57,9 +55,8 @@ animation = &"cleaning"
 autoplay = "default"
 frame_progress = 0.07767043
 
-[node name="CollisionShape2D" parent="StationWall" parent_id_path=PackedInt32Array(148367841) index="0" unique_id=1054573748]
+[node name="CollisionShape2D" parent="StationWall" parent_id_path=PackedInt32Array(148367841) index="0" unique_id=346114296]
 position = Vector2(16, 48)
-rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_bx035")
 
 [node name="CleaningSFX" type="AudioStreamPlayer2D" parent="." index="4" unique_id=573593518]

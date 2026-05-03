@@ -25,9 +25,9 @@
 [ext_resource type="Texture2D" uid="uid://dgk0ooffg6sd8" path="res://Assets/Items/plastic bottle clean.png" id="19_ia5ws"]
 [ext_resource type="Texture2D" uid="uid://snnih0w5wewj" path="res://Assets/Items/plastic bottle dishwashing bought.png" id="20_be5co"]
 [ext_resource type="Texture2D" uid="uid://f0qtkpti2yjw" path="res://Assets/Items/glass bottle toyo bought.png" id="20_i5xja"]
-[ext_resource type="Texture2D" uid="uid://b6qju5nw71l5p" path="res://Assets/Endscreen.png" id="20_kb5eu"]
+[ext_resource type="Texture2D" uid="uid://b6qju5nw71l5p" path="res://Assets/UI/Endscreen.png" id="20_kb5eu"]
 [ext_resource type="Texture2D" uid="uid://bed48k4naf1q3" path="res://Assets/Items/plastic bottle dishwashing.png" id="21_hycyb"]
-[ext_resource type="FontFile" uid="uid://dsn5vn2lq43nb" path="res://SuperPixel-m2L8j.ttf" id="21_lfy8a"]
+[ext_resource type="FontFile" uid="uid://dsn5vn2lq43nb" path="res://Assets/Fonts/SuperPixel-m2L8j.ttf" id="21_lfy8a"]
 [ext_resource type="Script" uid="uid://bbd5cpak4rhr6" path="res://Misc/grocery_list_ui.gd" id="22_ethxx"]
 [ext_resource type="Texture2D" uid="uid://civivny72dd6k" path="res://Assets/Items/glass bottle oil.png" id="22_mdra8"]
 [ext_resource type="Script" uid="uid://bsdbajlhhfbja" path="res://Misc/timer_label.gd" id="23_3o2xh"]
@@ -217,7 +217,7 @@ position = Vector2(265, -63)
 position = Vector2(256, 204)
 
 [node name="RRefillStation" parent="." unique_id=90535304 instance=ExtResource("5_ubhxj")]
-position = Vector2(-614, 556)
+position = Vector2(-576, 448)
 
 [node name="ShopStation" parent="." unique_id=1603033813 instance=ExtResource("7_lhbbi")]
 position = Vector2(320, 556)
@@ -293,6 +293,7 @@ script = ExtResource("23_3o2xh")
 timer = NodePath("../../GameManager/RoundTimer")
 
 [node name="EvaluationScreen" type="Control" parent="CanvasLayer" unique_id=1499103593 node_paths=PackedStringArray("game_manager")]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
