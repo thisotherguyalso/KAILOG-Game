@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://djoreradn574t"]
+
+[ext_resource type="PackedScene" uid="uid://dnu7owqmlf0q4" path="res://UI/inventory_ui.tscn" id="1_ia1lp"]
+[ext_resource type="PackedScene" uid="uid://djbhktkxeugd" path="res://Player/player.tscn" id="1_uhqqe"]
+[ext_resource type="PackedScene" uid="uid://dso3mgafdk2v0" path="res://Pickups/pickup_dirty_glass_bottle.tscn" id="3_2nij2"]
+[ext_resource type="PackedScene" uid="uid://doj87k5vv6hlq" path="res://Pickups/pickup_dirty_plastic_bottle.tscn" id="4_7cbxl"]
+[ext_resource type="PackedScene" uid="uid://bedkowog44pxi" path="res://Pickups/pickup_dirty_tupperware.tscn" id="5_8pr8v"]
+[ext_resource type="PackedScene" uid="uid://688p861i1tfi" path="res://Stations/cleaning_station.tscn" id="6_4gito"]
+[ext_resource type="PackedScene" uid="uid://0ith6mc8winc" path="res://Stations/cooking_oil_refill_station.tscn" id="7_fbuy2"]
+[ext_resource type="PackedScene" uid="uid://dewc78ookudj1" path="res://Stations/dishwashing_refill_station.tscn" id="8_0k8yu"]
+[ext_resource type="PackedScene" uid="uid://c0su22eradkp2" path="res://Stations/rice_refill_station.tscn" id="9_hiucn"]
+[ext_resource type="PackedScene" uid="uid://b378nrs2qcsni" path="res://Stations/shop_station.tscn" id="10_k6its"]
+[ext_resource type="PackedScene" uid="uid://d1d8bbtsvfpxb" path="res://Stations/suka_refill_station.tscn" id="11_2dw41"]
+[ext_resource type="PackedScene" uid="uid://dvjqn8mya81or" path="res://Stations/toyo_refill_station.tscn" id="12_ykxp3"]
+[ext_resource type="PackedScene" uid="uid://b8ckmdt8a8x60" path="res://Stations/trash_station.tscn" id="13_g6y4b"]
+
+[node name="TestScene" type="Node2D" unique_id=129317555]
+y_sort_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=863897339]
+
+[node name="InventoryUI" parent="CanvasLayer" unique_id=67015634 instance=ExtResource("1_ia1lp")]
+mouse_filter = 2
+
+[node name="Player" parent="." unique_id=1861928323 instance=ExtResource("1_uhqqe")]
+
+[node name="Pickups" type="Node" parent="." unique_id=1321112567]
+
+[node name="Pickup_DirtyGlassBottle" parent="." unique_id=258515556 instance=ExtResource("3_2nij2")]
+position = Vector2(496, 292)
+
+[node name="Pickup_DirtyPlasticBottle" parent="." unique_id=944719853 instance=ExtResource("4_7cbxl")]
+position = Vector2(904, 85)
+
+[node name="Pickup_DirtyTupperware" parent="." unique_id=554186743 instance=ExtResource("5_8pr8v")]
+position = Vector2(-160, 294)
+
+[node name="Stations" type="Node" parent="." unique_id=397432986]
+
+[node name="CleaningStation" parent="." unique_id=1300298490 instance=ExtResource("6_4gito")]
+position = Vector2(1187, 284)
+
+[node name="CookingOilRefill" parent="." unique_id=1249204890 instance=ExtResource("7_fbuy2")]
+position = Vector2(1427, 263)
+
+[node name="DishwashingRefill" parent="." unique_id=1142832881 instance=ExtResource("8_0k8yu")]
+position = Vector2(1674, 276)
+
+[node name="RiceRefill" parent="." unique_id=197138592 instance=ExtResource("9_hiucn")]
+position = Vector2(1913, 282)
+
+[node name="ShopStation" parent="." unique_id=1680326764 instance=ExtResource("10_k6its")]
+position = Vector2(1224, -34)
+
+[node name="SukaRefill" parent="." unique_id=2084422329 instance=ExtResource("11_2dw41")]
+position = Vector2(2158, 282)
+
+[node name="ToyoRefill" parent="." unique_id=1686793062 instance=ExtResource("12_ykxp3")]
+position = Vector2(2417, 286)
+
+[node name="TrashStation" parent="." unique_id=733592169 instance=ExtResource("13_g6y4b")]
+position = Vector2(961, 305)
+dirty_pickups = Array[PackedScene]([ExtResource("5_8pr8v"), ExtResource("3_2nij2"), ExtResource("4_7cbxl")])

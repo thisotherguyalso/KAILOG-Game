@@ -30,21 +30,8 @@ icon_refilled_map = Dictionary[String, Texture2D]({
 "Suka": ExtResource("9_284yv"),
 "Toyo": ExtResource("10_nam6m")
 })
-sprite_bought_map = Dictionary[String, Texture2D]({
-"Cooking Oil": ExtResource("4_3f1rb"),
-"Suka": ExtResource("5_c822b"),
-"Toyo": ExtResource("6_a2iwf")
-})
-sprite_clean = ExtResource("3_xqido")
-sprite_dirty = ExtResource("7_6db20")
-sprite_refilled_map = Dictionary[String, Texture2D]({
-"Cooking Oil": ExtResource("8_5pkmj"),
-"Suka": ExtResource("9_284yv"),
-"Toyo": ExtResource("10_nam6m")
-})
 item_name = "glass_bottle"
 icon = ExtResource("3_xqido")
-sprite = ExtResource("3_xqido")
 metadata/_custom_type_script = "uid://cq05cnjdmwdea"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ku5vk"]
@@ -54,7 +41,7 @@ size = Vector2(192, 192)
 radius = 67.0
 height = 192.0
 
-[node name="ShopStation" unique_id=1300298490 instance=ExtResource("1_d5fem")]
+[node name="ShopStation" unique_id=1300298490 groups=["Station"] instance=ExtResource("1_d5fem")]
 script = ExtResource("2_bvvwf")
 item_for_sale = SubResource("Resource_xqido")
 buy_price = 15.0

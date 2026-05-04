@@ -30,9 +30,8 @@ animations = [{
 }]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1gurw"]
-load_path = "res://.godot/imported/circle_tag.png-c08ff72d81e7038f27c68c1500f20cce.ctex"
 
-[node name="SukaRefill" unique_id=1300298490 instance=ExtResource("1_hmact")]
+[node name="SukaRefill" unique_id=1300298490 groups=["Station"] instance=ExtResource("1_hmact")]
 fill_contents = "Suka"
 required_container_name = "glass_bottle"
 

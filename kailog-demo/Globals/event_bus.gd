@@ -1,5 +1,13 @@
 extends Node
 
+## Inventory
 signal inventory_changed(inventory : Array[Item])
-signal item_removed(slot_index : int)
+signal item_removal_requested(slot_index : int)
 signal item_move_requested(origin_slot_index, slot_index)
+
+## Money
+signal item_refilled(cost: float)
+signal item_sold(cost: float)
+signal money_changed(amount: float)
+signal item_purchase_requested(cost: float, item: Item)
+signal item_bought()

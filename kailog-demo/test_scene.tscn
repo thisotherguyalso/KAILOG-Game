@@ -2,23 +2,228 @@
 
 [ext_resource type="PackedScene" uid="uid://dnu7owqmlf0q4" path="res://UI/inventory_ui.tscn" id="1_ia1lp"]
 [ext_resource type="PackedScene" uid="uid://djbhktkxeugd" path="res://Player/player.tscn" id="1_uhqqe"]
+[ext_resource type="Script" uid="uid://dk4q5v5ffjahw" path="res://money_ui.gd" id="2_7kp7o"]
 [ext_resource type="PackedScene" uid="uid://dso3mgafdk2v0" path="res://Pickups/pickup_dirty_glass_bottle.tscn" id="3_2nij2"]
+[ext_resource type="Texture2D" uid="uid://dhwyuqnivxrj0" path="res://Assets/Items/glass bottle clean.png" id="4_5qgi0"]
 [ext_resource type="PackedScene" uid="uid://doj87k5vv6hlq" path="res://Pickups/pickup_dirty_plastic_bottle.tscn" id="4_7cbxl"]
+[ext_resource type="Texture2D" uid="uid://b7gvj14lck7pu" path="res://Assets/Items/glass bottle oil bought.png" id="5_7kp7o"]
 [ext_resource type="PackedScene" uid="uid://bedkowog44pxi" path="res://Pickups/pickup_dirty_tupperware.tscn" id="5_8pr8v"]
+[ext_resource type="PackedScene" uid="uid://688p861i1tfi" path="res://Stations/cleaning_station.tscn" id="6_4gito"]
+[ext_resource type="Texture2D" uid="uid://w14b2728omkx" path="res://Assets/Items/glass bottle suka bought.png" id="6_8fq6b"]
+[ext_resource type="PackedScene" uid="uid://0ith6mc8winc" path="res://Stations/cooking_oil_refill_station.tscn" id="7_fbuy2"]
+[ext_resource type="Texture2D" uid="uid://f0qtkpti2yjw" path="res://Assets/Items/glass bottle toyo bought.png" id="7_oy8sc"]
+[ext_resource type="PackedScene" uid="uid://dewc78ookudj1" path="res://Stations/dishwashing_refill_station.tscn" id="8_0k8yu"]
+[ext_resource type="Texture2D" uid="uid://bh7s6ueijtq6l" path="res://Assets/Items/glass bottle dirty.png" id="8_2nf64"]
+[ext_resource type="PackedScene" uid="uid://c0su22eradkp2" path="res://Stations/rice_refill_station.tscn" id="9_hiucn"]
+[ext_resource type="Texture2D" uid="uid://civivny72dd6k" path="res://Assets/Items/glass bottle oil.png" id="9_sxsde"]
+[ext_resource type="PackedScene" uid="uid://b378nrs2qcsni" path="res://Stations/shop_station.tscn" id="10_k6its"]
+[ext_resource type="Texture2D" uid="uid://bnkse1taix27b" path="res://Assets/Items/glass bottle suka.png" id="10_r5xgu"]
+[ext_resource type="PackedScene" uid="uid://d1d8bbtsvfpxb" path="res://Stations/suka_refill_station.tscn" id="11_2dw41"]
+[ext_resource type="Texture2D" uid="uid://b4it642kqpl31" path="res://Assets/Items/glass bottle toyo.png" id="11_rygqd"]
+[ext_resource type="Script" uid="uid://cq05cnjdmwdea" path="res://Items/item_container.gd" id="12_8k62k"]
+[ext_resource type="PackedScene" uid="uid://dvjqn8mya81or" path="res://Stations/toyo_refill_station.tscn" id="12_ykxp3"]
+[ext_resource type="PackedScene" uid="uid://b8ckmdt8a8x60" path="res://Stations/trash_station.tscn" id="13_g6y4b"]
+[ext_resource type="Texture2D" uid="uid://dgk0ooffg6sd8" path="res://Assets/Items/plastic bottle clean.png" id="14_akknq"]
+[ext_resource type="Texture2D" uid="uid://snnih0w5wewj" path="res://Assets/Items/plastic bottle dishwashing bought.png" id="15_chy0g"]
+[ext_resource type="Texture2D" uid="uid://cre8qm8w7ao5c" path="res://Assets/Items/plastic bottle dirty.png" id="16_pknf1"]
+[ext_resource type="Texture2D" uid="uid://bed48k4naf1q3" path="res://Assets/Items/plastic bottle dishwashing.png" id="17_b6ixm"]
+[ext_resource type="Texture2D" uid="uid://cpis6ya4s133s" path="res://Assets/Items/tupperware clean.png" id="19_lvjxf"]
+[ext_resource type="Texture2D" uid="uid://dvpy451uh53qm" path="res://Assets/Items/tupperware rice bought.png" id="20_1ufot"]
+[ext_resource type="Texture2D" uid="uid://bjhqe5krrv1b3" path="res://Assets/Items/tupperware dirty.png" id="21_5s0rx"]
+[ext_resource type="Texture2D" uid="uid://dwq6at53ann6s" path="res://Assets/Items/tupperware rice.png" id="22_x7slq"]
+
+[sub_resource type="Resource" id="Resource_goxur"]
+script = ExtResource("12_8k62k")
+state = 2
+icon_bought_map = Dictionary[String, Texture2D]({
+"Cooking Oil": ExtResource("5_7kp7o"),
+"Suka": ExtResource("6_8fq6b"),
+"Toyo": ExtResource("7_oy8sc")
+})
+icon_clean = ExtResource("4_5qgi0")
+icon_dirty = ExtResource("8_2nf64")
+icon_refilled_map = Dictionary[String, Texture2D]({
+"Cooking Oil": ExtResource("9_sxsde"),
+"Suka": ExtResource("10_r5xgu"),
+"Toyo": ExtResource("11_rygqd")
+})
+item_name = "glass_bottle"
+icon = ExtResource("4_5qgi0")
+metadata/_custom_type_script = "uid://cq05cnjdmwdea"
+
+[sub_resource type="Resource" id="Resource_r20rb"]
+script = ExtResource("12_8k62k")
+state = 2
+sell_price_clean = 5.0
+sell_price_dirty = 3.0
+icon_bought_map = Dictionary[String, Texture2D]({
+"Dishwashing Liquid": ExtResource("15_chy0g")
+})
+icon_clean = ExtResource("14_akknq")
+icon_dirty = ExtResource("16_pknf1")
+icon_refilled_map = Dictionary[String, Texture2D]({
+"Dishwashing Liquid": ExtResource("17_b6ixm")
+})
+item_name = "plastic_bottle"
+icon = ExtResource("14_akknq")
+metadata/_custom_type_script = "uid://cq05cnjdmwdea"
+
+[sub_resource type="Resource" id="Resource_tal70"]
+script = ExtResource("12_8k62k")
+state = 2
+icon_bought_map = Dictionary[String, Texture2D]({
+"Bigas": ExtResource("20_1ufot")
+})
+icon_clean = ExtResource("19_lvjxf")
+icon_dirty = ExtResource("21_5s0rx")
+icon_refilled_map = Dictionary[String, Texture2D]({
+"Bigas": ExtResource("22_x7slq")
+})
+item_name = "tupperware"
+icon = ExtResource("19_lvjxf")
+metadata/_custom_type_script = "uid://cq05cnjdmwdea"
+
+[sub_resource type="Resource" id="Resource_5qgi0"]
+script = ExtResource("12_8k62k")
+contents = "Suka"
+icon_bought_map = Dictionary[String, Texture2D]({
+"Cooking Oil": ExtResource("5_7kp7o"),
+"Suka": ExtResource("6_8fq6b"),
+"Toyo": ExtResource("7_oy8sc")
+})
+icon_clean = ExtResource("4_5qgi0")
+icon_dirty = ExtResource("8_2nf64")
+icon_refilled_map = Dictionary[String, Texture2D]({
+"Cooking Oil": ExtResource("9_sxsde"),
+"Suka": ExtResource("10_r5xgu"),
+"Toyo": ExtResource("11_rygqd")
+})
+item_name = "glass_bottle"
+icon = ExtResource("4_5qgi0")
+metadata/_custom_type_script = "uid://cq05cnjdmwdea"
+
+[sub_resource type="Resource" id="Resource_7kp7o"]
+script = ExtResource("12_8k62k")
+state = 2
+icon_bought_map = Dictionary[String, Texture2D]({
+"Bigas": ExtResource("20_1ufot")
+})
+icon_clean = ExtResource("19_lvjxf")
+icon_dirty = ExtResource("21_5s0rx")
+icon_refilled_map = Dictionary[String, Texture2D]({
+"Bigas": ExtResource("22_x7slq")
+})
+item_name = "tupperware"
+icon = ExtResource("19_lvjxf")
+metadata/_custom_type_script = "uid://cq05cnjdmwdea"
+
+[sub_resource type="Resource" id="Resource_8fq6b"]
+script = ExtResource("12_8k62k")
+state = 2
+icon_bought_map = Dictionary[String, Texture2D]({
+"Cooking Oil": ExtResource("5_7kp7o"),
+"Suka": ExtResource("6_8fq6b"),
+"Toyo": ExtResource("7_oy8sc")
+})
+icon_clean = ExtResource("4_5qgi0")
+icon_dirty = ExtResource("8_2nf64")
+icon_refilled_map = Dictionary[String, Texture2D]({
+"Cooking Oil": ExtResource("9_sxsde"),
+"Suka": ExtResource("10_r5xgu"),
+"Toyo": ExtResource("11_rygqd")
+})
+item_name = "glass_bottle"
+icon = ExtResource("4_5qgi0")
+metadata/_custom_type_script = "uid://cq05cnjdmwdea"
+
+[sub_resource type="Resource" id="Resource_oy8sc"]
+script = ExtResource("12_8k62k")
+state = 2
+sell_price_clean = 5.0
+sell_price_dirty = 3.0
+icon_bought_map = Dictionary[String, Texture2D]({
+"Dishwashing Liquid": ExtResource("15_chy0g")
+})
+icon_clean = ExtResource("14_akknq")
+icon_dirty = ExtResource("16_pknf1")
+icon_refilled_map = Dictionary[String, Texture2D]({
+"Dishwashing Liquid": ExtResource("17_b6ixm")
+})
+item_name = "plastic_bottle"
+icon = ExtResource("14_akknq")
+metadata/_custom_type_script = "uid://cq05cnjdmwdea"
 
 [node name="TestScene" type="Node2D" unique_id=129317555]
+y_sort_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=863897339]
 
 [node name="InventoryUI" parent="CanvasLayer" unique_id=67015634 instance=ExtResource("1_ia1lp")]
+mouse_filter = 2
+
+[node name="MoneyUI" type="Control" parent="CanvasLayer" unique_id=652758070]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_7kp7o")
+
+[node name="MoneyText" type="Label" parent="CanvasLayer/MoneyUI" unique_id=848103878]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -125.0
+offset_top = 36.0
+offset_right = -56.0
+offset_bottom = 91.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "100"
 
 [node name="Player" parent="." unique_id=1861928323 instance=ExtResource("1_uhqqe")]
 
+[node name="Pickups" type="Node" parent="." unique_id=1321112567]
+
 [node name="Pickup_DirtyGlassBottle" parent="." unique_id=258515556 instance=ExtResource("3_2nij2")]
 position = Vector2(496, 292)
+item = SubResource("Resource_goxur")
 
 [node name="Pickup_DirtyPlasticBottle" parent="." unique_id=944719853 instance=ExtResource("4_7cbxl")]
 position = Vector2(904, 85)
+item = SubResource("Resource_r20rb")
 
 [node name="Pickup_DirtyTupperware" parent="." unique_id=554186743 instance=ExtResource("5_8pr8v")]
 position = Vector2(-160, 294)
+item = SubResource("Resource_tal70")
+
+[node name="Stations" type="Node" parent="." unique_id=397432986]
+
+[node name="CleaningStation" parent="." unique_id=1300298490 instance=ExtResource("6_4gito")]
+position = Vector2(1187, 284)
+
+[node name="CookingOilRefill" parent="." unique_id=1249204890 instance=ExtResource("7_fbuy2")]
+position = Vector2(1427, 263)
+
+[node name="DishwashingRefill" parent="." unique_id=1142832881 instance=ExtResource("8_0k8yu")]
+position = Vector2(1674, 276)
+
+[node name="RiceRefill" parent="." unique_id=197138592 instance=ExtResource("9_hiucn")]
+position = Vector2(1913, 282)
+
+[node name="SukaRefill" parent="." unique_id=2084422329 instance=ExtResource("11_2dw41")]
+position = Vector2(2158, 282)
+
+[node name="ToyoRefill" parent="." unique_id=1686793062 instance=ExtResource("12_ykxp3")]
+position = Vector2(2417, 286)
+
+[node name="ShopStation" parent="." unique_id=1680326764 instance=ExtResource("10_k6its")]
+position = Vector2(1224, -34)
+item_for_sale = SubResource("Resource_5qgi0")
+
+[node name="TrashStation" parent="." unique_id=733592169 instance=ExtResource("13_g6y4b")]
+position = Vector2(961, 305)
+dirty_pickups = Array[ExtResource("12_8k62k")]([SubResource("Resource_7kp7o"), SubResource("Resource_8fq6b"), SubResource("Resource_oy8sc")])

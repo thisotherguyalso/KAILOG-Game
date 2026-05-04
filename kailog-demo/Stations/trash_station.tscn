@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_snipu"]
 [ext_resource type="Script" uid="uid://wqgq3ty3bsj" path="res://Stations/trash_station.gd" id="2_8s2b4"]
 [ext_resource type="Texture2D" uid="uid://xy38xntksohl" path="res://Assets/Stations/TrashCan.png" id="3_8s2b4"]
-[ext_resource type="PackedScene" uid="uid://o1qk2knmfkoo" path="res://Items/dirty_tupperware_pickup.tscn" id="3_wr83r"]
+[ext_resource type="PackedScene" uid="uid://doj87k5vv6hlq" path="res://Pickups/pickup_dirty_plastic_bottle.tscn" id="3_wr83r"]
 [ext_resource type="AudioStream" uid="uid://83d0mex1chgh" path="res://Sounds/trash.mp3" id="4_gtlbv"]
-[ext_resource type="PackedScene" uid="uid://c3mntyg8syuew" path="res://Items/dirty_glass_bottle_pickup.tscn" id="4_jycj3"]
-[ext_resource type="PackedScene" uid="uid://du6k5kdw37vgo" path="res://Items/dirty_plastic_bottle_pickup.tscn" id="5_xhruq"]
+[ext_resource type="PackedScene" uid="uid://dso3mgafdk2v0" path="res://Pickups/pickup_dirty_glass_bottle.tscn" id="4_jycj3"]
+[ext_resource type="PackedScene" uid="uid://bedkowog44pxi" path="res://Pickups/pickup_dirty_tupperware.tscn" id="5_xhruq"]
 
 [node name="TrashStation" unique_id=1300298490 instance=ExtResource("1_snipu")]
 script = ExtResource("2_8s2b4")

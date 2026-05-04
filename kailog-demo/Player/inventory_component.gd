@@ -8,7 +8,10 @@ var inventory : Array[Item] = [null, null, null, null, null]
 
 func _ready():
 	EventBus.item_move_requested.connect(_on_item_move)
-	EventBus.item_removed.connect(remove_item)
+	EventBus.item_removal_requested.connect(remove_item)
+
+func is_empty():
+	return inventory.has(null)
 
 func add_item(item : Item):
 	inventory[_find_first_slot()] = item

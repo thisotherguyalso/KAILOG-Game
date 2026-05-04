@@ -1,7 +1,26 @@
 [gd_scene format=3 uid="uid://bedkowog44pxi"]
 
 [ext_resource type="PackedScene" uid="uid://bmpp8rqiljegs" path="res://Pickups/pickup.tscn" id="1_3k6w1"]
-[ext_resource type="Resource" uid="uid://cls214sdx0dxj" path="res://Items/tupperware.tres" id="2_xbqpb"]
+[ext_resource type="Texture2D" uid="uid://cpis6ya4s133s" path="res://Assets/Items/tupperware clean.png" id="2_ldccs"]
+[ext_resource type="Texture2D" uid="uid://dvpy451uh53qm" path="res://Assets/Items/tupperware rice bought.png" id="3_pyi36"]
+[ext_resource type="Texture2D" uid="uid://bjhqe5krrv1b3" path="res://Assets/Items/tupperware dirty.png" id="4_142bl"]
+[ext_resource type="Texture2D" uid="uid://dwq6at53ann6s" path="res://Assets/Items/tupperware rice.png" id="5_kwts2"]
+[ext_resource type="Script" uid="uid://cq05cnjdmwdea" path="res://Items/item_container.gd" id="6_378ud"]
+
+[sub_resource type="Resource" id="Resource_wvfmt"]
+script = ExtResource("6_378ud")
+state = 2
+icon_bought_map = Dictionary[String, Texture2D]({
+"Bigas": ExtResource("3_pyi36")
+})
+icon_clean = ExtResource("2_ldccs")
+icon_dirty = ExtResource("4_142bl")
+icon_refilled_map = Dictionary[String, Texture2D]({
+"Bigas": ExtResource("5_kwts2")
+})
+item_name = "tupperware"
+icon = ExtResource("2_ldccs")
+metadata/_custom_type_script = "uid://cq05cnjdmwdea"
 
 [node name="Pickup_DirtyTupperware" unique_id=258515556 instance=ExtResource("1_3k6w1")]
-item = ExtResource("2_xbqpb")
+item = SubResource("Resource_wvfmt")

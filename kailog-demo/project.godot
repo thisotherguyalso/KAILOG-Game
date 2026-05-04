@@ -27,6 +27,7 @@ EventBus="*uid://drlhajd00mg76"
 
 Player="The player instance."
 "Inventory Slot"=""
+Station=""
 
 [input]
 

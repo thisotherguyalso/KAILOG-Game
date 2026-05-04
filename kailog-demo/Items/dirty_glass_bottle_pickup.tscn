@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://c3mntyg8syuew"]
 
-[ext_resource type="PackedScene" uid="uid://brh0vntjhoxje" path="res://Items/pickup_item.tscn" id="1_g001u"]
 [ext_resource type="Texture2D" uid="uid://dhwyuqnivxrj0" path="res://Assets/Items/glass bottle clean.png" id="2_okquk"]
 [ext_resource type="Texture2D" uid="uid://b7gvj14lck7pu" path="res://Assets/Items/glass bottle oil bought.png" id="3_h6vl1"]
 [ext_resource type="Texture2D" uid="uid://w14b2728omkx" path="res://Assets/Items/glass bottle suka bought.png" id="4_unym2"]
@@ -26,22 +25,9 @@ icon_refilled_map = Dictionary[String, Texture2D]({
 "Suka": ExtResource("8_ksly5"),
 "Toyo": ExtResource("9_iwdqd")
 })
-sprite_bought_map = Dictionary[String, Texture2D]({
-"Cooking Oil": ExtResource("3_h6vl1"),
-"Suka": ExtResource("4_unym2"),
-"Toyo": ExtResource("5_thi6b")
-})
-sprite_clean = ExtResource("2_okquk")
-sprite_dirty = ExtResource("6_1mg1y")
-sprite_refilled_map = Dictionary[String, Texture2D]({
-"Cooking Oil": ExtResource("7_ty3ym"),
-"Suka": ExtResource("8_ksly5"),
-"Toyo": ExtResource("9_iwdqd")
-})
 item_name = "glass_bottle"
 icon = ExtResource("2_okquk")
-sprite = ExtResource("2_okquk")
 metadata/_custom_type_script = "uid://cq05cnjdmwdea"
 
-[node name="DirtyGlassBottlePickup" unique_id=234542647 instance=ExtResource("1_g001u")]
+[node name="DirtyGlassBottlePickup" unique_id=234542647]
 item = SubResource("Resource_6qnvt")

@@ -1,7 +1,34 @@
 [gd_scene format=3 uid="uid://dso3mgafdk2v0"]
 
 [ext_resource type="PackedScene" uid="uid://bmpp8rqiljegs" path="res://Pickups/pickup.tscn" id="1_x8057"]
-[ext_resource type="Resource" uid="uid://b1nc8r44bf771" path="res://Items/glass_bottle.tres" id="2_4iard"]
+[ext_resource type="Texture2D" uid="uid://dhwyuqnivxrj0" path="res://Assets/Items/glass bottle clean.png" id="2_8snlg"]
+[ext_resource type="Texture2D" uid="uid://b7gvj14lck7pu" path="res://Assets/Items/glass bottle oil bought.png" id="3_wjfbt"]
+[ext_resource type="Texture2D" uid="uid://w14b2728omkx" path="res://Assets/Items/glass bottle suka bought.png" id="4_hmqhw"]
+[ext_resource type="Texture2D" uid="uid://f0qtkpti2yjw" path="res://Assets/Items/glass bottle toyo bought.png" id="5_pw5ri"]
+[ext_resource type="Texture2D" uid="uid://bh7s6ueijtq6l" path="res://Assets/Items/glass bottle dirty.png" id="6_u2sjv"]
+[ext_resource type="Texture2D" uid="uid://civivny72dd6k" path="res://Assets/Items/glass bottle oil.png" id="7_80tnb"]
+[ext_resource type="Texture2D" uid="uid://bnkse1taix27b" path="res://Assets/Items/glass bottle suka.png" id="8_lr46l"]
+[ext_resource type="Texture2D" uid="uid://b4it642kqpl31" path="res://Assets/Items/glass bottle toyo.png" id="9_011xq"]
+[ext_resource type="Script" uid="uid://cq05cnjdmwdea" path="res://Items/item_container.gd" id="10_fqo71"]
+
+[sub_resource type="Resource" id="Resource_fdoug"]
+script = ExtResource("10_fqo71")
+state = 2
+icon_bought_map = Dictionary[String, Texture2D]({
+"Cooking Oil": ExtResource("3_wjfbt"),
+"Suka": ExtResource("4_hmqhw"),
+"Toyo": ExtResource("5_pw5ri")
+})
+icon_clean = ExtResource("2_8snlg")
+icon_dirty = ExtResource("6_u2sjv")
+icon_refilled_map = Dictionary[String, Texture2D]({
+"Cooking Oil": ExtResource("7_80tnb"),
+"Suka": ExtResource("8_lr46l"),
+"Toyo": ExtResource("9_011xq")
+})
+item_name = "glass_bottle"
+icon = ExtResource("2_8snlg")
+metadata/_custom_type_script = "uid://cq05cnjdmwdea"
 
 [node name="Pickup_DirtyGlassBottle" unique_id=258515556 instance=ExtResource("1_x8057")]
-item = ExtResource("2_4iard")
+item = SubResource("Resource_fdoug")

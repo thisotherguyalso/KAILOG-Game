@@ -2,24 +2,31 @@
 class_name MoneyComponent
 extends Node
 
-signal money_changed(new_amount: float)
-
 @export var starting_money: float = 100.0
 
 var amount: float = 0.0
 
 func _ready() -> void:
 	amount = starting_money
+	EventBus.item_refilled.connect(deduct)
+	EventBus.item_sold.connect(add)
+	EventBus.item_purchase_requested.connect(_on_purchase_requested)
+
+func _on_purchase_requested(cost: float) -> void:
+	if not can_afford(cost):
+		return
+	deduct(cost)
+	EventBus.item_bought.emit()
 
 func add(value: float) -> void:
 	amount += value
-	money_changed.emit(amount)
+	EventBus.money_changed.emit(amount)
 
 func deduct(value: float) -> bool:
 	if amount < value:
 		return false
 	amount -= value
-	money_changed.emit(amount)
+	EventBus.money_changed.emit(amount)
 	return true
 
 func can_afford(value: float) -> bool:
@@ -27,4 +34,4 @@ func can_afford(value: float) -> bool:
 
 func reset() -> void:
 	amount = starting_money
-	money_changed.emit(amount)
+	EventBus.money_changed.emit(amount)

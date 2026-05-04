@@ -9,6 +9,7 @@ func _ready():
 
 func _on_body_entered(body):
 	if body is Player:
-		print("woah")
+		if not body.inventory.is_empty():
+			return
 		body.inventory.add_item(item)
 		self.queue_free()

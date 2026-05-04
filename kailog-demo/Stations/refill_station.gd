@@ -11,7 +11,6 @@ extends Station
 
 var _is_busy := false
 
-
 func can_receive(item: Item) -> bool:
 	if _is_busy:
 		return false
@@ -25,13 +24,11 @@ func can_receive(item: Item) -> bool:
 		return false
 	return true
 
-
 func receive_item(item: Item) -> void:
-	player.money.deduct(refill_price)
-
 	_is_busy = true
 	var container := item as ItemContainer
 	
+	EventBus.item_refilled.emit(refill_price)
 	$PouringSFX.play()
 	$AnimatedSprite2D.play("refilling")
 
@@ -45,10 +42,3 @@ func receive_item(item: Item) -> void:
 	_spawn_pickup(container)
 	_is_busy = false
 	item_processed.emit(container)
-
-
-func _spawn_pickup(item: Item) -> void:
-	var pickup := preload("res://Items/pickup_item.tscn").instantiate()
-	pickup.item = item
-	pickup.global_position = global_position + Vector2(randi_range(-100, 100), 100)
-	get_parent().add_child(pickup)

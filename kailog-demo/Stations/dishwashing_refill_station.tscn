@@ -33,9 +33,8 @@ animations = [{
 }]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1gurw"]
-load_path = "res://.godot/imported/circle_tag.png-c08ff72d81e7038f27c68c1500f20cce.ctex"
 
-[node name="DishwashingRefill" unique_id=1300298490 instance=ExtResource("1_urh61")]
+[node name="DishwashingRefill" unique_id=1300298490 groups=["Station"] instance=ExtResource("1_urh61")]
 script = ExtResource("2_q5n7t")
 fill_contents = "Dishwashing Liquid"
 required_container_name = "plastic_bottle"

@@ -10,7 +10,21 @@ size = Vector2(128, 128)
 radius = 19.0
 height = 128.0
 
-[node name="Station" type="Area2D" unique_id=1300298490]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5jkxk"]
+bg_color = Color(0.17347693, 0.16928947, 0.15678808, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0k6ow"]
+bg_color = Color(0.48702353, 0.6669364, 0.23527348, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Station" type="Area2D" unique_id=1300298490 groups=["Station"]]
 collision_layer = 8
 collision_mask = 4
 script = ExtResource("1_ajrjd")
@@ -30,3 +44,14 @@ position = Vector2(0, 45)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_5jkxk")
 debug_color = Color(0.19791797, 0.6415829, 0, 0.41960785)
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=575793761]
+visible = false
+offset_left = -104.0
+offset_top = 71.0
+offset_right = 104.0
+offset_bottom = 98.0
+theme_override_styles/background = SubResource("StyleBoxFlat_5jkxk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0k6ow")
+value = 14.43
+show_percentage = false

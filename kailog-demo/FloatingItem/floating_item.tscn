@@ -6,9 +6,14 @@
 radius = 80.0
 
 [node name="FloatingItem" type="Area2D" unique_id=1402307360]
+collision_layer = 0
+collision_mask = 8
 script = ExtResource("1_8frwa")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2005357338]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1810602279]
 shape = SubResource("CircleShape2D_sweiw")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
