@@ -19,8 +19,17 @@ func can_receive(item: Item) -> bool:
 func receive_item(item: Item) -> void:
 	var price := _get_sell_price(item)
 	EventBus.item_sold.emit(price)
+	EventBus.points_changed.emit(check_points(item))
 	$MoneySFX.play(0.50)
 	# TODO: show floating "+$X" feedback.
+
+func check_points(item: Item) -> int:
+	var container := item as ItemContainer
+	if container.state == container.ContainerState.DIRTY:
+		return -1
+	elif container.state == container.ContainerState.CLEAN:
+		return -3
+	return 0
 
 # ── Buying (click) ───────────────────────────────────────────────────────────
 
@@ -36,4 +45,5 @@ func interact() -> void:
 	EventBus.item_purchase_requested.emit(buy_price)
 
 func _on_item_bought():
+	
 	_spawn_pickup(item_for_sale)

@@ -5,15 +5,20 @@ extends Station
 @export var dirty_pickups : Array[ItemContainer]
 
 func can_receive(_item: Item) -> bool:
-	
 	return true
-
 
 func receive_item(_item: Item) -> void:
 	$TrashSFX.play(0.74)
+	EventBus.points_changed.emit(check_points(_item))
 	# TODO: play destruction particles
-	pass  # Pickup already freed by base class.
 
+func check_points(item: Item) -> int:
+	var container := item as ItemContainer
+	if container.state == container.ContainerState.DIRTY:
+		return -2
+	elif container.state != container.ContainerState.CLEAN:
+		return 1
+	return 0
 
 # ── Getting stuff (click) ───────────────────────────────────────────────────────────
 

@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://djoreradn574t"]
 
+[ext_resource type="Script" uid="uid://xdb8r0rbno84" path="res://Player/money_component.gd" id="1_8fq6b"]
 [ext_resource type="PackedScene" uid="uid://dnu7owqmlf0q4" path="res://UI/inventory_ui.tscn" id="1_ia1lp"]
 [ext_resource type="PackedScene" uid="uid://djbhktkxeugd" path="res://Player/player.tscn" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://dk4q5v5ffjahw" path="res://money_ui.gd" id="2_7kp7o"]
+[ext_resource type="Script" uid="uid://vqpown3x2nmd" path="res://points_component.gd" id="2_oy8sc"]
 [ext_resource type="PackedScene" uid="uid://dso3mgafdk2v0" path="res://Pickups/pickup_dirty_glass_bottle.tscn" id="3_2nij2"]
 [ext_resource type="Texture2D" uid="uid://dhwyuqnivxrj0" path="res://Assets/Items/glass bottle clean.png" id="4_5qgi0"]
 [ext_resource type="PackedScene" uid="uid://doj87k5vv6hlq" path="res://Pickups/pickup_dirty_plastic_bottle.tscn" id="4_7cbxl"]
+[ext_resource type="Script" uid="uid://di64p5phgnj43" path="res://flood_meter_ui.gd" id="5_2nf64"]
 [ext_resource type="Texture2D" uid="uid://b7gvj14lck7pu" path="res://Assets/Items/glass bottle oil bought.png" id="5_7kp7o"]
 [ext_resource type="PackedScene" uid="uid://bedkowog44pxi" path="res://Pickups/pickup_dirty_tupperware.tscn" id="5_8pr8v"]
 [ext_resource type="PackedScene" uid="uid://688p861i1tfi" path="res://Stations/cleaning_station.tscn" id="6_4gito"]
@@ -156,23 +159,20 @@ metadata/_custom_type_script = "uid://cq05cnjdmwdea"
 [node name="TestScene" type="Node2D" unique_id=129317555]
 y_sort_enabled = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=863897339]
+[node name="GameManager" type="Node" parent="." unique_id=2012746634]
 
-[node name="InventoryUI" parent="CanvasLayer" unique_id=67015634 instance=ExtResource("1_ia1lp")]
+[node name="MoneyComponent" type="Node" parent="GameManager" unique_id=1971624313]
+script = ExtResource("1_8fq6b")
+
+[node name="PointsComponent" type="Node" parent="GameManager" unique_id=666897618]
+script = ExtResource("2_oy8sc")
+
+[node name="PlayerUICanvas" type="CanvasLayer" parent="." unique_id=863897339]
+
+[node name="InventoryUI" parent="PlayerUICanvas" unique_id=67015634 instance=ExtResource("1_ia1lp")]
 mouse_filter = 2
 
-[node name="MoneyUI" type="Control" parent="CanvasLayer" unique_id=652758070]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("2_7kp7o")
-
-[node name="MoneyText" type="Label" parent="CanvasLayer/MoneyUI" unique_id=848103878]
-layout_mode = 1
+[node name="MoneyUI" type="Label" parent="PlayerUICanvas" unique_id=848103878]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -183,6 +183,16 @@ offset_bottom = 91.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 40
 text = "100"
+script = ExtResource("2_7kp7o")
+
+[node name="FloodMeterUI" type="ProgressBar" parent="PlayerUICanvas" unique_id=124495635]
+offset_left = 72.0
+offset_top = 223.0
+offset_right = 248.30081
+offset_bottom = 309.9749
+rotation = -1.5707964
+show_percentage = false
+script = ExtResource("5_2nf64")
 
 [node name="Player" parent="." unique_id=1861928323 instance=ExtResource("1_uhqqe")]
 

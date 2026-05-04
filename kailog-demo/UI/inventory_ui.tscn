@@ -2,6 +2,18 @@
 
 [ext_resource type="Script" uid="uid://ci63sd7yf4avd" path="res://UI/inventory_ui.gd" id="1_l6l0t"]
 [ext_resource type="Script" uid="uid://d02jojpjak33d" path="res://UI/inventory_slot.gd" id="2_dk10o"]
+[ext_resource type="Texture2D" uid="uid://bpy77fiybtxqo" path="res://Assets/UI/inventory_bag_back.png" id="2_t6nog"]
+[ext_resource type="Texture2D" uid="uid://0edh3ou8gguq" path="res://Assets/UI/inventory_bag_front.png" id="4_6128g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t6nog"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6128g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7o5sx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jn8i4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nygdy"]
 
 [node name="InventoryUI" type="Control" unique_id=67015634]
 layout_mode = 3
@@ -12,6 +24,24 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l6l0t")
 
+[node name="Bag_Back" type="TextureRect" parent="." unique_id=1397476576]
+texture_filter = 1
+custom_minimum_size = Vector2(224, 32)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -456.0
+offset_top = -128.0
+offset_right = -232.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(4, 4)
+texture = ExtResource("2_t6nog")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=295920896]
 layout_mode = 1
 anchors_preset = 7
@@ -19,15 +49,17 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
+offset_left = -328.0
+offset_top = -128.0
+offset_right = 328.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/separation = 0
 
 [node name="InventorySlot1" type="Panel" parent="HBoxContainer" unique_id=1871777277 groups=["Inventory Slot"]]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_t6nog")
 script = ExtResource("2_dk10o")
 
 [node name="Icon" type="Sprite2D" parent="HBoxContainer/InventorySlot1" unique_id=1859035815]
@@ -36,6 +68,7 @@ offset = Vector2(64, 64)
 [node name="InventorySlot2" type="Panel" parent="HBoxContainer" unique_id=276891342 groups=["Inventory Slot"]]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6128g")
 script = ExtResource("2_dk10o")
 slot_index = 1
 
@@ -45,6 +78,7 @@ offset = Vector2(64, 64)
 [node name="InventorySlot3" type="Panel" parent="HBoxContainer" unique_id=6697479 groups=["Inventory Slot"]]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7o5sx")
 script = ExtResource("2_dk10o")
 slot_index = 2
 
@@ -54,6 +88,7 @@ offset = Vector2(64, 64)
 [node name="InventorySlot4" type="Panel" parent="HBoxContainer" unique_id=1799704531 groups=["Inventory Slot"]]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jn8i4")
 script = ExtResource("2_dk10o")
 slot_index = 3
 
@@ -63,8 +98,28 @@ offset = Vector2(64, 64)
 [node name="InventorySlot5" type="Panel" parent="HBoxContainer" unique_id=1955135522 groups=["Inventory Slot"]]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nygdy")
 script = ExtResource("2_dk10o")
 slot_index = 4
 
 [node name="Icon" type="Sprite2D" parent="HBoxContainer/InventorySlot5" unique_id=443197663]
 offset = Vector2(64, 64)
+
+[node name="Bag_Front" type="TextureRect" parent="." unique_id=2118825546]
+texture_filter = 1
+custom_minimum_size = Vector2(224, 32)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -456.0
+offset_top = -128.0
+offset_right = -232.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(4, 4)
+mouse_filter = 2
+texture = ExtResource("4_6128g")

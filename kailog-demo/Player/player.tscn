@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://dfju0tl5ha7qc" path="res://Player/movement_component.gd" id="4_gwnis"]
 [ext_resource type="Script" uid="uid://ca8wbfsruak5y" path="res://Player/inventory_component.gd" id="5_k53q1"]
 [ext_resource type="AudioStream" uid="uid://bcfnekkb7s3bs" path="res://Sounds/pickup.mp3" id="5_od3ui"]
-[ext_resource type="Script" uid="uid://xdb8r0rbno84" path="res://Player/money_component.gd" id="6_fhl08"]
 [ext_resource type="Script" uid="uid://dwnfd4bshbiau" path="res://Player/audio_component.gd" id="6_od3ui"]
 [ext_resource type="AudioStream" uid="uid://cil7ybifqbc8a" path="res://Sounds/walking.mp3" id="7_vtle1"]
 
@@ -160,9 +159,6 @@ script = ExtResource("4_gwnis")
 
 [node name="InventoryComponent" type="Node" parent="." unique_id=1940238054]
 script = ExtResource("5_k53q1")
-
-[node name="MoneyComponent" type="Node" parent="." unique_id=161918027]
-script = ExtResource("6_fhl08")
 
 [node name="AudioComponent" type="Node" parent="." unique_id=2009633941]
 script = ExtResource("6_od3ui")

@@ -11,3 +11,7 @@ signal item_sold(cost: float)
 signal money_changed(amount: float)
 signal item_purchase_requested(cost: float, item: Item)
 signal item_bought()
+
+## Points
+signal points_changed(amount: int)
+signal flood_meter_changed(points: int)
