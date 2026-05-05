@@ -1,7 +1,8 @@
 class_name PointsComponent
 extends Node
 
-var points: int = 10
+var maximum : int = 100
+var points: int = maximum/2
 
 func _ready() -> void:
 	EventBus.points_changed.connect(_on_points_changed)

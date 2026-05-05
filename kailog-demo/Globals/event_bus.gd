@@ -15,3 +15,4 @@ signal item_bought()
 ## Points
 signal points_changed(amount: int)
 signal flood_meter_changed(points: int)
+signal add_log_entry(log_entry: LogEntry)

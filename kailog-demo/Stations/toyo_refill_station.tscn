@@ -31,9 +31,9 @@ animations = [{
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1gurw"]
 
-[node name="ToyoRefill" unique_id=1300298490 groups=["Station"] instance=ExtResource("1_3n7tc")]
+[node name="ToyoRefill" unique_id=1300298490 instance=ExtResource("1_3n7tc")]
 fill_contents = "Toyo"
-required_container_name = "glass_bottle"
+required_container_name = "Glass Bottle"
 
 [node name="Label" parent="." index="2" unique_id=1265903786]
 visible = false

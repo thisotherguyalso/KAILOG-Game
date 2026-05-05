@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dk4q5v5ffjahw" path="res://money_ui.gd" id="2_7kp7o"]
 [ext_resource type="Script" uid="uid://vqpown3x2nmd" path="res://points_component.gd" id="2_oy8sc"]
 [ext_resource type="PackedScene" uid="uid://dso3mgafdk2v0" path="res://Pickups/pickup_dirty_glass_bottle.tscn" id="3_2nij2"]
+[ext_resource type="Script" uid="uid://bgddhomjf8guf" path="res://log_component.gd" id="3_sxsde"]
 [ext_resource type="Texture2D" uid="uid://dhwyuqnivxrj0" path="res://Assets/Items/glass bottle clean.png" id="4_5qgi0"]
 [ext_resource type="PackedScene" uid="uid://doj87k5vv6hlq" path="res://Pickups/pickup_dirty_plastic_bottle.tscn" id="4_7cbxl"]
 [ext_resource type="Script" uid="uid://di64p5phgnj43" path="res://flood_meter_ui.gd" id="5_2nf64"]
@@ -50,7 +51,7 @@ icon_refilled_map = Dictionary[String, Texture2D]({
 "Suka": ExtResource("10_r5xgu"),
 "Toyo": ExtResource("11_rygqd")
 })
-item_name = "glass_bottle"
+item_name = "Glass Bottle"
 icon = ExtResource("4_5qgi0")
 metadata/_custom_type_script = "uid://cq05cnjdmwdea"
 
@@ -67,7 +68,7 @@ icon_dirty = ExtResource("16_pknf1")
 icon_refilled_map = Dictionary[String, Texture2D]({
 "Dishwashing Liquid": ExtResource("17_b6ixm")
 })
-item_name = "plastic_bottle"
+item_name = "Plastic Bottle"
 icon = ExtResource("14_akknq")
 metadata/_custom_type_script = "uid://cq05cnjdmwdea"
 
@@ -82,7 +83,7 @@ icon_dirty = ExtResource("21_5s0rx")
 icon_refilled_map = Dictionary[String, Texture2D]({
 "Bigas": ExtResource("22_x7slq")
 })
-item_name = "tupperware"
+item_name = "Tupperware"
 icon = ExtResource("19_lvjxf")
 metadata/_custom_type_script = "uid://cq05cnjdmwdea"
 
@@ -167,6 +168,9 @@ script = ExtResource("1_8fq6b")
 [node name="PointsComponent" type="Node" parent="GameManager" unique_id=666897618]
 script = ExtResource("2_oy8sc")
 
+[node name="LogComponent" type="Node" parent="GameManager" unique_id=1997887250]
+script = ExtResource("3_sxsde")
+
 [node name="PlayerUICanvas" type="CanvasLayer" parent="." unique_id=863897339]
 
 [node name="InventoryUI" parent="PlayerUICanvas" unique_id=67015634 instance=ExtResource("1_ia1lp")]
@@ -233,7 +237,10 @@ position = Vector2(2417, 286)
 [node name="ShopStation" parent="." unique_id=1680326764 instance=ExtResource("10_k6its")]
 position = Vector2(1224, -34)
 item_for_sale = SubResource("Resource_5qgi0")
+points_sold = -10
+points_bought = 25
 
 [node name="TrashStation" parent="." unique_id=733592169 instance=ExtResource("13_g6y4b")]
 position = Vector2(961, 305)
 dirty_pickups = Array[ExtResource("12_8k62k")]([SubResource("Resource_7kp7o"), SubResource("Resource_8fq6b"), SubResource("Resource_oy8sc")])
+wait_time = 1.0

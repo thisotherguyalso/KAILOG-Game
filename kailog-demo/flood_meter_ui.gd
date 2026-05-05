@@ -1,6 +1,6 @@
 extends ProgressBar
 
-@export var maximum : int = 20
+@export var maximum : int = 100
 
 func _ready() -> void:
 	max_value = maximum

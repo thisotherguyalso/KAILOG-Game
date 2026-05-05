@@ -19,6 +19,6 @@ icon_dirty = ExtResource("2_p261g")
 icon_refilled_map = Dictionary[String, Texture2D]({
 "Dishwashing Liquid": ExtResource("4_3dw7i")
 })
-item_name = "plastic_bottle"
+item_name = "Plastic Bottle"
 icon = ExtResource("1_ew4cb")
 metadata/_custom_type_script = "uid://cq05cnjdmwdea"

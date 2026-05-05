@@ -25,19 +25,6 @@ icon_refilled_map = Dictionary[String, Texture2D]({
 "Suka": ExtResource("6_vjtkr"),
 "Toyo": ExtResource("5_1m1y6")
 })
-sprite_bought_map = Dictionary[String, Texture2D]({
-"Cooking Oil": ExtResource("4_1gr7q"),
-"Suka": ExtResource("3_ffjk4"),
-"Toyo": ExtResource("2_viow8")
-})
-sprite_clean = ExtResource("1_f705m")
-sprite_dirty = ExtResource("5_viow8")
-sprite_refilled_map = Dictionary[String, Texture2D]({
-"Cooking Oil": ExtResource("7_td4ys"),
-"Suka": ExtResource("6_vjtkr"),
-"Toyo": ExtResource("5_1m1y6")
-})
-item_name = "glass_bottle"
+item_name = "Glass Bottle"
 icon = ExtResource("1_f705m")
-sprite = ExtResource("1_f705m")
 metadata/_custom_type_script = "uid://cq05cnjdmwdea"

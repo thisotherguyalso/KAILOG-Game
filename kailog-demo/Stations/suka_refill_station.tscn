@@ -31,9 +31,9 @@ animations = [{
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1gurw"]
 
-[node name="SukaRefill" unique_id=1300298490 groups=["Station"] instance=ExtResource("1_hmact")]
+[node name="SukaRefill" unique_id=1300298490 instance=ExtResource("1_hmact")]
 fill_contents = "Suka"
-required_container_name = "glass_bottle"
+required_container_name = "Glass Bottle"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="5" unique_id=467712087]
 texture_filter = 1

@@ -34,10 +34,10 @@ animations = [{
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1gurw"]
 
-[node name="DishwashingRefill" unique_id=1300298490 groups=["Station"] instance=ExtResource("1_urh61")]
+[node name="DishwashingRefill" unique_id=1300298490 instance=ExtResource("1_urh61")]
 script = ExtResource("2_q5n7t")
 fill_contents = "Dishwashing Liquid"
-required_container_name = "plastic_bottle"
+required_container_name = "Plastic Bottle"
 refill_duration = 2.0
 refill_price = 5.0
 

@@ -3,6 +3,9 @@ class_name TrashStation
 extends Station
 
 @export var dirty_pickups : Array[ItemContainer]
+@export var wait_time: float = 1.0
+
+var _is_busy = false
 
 func can_receive(_item: Item) -> bool:
 	return true
@@ -23,17 +26,21 @@ func check_points(item: Item) -> int:
 # ── Getting stuff (click) ───────────────────────────────────────────────────────────
 
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
+	if _is_busy:
+		return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		interact()
 	elif event is InputEventScreenTouch and event.pressed:
 		interact()
 
 func interact() -> void:
+	_is_busy = true
 	$TrashSFX.play(0.0)
+	_show_progress(wait_time)
+	await get_tree().create_timer(wait_time).timeout
+	_hide_progress()
 	_spawn_pickup(dirty_pickups.pick_random())
-	_tween_scale(HOVER_SCALE)
-	await get_tree().create_timer(0.1).timeout
-	_tween_scale(NORMAL_SCALE)
+	_is_busy = false
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
 

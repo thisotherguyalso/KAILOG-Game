@@ -34,10 +34,10 @@ animations = [{
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1gurw"]
 
-[node name="CookingOilRefill" unique_id=1300298490 groups=["Station"] instance=ExtResource("1_0a2gd")]
+[node name="CookingOilRefill" unique_id=1300298490 instance=ExtResource("1_0a2gd")]
 script = ExtResource("2_g0qco")
 fill_contents = "Cooking Oil"
-required_container_name = "glass_bottle"
+required_container_name = "Glass Bottle"
 refill_duration = 2.0
 refill_price = 5.0
 

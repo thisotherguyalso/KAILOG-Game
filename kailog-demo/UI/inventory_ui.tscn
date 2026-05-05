@@ -63,6 +63,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_t6nog")
 script = ExtResource("2_dk10o")
 
 [node name="Icon" type="Sprite2D" parent="HBoxContainer/InventorySlot1" unique_id=1859035815]
+position = Vector2(0, -24)
 offset = Vector2(64, 64)
 
 [node name="InventorySlot2" type="Panel" parent="HBoxContainer" unique_id=276891342 groups=["Inventory Slot"]]
@@ -73,6 +74,7 @@ script = ExtResource("2_dk10o")
 slot_index = 1
 
 [node name="Icon" type="Sprite2D" parent="HBoxContainer/InventorySlot2" unique_id=2109328642]
+position = Vector2(0, -24)
 offset = Vector2(64, 64)
 
 [node name="InventorySlot3" type="Panel" parent="HBoxContainer" unique_id=6697479 groups=["Inventory Slot"]]
@@ -83,6 +85,7 @@ script = ExtResource("2_dk10o")
 slot_index = 2
 
 [node name="Icon" type="Sprite2D" parent="HBoxContainer/InventorySlot3" unique_id=370278495]
+position = Vector2(0, -24)
 offset = Vector2(64, 64)
 
 [node name="InventorySlot4" type="Panel" parent="HBoxContainer" unique_id=1799704531 groups=["Inventory Slot"]]
@@ -93,6 +96,7 @@ script = ExtResource("2_dk10o")
 slot_index = 3
 
 [node name="Icon" type="Sprite2D" parent="HBoxContainer/InventorySlot4" unique_id=901757747]
+position = Vector2(0, -24)
 offset = Vector2(64, 64)
 
 [node name="InventorySlot5" type="Panel" parent="HBoxContainer" unique_id=1955135522 groups=["Inventory Slot"]]
@@ -103,6 +107,7 @@ script = ExtResource("2_dk10o")
 slot_index = 4
 
 [node name="Icon" type="Sprite2D" parent="HBoxContainer/InventorySlot5" unique_id=443197663]
+position = Vector2(0, -24)
 offset = Vector2(64, 64)
 
 [node name="Bag_Front" type="TextureRect" parent="." unique_id=2118825546]
