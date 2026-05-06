@@ -23,6 +23,10 @@ config/icon="res://Assets/icon.svg"
 
 EventBus="*uid://drlhajd00mg76"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [global_group]
 
 Player="The player instance."

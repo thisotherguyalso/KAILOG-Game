@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bpmjjcr8561l7"]
+
+[ext_resource type="Script" uid="uid://duoeqwphqi6do" path="res://grocery_list_ui.gd" id="1_yc7ko"]
+[ext_resource type="PackedScene" uid="uid://bwejh4dtxn2tf" path="res://UI/grocery_entry_ui.tscn" id="2_lx8tb"]
+
+[node name="GroceryListUI" type="Button" unique_id=2013998030]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -452.0
+offset_top = 100.0
+offset_right = -52.0
+offset_bottom = 500.0
+grow_horizontal = 0
+pivot_offset = Vector2(400, 0)
+script = ExtResource("1_yc7ko")
+
+[node name="VFlowContainer" type="VFlowContainer" parent="." unique_id=1716248768]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -169.25
+offset_right = 165.0
+offset_bottom = 169.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 12
+
+[node name="GroceryEntry1" parent="VFlowContainer" unique_id=520736048 instance=ExtResource("2_lx8tb")]
+layout_mode = 2
+
+[node name="GroceryEntry2" parent="VFlowContainer" unique_id=656213234 instance=ExtResource("2_lx8tb")]
+layout_mode = 2
+
+[node name="GroceryEntry3" parent="VFlowContainer" unique_id=1748673757 instance=ExtResource("2_lx8tb")]
+layout_mode = 2
+
+[node name="GroceryEntry4" parent="VFlowContainer" unique_id=790672990 instance=ExtResource("2_lx8tb")]
+layout_mode = 2
+
+[node name="GroceryEntry5" parent="VFlowContainer" unique_id=392389399 instance=ExtResource("2_lx8tb")]
+layout_mode = 2
+
+[node name="GroceryEntry6" parent="VFlowContainer" unique_id=503674036 instance=ExtResource("2_lx8tb")]
+layout_mode = 2
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

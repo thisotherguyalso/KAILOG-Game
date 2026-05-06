@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bhei0l2lswatw"]
+
+[ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_jdyuv"]
+[ext_resource type="Script" uid="uid://csoxlnffae0gv" path="res://Stations/house_station.gd" id="2_vqtvr"]
+[ext_resource type="Script" uid="uid://yg8s3x6dm10j" path="res://Misc/grocery_entry.gd" id="3_l7o6p"]
+
+[sub_resource type="Resource" id="Resource_l7o6p"]
+script = ExtResource("3_l7o6p")
+metadata/_custom_type_script = "uid://yg8s3x6dm10j"
+
+[node name="HouseStation" unique_id=1300298490 instance=ExtResource("1_jdyuv")]
+script = ExtResource("2_vqtvr")
+grocery_list = Array[ExtResource("3_l7o6p")]([SubResource("Resource_l7o6p")])
+points_refilled = -4
+points_bought = 2

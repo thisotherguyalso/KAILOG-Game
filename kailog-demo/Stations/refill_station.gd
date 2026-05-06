@@ -21,6 +21,7 @@ func can_receive(item: Item) -> bool:
 		return false
 	if (required_container_name != ""
 			and container.item_name != required_container_name):
+		print(container.item_name)
 		return false
 	return true
 

@@ -16,3 +16,6 @@ signal item_bought()
 signal points_changed(amount: int)
 signal flood_meter_changed(points: int)
 signal add_log_entry(log_entry: LogEntry)
+
+## Grocery List
+signal grocery_list_updated(grocery_list : Array[GroceryEntry])

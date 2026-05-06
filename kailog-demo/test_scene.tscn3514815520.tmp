@@ -14,8 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://bedkowog44pxi" path="res://Pickups/pickup_dirty_tupperware.tscn" id="5_8pr8v"]
 [ext_resource type="PackedScene" uid="uid://688p861i1tfi" path="res://Stations/cleaning_station.tscn" id="6_4gito"]
 [ext_resource type="Texture2D" uid="uid://w14b2728omkx" path="res://Assets/Items/glass bottle suka bought.png" id="6_8fq6b"]
-[ext_resource type="PackedScene" uid="uid://bpmjjcr8561l7" path="res://UI/grocery_list_ui.tscn" id="7_8k62k"]
-[ext_resource type="Script" uid="uid://bttyxyat6461" path="res://grocery_button_ui.gd" id="7_akknq"]
 [ext_resource type="PackedScene" uid="uid://0ith6mc8winc" path="res://Stations/cooking_oil_refill_station.tscn" id="7_fbuy2"]
 [ext_resource type="Texture2D" uid="uid://f0qtkpti2yjw" path="res://Assets/Items/glass bottle toyo bought.png" id="7_oy8sc"]
 [ext_resource type="PackedScene" uid="uid://dewc78ookudj1" path="res://Stations/dishwashing_refill_station.tscn" id="8_0k8yu"]
@@ -110,7 +108,7 @@ item_name = "glass_bottle"
 icon = ExtResource("4_5qgi0")
 metadata/_custom_type_script = "uid://cq05cnjdmwdea"
 
-[sub_resource type="Resource" id="Resource_chy0g"]
+[sub_resource type="Resource" id="Resource_7kp7o"]
 script = ExtResource("12_8k62k")
 state = 2
 icon_bought_map = Dictionary[String, Texture2D]({
@@ -121,28 +119,11 @@ icon_dirty = ExtResource("21_5s0rx")
 icon_refilled_map = Dictionary[String, Texture2D]({
 "Bigas": ExtResource("22_x7slq")
 })
-item_name = "Tupperware"
+item_name = "tupperware"
 icon = ExtResource("19_lvjxf")
 metadata/_custom_type_script = "uid://cq05cnjdmwdea"
 
-[sub_resource type="Resource" id="Resource_pknf1"]
-script = ExtResource("12_8k62k")
-state = 2
-sell_price_clean = 5.0
-sell_price_dirty = 3.0
-icon_bought_map = Dictionary[String, Texture2D]({
-"Dishwashing Liquid": ExtResource("15_chy0g")
-})
-icon_clean = ExtResource("14_akknq")
-icon_dirty = ExtResource("16_pknf1")
-icon_refilled_map = Dictionary[String, Texture2D]({
-"Dishwashing Liquid": ExtResource("17_b6ixm")
-})
-item_name = "Plastic Bottle"
-icon = ExtResource("14_akknq")
-metadata/_custom_type_script = "uid://cq05cnjdmwdea"
-
-[sub_resource type="Resource" id="Resource_b6ixm"]
+[sub_resource type="Resource" id="Resource_8fq6b"]
 script = ExtResource("12_8k62k")
 state = 2
 icon_bought_map = Dictionary[String, Texture2D]({
@@ -157,19 +138,34 @@ icon_refilled_map = Dictionary[String, Texture2D]({
 "Suka": ExtResource("10_r5xgu"),
 "Toyo": ExtResource("11_rygqd")
 })
-item_name = "Glass Bottle"
+item_name = "glass_bottle"
 icon = ExtResource("4_5qgi0")
+metadata/_custom_type_script = "uid://cq05cnjdmwdea"
+
+[sub_resource type="Resource" id="Resource_oy8sc"]
+script = ExtResource("12_8k62k")
+state = 2
+sell_price_clean = 5.0
+sell_price_dirty = 3.0
+icon_bought_map = Dictionary[String, Texture2D]({
+"Dishwashing Liquid": ExtResource("15_chy0g")
+})
+icon_clean = ExtResource("14_akknq")
+icon_dirty = ExtResource("16_pknf1")
+icon_refilled_map = Dictionary[String, Texture2D]({
+"Dishwashing Liquid": ExtResource("17_b6ixm")
+})
+item_name = "plastic_bottle"
+icon = ExtResource("14_akknq")
 metadata/_custom_type_script = "uid://cq05cnjdmwdea"
 
 [sub_resource type="Resource" id="Resource_8k62k"]
 script = ExtResource("37_rygqd")
-texture = ExtResource("10_r5xgu")
 content = "Suka"
 metadata/_custom_type_script = "uid://yg8s3x6dm10j"
 
 [sub_resource type="Resource" id="Resource_akknq"]
 script = ExtResource("37_rygqd")
-texture = ExtResource("9_sxsde")
 content = "Cooking Oil"
 needed_quantity = 2
 metadata/_custom_type_script = "uid://yg8s3x6dm10j"
@@ -215,27 +211,6 @@ rotation = -1.5707964
 show_percentage = false
 script = ExtResource("5_2nf64")
 
-[node name="GroceryButtonUI" type="Button" parent="PlayerUICanvas" unique_id=1768813795 node_paths=PackedStringArray("grocery_list_ui")]
-visible = false
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -123.0
-offset_top = 109.0
-offset_right = -45.0
-offset_bottom = 191.0
-grow_horizontal = 0
-script = ExtResource("7_akknq")
-grocery_list_ui = NodePath("../GroceryListUI")
-
-[node name="GroceryListUI" parent="PlayerUICanvas" unique_id=658338672 node_paths=PackedStringArray("open_button") instance=ExtResource("7_8k62k")]
-offset_left = -452.0
-offset_top = 100.0
-offset_right = -52.000244
-offset_bottom = 500.0
-pivot_offset = Vector2(400, 0)
-open_button = NodePath("../GroceryButtonUI")
-
 [node name="Player" parent="." unique_id=1861928323 instance=ExtResource("1_uhqqe")]
 
 [node name="Pickups" type="Node" parent="." unique_id=1321112567]
@@ -280,11 +255,9 @@ points_bought = 25
 
 [node name="TrashStation" parent="." unique_id=733592169 instance=ExtResource("13_g6y4b")]
 position = Vector2(961, 305)
-dirty_pickups = Array[ExtResource("12_8k62k")]([SubResource("Resource_chy0g"), SubResource("Resource_pknf1"), SubResource("Resource_b6ixm")])
+dirty_pickups = Array[ExtResource("12_8k62k")]([SubResource("Resource_7kp7o"), SubResource("Resource_8fq6b"), SubResource("Resource_oy8sc")])
 wait_time = 1.0
 
 [node name="HouseStation" parent="." unique_id=922618431 instance=ExtResource("36_r5xgu")]
 position = Vector2(732, 304)
-grocery_list = Array[ExtResource("37_rygqd")]([SubResource("Resource_8k62k"), SubResource("Resource_akknq")])
-
-[connection signal="pressed" from="PlayerUICanvas/GroceryButtonUI" to="PlayerUICanvas/GroceryButtonUI" method="_on_pressed"]
+grocery_list = Array[ExtResource("37_rygqd")]([SubResource("Resource_8k62k"), SubResource("Resource_akknq"), null])
