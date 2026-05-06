@@ -9,7 +9,6 @@ var maximum : int = 0
 func _ready():
 	$Current.text = str(current)
 	$Maximum.text = str(maximum)
-	$VBoxContainer/Contents.text = contents
-	$VBoxContainer/TextureRect.expand_mode = TextureRect.EXPAND_FIT_HEIGHT
-	$VBoxContainer/TextureRect.texture = texture
+	$TextureRect.expand_mode = TextureRect.EXPAND_FIT_WIDTH
+	$TextureRect.texture = texture
 	

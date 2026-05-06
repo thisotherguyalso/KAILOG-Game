@@ -19,3 +19,7 @@ signal add_log_entry(log_entry: LogEntry)
 
 ## Grocery List
 signal grocery_list_updated(grocery_list : Array[GroceryEntry])
+
+## Rounds
+signal round_finished(end_label: String, round_stats : RoundStats)
+signal round_timer_ticked(time_left : float)

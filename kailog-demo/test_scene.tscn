@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bgddhomjf8guf" path="res://log_component.gd" id="3_sxsde"]
 [ext_resource type="Texture2D" uid="uid://dhwyuqnivxrj0" path="res://Assets/Items/glass bottle clean.png" id="4_5qgi0"]
 [ext_resource type="PackedScene" uid="uid://doj87k5vv6hlq" path="res://Pickups/pickup_dirty_plastic_bottle.tscn" id="4_7cbxl"]
+[ext_resource type="Script" uid="uid://kdl4yg08abaq" path="res://round_manager.gd" id="4_chy0g"]
 [ext_resource type="Script" uid="uid://di64p5phgnj43" path="res://flood_meter_ui.gd" id="5_2nf64"]
 [ext_resource type="Texture2D" uid="uid://b7gvj14lck7pu" path="res://Assets/Items/glass bottle oil bought.png" id="5_7kp7o"]
 [ext_resource type="PackedScene" uid="uid://bedkowog44pxi" path="res://Pickups/pickup_dirty_tupperware.tscn" id="5_8pr8v"]
@@ -20,11 +21,14 @@
 [ext_resource type="Texture2D" uid="uid://f0qtkpti2yjw" path="res://Assets/Items/glass bottle toyo bought.png" id="7_oy8sc"]
 [ext_resource type="PackedScene" uid="uid://dewc78ookudj1" path="res://Stations/dishwashing_refill_station.tscn" id="8_0k8yu"]
 [ext_resource type="Texture2D" uid="uid://bh7s6ueijtq6l" path="res://Assets/Items/glass bottle dirty.png" id="8_2nf64"]
+[ext_resource type="FontFile" uid="uid://brjli3qi7om10" path="res://Assets/Fonts/PixelDigivolve-mOm9.ttf" id="9_b6ixm"]
 [ext_resource type="PackedScene" uid="uid://c0su22eradkp2" path="res://Stations/rice_refill_station.tscn" id="9_hiucn"]
+[ext_resource type="Script" uid="uid://coww2l327ow7s" path="res://round_timer_ui.gd" id="9_pknf1"]
 [ext_resource type="Texture2D" uid="uid://civivny72dd6k" path="res://Assets/Items/glass bottle oil.png" id="9_sxsde"]
 [ext_resource type="PackedScene" uid="uid://b378nrs2qcsni" path="res://Stations/shop_station.tscn" id="10_k6its"]
 [ext_resource type="Texture2D" uid="uid://bnkse1taix27b" path="res://Assets/Items/glass bottle suka.png" id="10_r5xgu"]
 [ext_resource type="PackedScene" uid="uid://d1d8bbtsvfpxb" path="res://Stations/suka_refill_station.tscn" id="11_2dw41"]
+[ext_resource type="PackedScene" uid="uid://bvltlsgqu0xi6" path="res://UI/round_finished_ui.tscn" id="11_lvjxf"]
 [ext_resource type="Texture2D" uid="uid://b4it642kqpl31" path="res://Assets/Items/glass bottle toyo.png" id="11_rygqd"]
 [ext_resource type="Script" uid="uid://cq05cnjdmwdea" path="res://Items/item_container.gd" id="12_8k62k"]
 [ext_resource type="PackedScene" uid="uid://dvjqn8mya81or" path="res://Stations/toyo_refill_station.tscn" id="12_ykxp3"]
@@ -188,6 +192,8 @@ script = ExtResource("2_oy8sc")
 [node name="LogComponent" type="Node" parent="GameManager" unique_id=1997887250]
 script = ExtResource("3_sxsde")
 
+[node name="LevelComponent" type="Node" parent="GameManager" unique_id=1416144353]
+
 [node name="PlayerUICanvas" type="CanvasLayer" parent="." unique_id=863897339]
 
 [node name="InventoryUI" parent="PlayerUICanvas" unique_id=67015634 instance=ExtResource("1_ia1lp")]
@@ -202,6 +208,7 @@ offset_top = 36.0
 offset_right = -56.0
 offset_bottom = 91.0
 grow_horizontal = 0
+theme_override_fonts/font = ExtResource("9_b6ixm")
 theme_override_font_sizes/font_size = 40
 text = "100"
 script = ExtResource("2_7kp7o")
@@ -229,14 +236,33 @@ script = ExtResource("7_akknq")
 grocery_list_ui = NodePath("../GroceryListUI")
 
 [node name="GroceryListUI" parent="PlayerUICanvas" unique_id=658338672 node_paths=PackedStringArray("open_button") instance=ExtResource("7_8k62k")]
-offset_left = -452.0
-offset_top = 100.0
-offset_right = -52.000244
-offset_bottom = 500.0
-pivot_offset = Vector2(400, 0)
 open_button = NodePath("../GroceryButtonUI")
 
+[node name="RoundTimerUI" type="Label" parent="PlayerUICanvas" unique_id=1221307739]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 35.0
+offset_right = 63.0
+offset_bottom = 111.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("9_b6ixm")
+theme_override_font_sizes/font_size = 64
+text = "1:00"
+script = ExtResource("9_pknf1")
+
+[node name="RoundFinishedUI" parent="PlayerUICanvas" unique_id=914914103 instance=ExtResource("11_lvjxf")]
+visible = false
+
+[node name="RoundManager" type="Timer" parent="." unique_id=1252054643 node_paths=PackedStringArray("house_station")]
+wait_time = 5.0
+one_shot = true
+script = ExtResource("4_chy0g")
+house_station = NodePath("../HouseStation")
+
 [node name="Player" parent="." unique_id=1861928323 instance=ExtResource("1_uhqqe")]
+position = Vector2(1088, 481)
 
 [node name="Pickups" type="Node" parent="." unique_id=1321112567]
 
@@ -288,3 +314,4 @@ position = Vector2(732, 304)
 grocery_list = Array[ExtResource("37_rygqd")]([SubResource("Resource_8k62k"), SubResource("Resource_akknq")])
 
 [connection signal="pressed" from="PlayerUICanvas/GroceryButtonUI" to="PlayerUICanvas/GroceryButtonUI" method="_on_pressed"]
+[connection signal="timeout" from="RoundManager" to="RoundManager" method="_on_timeout"]

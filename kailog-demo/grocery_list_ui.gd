@@ -26,7 +26,7 @@ func create_grocery_entry(grocery_entry: GroceryEntry):
 func open_ui():
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
-	tween.tween_property(self, "scale", Vector2.ONE, 0.08)
+	tween.tween_property(self, "scale", Vector2(0.7, 0.7), 0.08)
 
 func close_ui():
 	var tween = create_tween()

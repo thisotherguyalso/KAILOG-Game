@@ -11,24 +11,10 @@ offset_bottom = 68.0
 mouse_filter = 2
 script = ExtResource("1_nr1rm")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=722992937]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=392634473]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=392634473]
 layout_mode = 2
 texture = ExtResource("2_bgfar")
-expand_mode = 4
-
-[node name="Contents" type="Label" parent="VBoxContainer" unique_id=330306355]
-custom_minimum_size = Vector2(64, 41.36)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_1pahe")
-theme_override_font_sizes/font_size = 12
-text = "dishwashing liquid"
-horizontal_alignment = 1
-autowrap_mode = 3
-justification_flags = 162
-clip_text = true
+expand_mode = 2
 
 [node name="Space" type="Label" parent="." unique_id=1050300383]
 layout_mode = 2

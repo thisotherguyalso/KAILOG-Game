@@ -35,10 +35,7 @@ func _physics_process(delta: float) -> void:
 		$"../Sprite2D".play('idle')
 
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	if direction:
-		player.velocity = lerp(player.velocity, direction * speed, delta * slipperiness) 
-	else:
-		player.velocity = lerp(player.velocity, Vector2.ZERO, delta * slipperiness) 
+	player.velocity = direction * speed 
 		
 	if Input.get_action_strength("sprint"):
 		speed = sprintSpeed
