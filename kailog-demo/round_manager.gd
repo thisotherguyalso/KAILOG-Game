@@ -35,12 +35,12 @@ func _process(_delta : float) -> void:
 func finish_round(end_label):
 	if not is_stopped():
 		stop()
-	EventBus.round_finished.emit(end_label, create_round_stats())
+	EventBus.round_finished.emit(end_label, create_round_results())
 
-func create_round_stats():
-	var round_stats = RoundStats.new()
-	round_stats.current_money = money_component.amount
-	round_stats.initial_money = initial_money
-	round_stats.grocery_list = house_station.grocery_list.duplicate()
-	round_stats.log_list = log_component.log_entries.duplicate()
-	return round_stats
+func create_round_results():
+	var round_results = RoundResults.new()
+	round_results.current_money = money_component.amount
+	round_results.initial_money = initial_money
+	round_results.grocery_list = house_station.grocery_list.duplicate()
+	round_results.log_list = log_component.log_entries.duplicate()
+	return round_results

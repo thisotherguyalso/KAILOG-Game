@@ -7,13 +7,15 @@ extends Control
 @export var round_evaluation_scene: PackedScene
 
 var awaiting_input: bool = false
+var round_results : RoundResults
 
 func _ready():
 	hide()
 	prompt_label.hide()
 	EventBus.round_finished.connect(_on_round_finished)
 
-func _on_round_finished(label_text: String):
+func _on_round_finished(label_text: String, round_results : RoundResults):
+	self.round_results = round_results
 	show()
 	_animate_background_in()
 	_set_end_label(label_text)
@@ -60,5 +62,6 @@ func _input(event: InputEvent):
 		_spawn_evaluation_screen()
 
 func _spawn_evaluation_screen():
-	var eval = round_evaluation_scene.instantiate()
+	var eval : RoundEvaluation = round_evaluation_scene.instantiate()
+	eval.round_results = self.round_results
 	add_child(eval)

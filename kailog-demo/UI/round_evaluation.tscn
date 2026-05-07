@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://cuq0yvrvkqbpa"]
+
+[ext_resource type="Script" uid="uid://cujn5dc7k2wva" path="res://UI/round_evaluation.gd" id="1_lwtm4"]
+[ext_resource type="FontFile" uid="uid://brjli3qi7om10" path="res://Assets/Fonts/PixelDigivolve-mOm9.ttf" id="1_rolft"]
+[ext_resource type="Script" uid="uid://yg8s3x6dm10j" path="res://Misc/grocery_entry.gd" id="2_8veop"]
+[ext_resource type="Texture2D" uid="uid://b4it642kqpl31" path="res://Assets/Items/glass bottle toyo.png" id="3_gvlwq"]
+[ext_resource type="Script" uid="uid://bfgt0rrt6f8q6" path="res://UI/grocery_list_results.gd" id="3_qc6s0"]
+[ext_resource type="Texture2D" uid="uid://civivny72dd6k" path="res://Assets/Items/glass bottle oil.png" id="4_umv3i"]
+[ext_resource type="Script" uid="uid://b4qwrbyoo8br" path="res://log_entry.gd" id="5_73ej4"]
+[ext_resource type="Script" uid="uid://doi2w0qvt0xsj" path="res://round_results.gd" id="6_6fx3h"]
+[ext_resource type="PackedScene" uid="uid://dlarhfcnsboi8" path="res://UI/Results/grocery_entry_result.tscn" id="7_5nrtf"]
+
+[sub_resource type="Resource" id="Resource_d186w"]
+script = ExtResource("2_8veop")
+texture = ExtResource("3_gvlwq")
+content = "Suka"
+needed_quantity = 3
+metadata/_custom_type_script = "uid://yg8s3x6dm10j"
+
+[sub_resource type="Resource" id="Resource_ds4wt"]
+script = ExtResource("2_8veop")
+texture = ExtResource("4_umv3i")
+content = "Cooking Oil"
+needed_quantity = 2
+metadata/_custom_type_script = "uid://yg8s3x6dm10j"
+
+[sub_resource type="Resource" id="Resource_8veop"]
+script = ExtResource("5_73ej4")
+description = "Did nothing"
+metadata/_custom_type_script = "uid://b4qwrbyoo8br"
+
+[sub_resource type="Resource" id="Resource_gvlwq"]
+script = ExtResource("5_73ej4")
+description = "Killed everyone"
+points = 67
+metadata/_custom_type_script = "uid://b4qwrbyoo8br"
+
+[sub_resource type="Resource" id="Resource_ecwiu"]
+script = ExtResource("6_6fx3h")
+initial_money = 50
+current_money = -50
+grocery_list = Array[ExtResource("2_8veop")]([SubResource("Resource_d186w"), SubResource("Resource_ds4wt")])
+log_list = Array[ExtResource("5_73ej4")]([SubResource("Resource_8veop"), SubResource("Resource_gvlwq")])
+metadata/_custom_type_script = "uid://doi2w0qvt0xsj"
+
+[node name="RoundEvaluation" type="Control" unique_id=1604905510]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lwtm4")
+round_results = SubResource("Resource_ecwiu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1450399107]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.55644524, 0.6038054, 0.5425363, 1)
+
+[node name="EndLabel" type="Label" parent="." unique_id=27712352]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -224.0
+offset_top = 64.0
+offset_right = 213.0
+offset_bottom = 257.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_rolft")
+theme_override_font_sizes/font_size = 80
+text = "End Label
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PromptLabel" type="Label" parent="." unique_id=1026193313]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = 220.0
+offset_right = 174.0
+offset_bottom = 259.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_rolft")
+theme_override_font_sizes/font_size = 32
+text = "Tap to continue"
+horizontal_alignment = 1
+
+[node name="GroceryListResults" type="ColorRect" parent="." unique_id=579731459]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -132.0
+offset_right = 256.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.17004329, 0.36730996, 0.259738, 1)
+script = ExtResource("3_qc6s0")
+grocery_entry_result_scene = ExtResource("7_5nrtf")
+
+[node name="VFlowContainer" type="VFlowContainer" parent="GroceryListResults" unique_id=1524297591]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -112.0
+offset_right = 240.0
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16

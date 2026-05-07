@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dlarhfcnsboi8"]
+
+[ext_resource type="Texture2D" uid="uid://bnkse1taix27b" path="res://Assets/Items/glass bottle suka.png" id="1_anle3"]
+[ext_resource type="Script" uid="uid://df4ts7o2j1xuu" path="res://UI/Results/grocery_entry_result.gd" id="1_rryqn"]
+[ext_resource type="FontFile" uid="uid://brjli3qi7om10" path="res://Assets/Fonts/PixelDigivolve-mOm9.ttf" id="2_rryqn"]
+[ext_resource type="Texture2D" uid="uid://bvfd6iq556yfo" path="res://Assets/UI/pngtree-pixel-art-green-checkmark-label-icon-png-image_16876083.webp" id="3_sge56"]
+[ext_resource type="AudioStream" uid="uid://ue0nkk1i1rhw" path="res://Sounds/pop.mp3" id="5_sge56"]
+[ext_resource type="AudioStream" uid="uid://bwmaxw0t0yqbn" path="res://Sounds/small_win.mp3" id="6_5v88i"]
+
+[node name="GroceryEntryResult" type="HBoxContainer" unique_id=1597139551]
+theme_override_constants/separation = 0
+script = ExtResource("1_rryqn")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1560183988]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("1_anle3")
+expand_mode = 2
+
+[node name="Current" type="Label" parent="." unique_id=1768193435]
+custom_minimum_size = Vector2(32, 64)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rryqn")
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slash" type="Label" parent="." unique_id=1507373122]
+custom_minimum_size = Vector2(32, 64)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rryqn")
+theme_override_font_sizes/font_size = 50
+text = "/"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Maximum" type="Label" parent="." unique_id=785388152]
+custom_minimum_size = Vector2(32, 64)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rryqn")
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Check" type="TextureRect" parent="." unique_id=1795036409]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("3_sge56")
+expand_mode = 2
+
+[node name="BoopSFX" type="AudioStreamPlayer" parent="." unique_id=1998591906]
+stream = ExtResource("5_sge56")
+volume_db = -10.0
+
+[node name="ResultSFX" type="AudioStreamPlayer" parent="." unique_id=88696389]
+stream = ExtResource("6_5v88i")
+volume_db = -10.0

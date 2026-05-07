@@ -1,5 +1,5 @@
 class_name LogEntry
-extends Node
+extends Resource
 
-var description : String
-var points : int
+@export var description : String
+@export var points : int

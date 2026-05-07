@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://co2ly7bm6neum" path="res://UI/round_finished_ui.gd" id="1_aqadx"]
 [ext_resource type="FontFile" uid="uid://brjli3qi7om10" path="res://Assets/Fonts/PixelDigivolve-mOm9.ttf" id="1_il8ny"]
+[ext_resource type="PackedScene" uid="uid://cuq0yvrvkqbpa" path="res://UI/round_evaluation.tscn" id="2_o5m4y"]
 
 [node name="RoundFinishedUI" type="Control" unique_id=914914103]
 layout_mode = 3
@@ -11,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_aqadx")
+round_evaluation_scene = ExtResource("2_o5m4y")
 
 [node name="Background" type="ColorRect" parent="." unique_id=811761278]
 layout_mode = 1

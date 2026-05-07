@@ -255,10 +255,13 @@ script = ExtResource("9_pknf1")
 [node name="RoundFinishedUI" parent="PlayerUICanvas" unique_id=914914103 instance=ExtResource("11_lvjxf")]
 visible = false
 
-[node name="RoundManager" type="Timer" parent="." unique_id=1252054643 node_paths=PackedStringArray("house_station")]
+[node name="RoundManager" type="Timer" parent="." unique_id=1252054643 node_paths=PackedStringArray("money_component", "points_component", "log_component", "house_station")]
 wait_time = 5.0
 one_shot = true
 script = ExtResource("4_chy0g")
+money_component = NodePath("../GameManager/MoneyComponent")
+points_component = NodePath("../GameManager/PointsComponent")
+log_component = NodePath("../GameManager/LogComponent")
 house_station = NodePath("../HouseStation")
 
 [node name="Player" parent="." unique_id=1861928323 instance=ExtResource("1_uhqqe")]
