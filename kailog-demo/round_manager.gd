@@ -5,12 +5,15 @@ extends Timer
 @export var money_component : MoneyComponent
 @export var points_component : PointsComponent
 @export var log_component : LogComponent
-var initial_money : int
 
+var initial_money : int
+var initial_points : int
 ## Needs to be initialized in-level
 @export var house_station : HouseStation
 
 func _ready():
+	initial_money = money_component.amount
+	initial_points = points_component.points
 	EventBus.points_changed.connect(check_flood)
 	EventBus.grocery_list_updated.connect(check_groceries)
 	await get_parent().ready
@@ -41,6 +44,7 @@ func create_round_results():
 	var round_results = RoundResults.new()
 	round_results.current_money = money_component.amount
 	round_results.initial_money = initial_money
+	round_results.initial_points = initial_points
 	round_results.grocery_list = house_station.grocery_list.duplicate()
 	round_results.log_list = log_component.log_entries.duplicate()
 	return round_results

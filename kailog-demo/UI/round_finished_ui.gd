@@ -63,5 +63,6 @@ func _input(event: InputEvent):
 
 func _spawn_evaluation_screen():
 	var eval : RoundEvaluation = round_evaluation_scene.instantiate()
-	eval.round_results = self.round_results
 	add_child(eval)
+	eval.end_label.text = end_label.text
+	eval.round_results = self.round_results

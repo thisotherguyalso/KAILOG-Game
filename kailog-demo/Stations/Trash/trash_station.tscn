@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://b8ckmdt8a8x60"]
+
+[ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_snipu"]
+[ext_resource type="Script" uid="uid://wqgq3ty3bsj" path="res://Stations/Trash/trash_station.gd" id="2_8s2b4"]
+[ext_resource type="Script" uid="uid://cq05cnjdmwdea" path="res://Items/item_container.gd" id="3_5754y"]
+[ext_resource type="Texture2D" uid="uid://dunw1l832lbxl" path="res://Assets/Stations/Trash/TrashCanFull.png" id="4_7uqlk"]
+[ext_resource type="AudioStream" uid="uid://83d0mex1chgh" path="res://Sounds/trash.mp3" id="4_gtlbv"]
+[ext_resource type="Resource" uid="uid://b1nc8r44bf771" path="res://Items/glass_bottle.tres" id="4_hnv5v"]
+[ext_resource type="Resource" uid="uid://cw6mafibssohk" path="res://Items/plastic_bottle.tres" id="5_xix6u"]
+[ext_resource type="Resource" uid="uid://cls214sdx0dxj" path="res://Items/tupperware.tres" id="6_xlhe1"]
+
+[node name="TrashStation" unique_id=1300298490 instance=ExtResource("1_snipu")]
+script = ExtResource("2_8s2b4")
+dirty_pickups = Array[ExtResource("3_5754y")]([ExtResource("4_hnv5v"), ExtResource("5_xix6u"), ExtResource("6_xlhe1")])
+wait_time = 1.0
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1778666264]
+position = Vector2(0, -32)
+
+[node name="Sprite2D" parent="." index="1" unique_id=760885286]
+modulate = Color(1, 1, 1, 1)
+texture_filter = 1
+position = Vector2(1.9073486e-06, -4.7683716e-06)
+scale = Vector2(3.9999998, 4)
+texture = ExtResource("4_7uqlk")
+offset = Vector2(0, -8)
+
+[node name="CollisionShape2D" parent="StationWall" parent_id_path=PackedInt32Array(148367841) index="0" unique_id=346114296]
+position = Vector2(0, 16)
+
+[node name="TrashSFX" type="AudioStreamPlayer2D" parent="." index="3" unique_id=796906363]
+stream = ExtResource("4_gtlbv")

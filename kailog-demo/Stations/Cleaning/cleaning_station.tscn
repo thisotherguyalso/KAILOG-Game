@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://688p861i1tfi"]
+
+[ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_mqdyq"]
+[ext_resource type="Script" uid="uid://d4bht54jje4cf" path="res://Stations/Cleaning/cleaning_station.gd" id="2_ayto0"]
+[ext_resource type="AudioStream" uid="uid://dtd42ape1rj3u" path="res://Sounds/cleaning.mp3" id="3_ayto0"]
+[ext_resource type="Texture2D" uid="uid://d1nr7pmdv72cn" path="res://Assets/Stations/Cleaning/faucet_running3.png" id="3_ogcsi"]
+[ext_resource type="Texture2D" uid="uid://b7pyehgf4h583" path="res://Assets/Stations/Cleaning/faucet_running2.png" id="4_1doqa"]
+[ext_resource type="Texture2D" uid="uid://k7je6oq7fvk" path="res://Assets/Stations/Cleaning/faucet_running1.png" id="5_q43r7"]
+[ext_resource type="Texture2D" uid="uid://cu8re1kkamrk4" path="res://Assets/Stations/Cleaning/faucet_default.png" id="6_duauc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_47wtr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ogcsi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1doqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q43r7")
+}],
+"loop": true,
+"name": &"cleaning",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_duauc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bx035"]
+radius = 24.0
+height = 112.0
+
+[node name="CleaningStation" unique_id=1300298490 instance=ExtResource("1_mqdyq")]
+script = ExtResource("2_ayto0")
+clean_duration = 3.0
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1778666264]
+position = Vector2(0, -40)
+
+[node name="Sprite2D" parent="." index="1" unique_id=760885286]
+visible = false
+modulate = Color(1, 1, 1, 1)
+scale = Vector2(0.56, 0.56)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2" unique_id=1193646284]
+texture_filter = 1
+position = Vector2(0, -40)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_47wtr")
+animation = &"cleaning"
+autoplay = "default"
+frame_progress = 0.90342736
+
+[node name="CollisionShape2D" parent="StationWall" parent_id_path=PackedInt32Array(148367841) index="0" unique_id=346114296]
+position = Vector2(0, 0)
+shape = SubResource("CapsuleShape2D_bx035")
+
+[node name="CleaningSFX" type="AudioStreamPlayer2D" parent="." index="4" unique_id=573593518]
+stream = ExtResource("3_ayto0")
+
+[node name="ProgressBar" parent="." index="5" unique_id=575793761]
+offset_left = -103.0
+offset_top = 30.0
+offset_right = 105.0
+offset_bottom = 57.0

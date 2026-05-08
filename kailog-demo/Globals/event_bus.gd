@@ -23,3 +23,7 @@ signal grocery_list_updated(grocery_list : Array[GroceryEntry])
 ## Rounds
 signal round_finished(end_label: String, round_results : RoundResults)
 signal round_timer_ticked(time_left : float)
+signal next_level_requested()
+
+## Game
+signal end_game()

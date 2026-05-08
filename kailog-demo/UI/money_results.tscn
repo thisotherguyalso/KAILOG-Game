@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://deiishaer4hmn"]
+
+[ext_resource type="Script" uid="uid://cqqr7j3jn312n" path="res://UI/money_results.gd" id="1_aears"]
+[ext_resource type="FontFile" uid="uid://brjli3qi7om10" path="res://Assets/Fonts/PixelDigivolve-mOm9.ttf" id="2_8hfb6"]
+[ext_resource type="AudioStream" uid="uid://ue0nkk1i1rhw" path="res://Sounds/pop.mp3" id="3_qtd3g"]
+[ext_resource type="AudioStream" uid="uid://bwmaxw0t0yqbn" path="res://Sounds/small_win.mp3" id="4_ji1v0"]
+
+[node name="MoneyResults" type="Control" unique_id=762008093]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 485.0
+offset_bottom = 104.0
+script = ExtResource("1_aears")
+
+[node name="Initial" type="Label" parent="." unique_id=1853263741]
+layout_mode = 0
+offset_top = 14.0
+offset_right = 157.0
+offset_bottom = 90.0
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_8hfb6")
+theme_override_font_sizes/font_size = 64
+text = "P 60"
+vertical_alignment = 1
+
+[node name="To" type="Label" parent="." unique_id=1966504796]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 14.0
+offset_right = 248.0
+offset_bottom = 90.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_8hfb6")
+theme_override_font_sizes/font_size = 64
+text = "->"
+
+[node name="Current" type="Label" parent="." unique_id=2065667960]
+modulate = Color(0, 0.7976578, 0.088390775, 1)
+layout_mode = 0
+offset_left = 270.0
+offset_right = 485.0
+offset_bottom = 104.0
+size_flags_vertical = 8
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_8hfb6")
+theme_override_font_sizes/font_size = 88
+text = "P 60"
+
+[node name="BoopSFX" type="AudioStreamPlayer" parent="." unique_id=63480427]
+stream = ExtResource("3_qtd3g")
+volume_db = -10.0
+
+[node name="ResultSFX" type="AudioStreamPlayer" parent="." unique_id=1901659626]
+stream = ExtResource("4_ji1v0")
+volume_db = -10.0

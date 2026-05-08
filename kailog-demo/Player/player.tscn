@@ -125,7 +125,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k53q1"]
 radius = 30.0
-height = 116.0
+height = 64.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1861928323 groups=["Player"]]
 collision_layer = 2
@@ -134,18 +134,20 @@ script = ExtResource("1_cvnsp")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1933894566]
 texture_filter = 1
-position = Vector2(-0.99999994, -19.999998)
+position = Vector2(0, -1.9073486e-06)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_b1ygp")
 animation = &"idle"
 autoplay = "idle"
+offset = Vector2(0, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1652575677]
-position = Vector2(0, 32)
+position = Vector2(0, -31)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_k53q1")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=984114381]
+position = Vector2(0, -72)
 zoom = Vector2(0.8, 0.8)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0

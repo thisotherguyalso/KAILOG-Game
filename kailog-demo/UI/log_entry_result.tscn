@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bfjk8epb18thh"]
+
+[ext_resource type="Script" uid="uid://cqhtcbo8nimp5" path="res://UI/log_entry_result.gd" id="1_6nigr"]
+[ext_resource type="FontFile" uid="uid://brjli3qi7om10" path="res://Assets/Fonts/PixelDigivolve-mOm9.ttf" id="1_o2t8u"]
+[ext_resource type="AudioStream" uid="uid://ue0nkk1i1rhw" path="res://Sounds/pop.mp3" id="2_rob24"]
+[ext_resource type="AudioStream" uid="uid://bwmaxw0t0yqbn" path="res://Sounds/small_win.mp3" id="3_6nigr"]
+
+[node name="LogEntryResult" type="Control" unique_id=948421327]
+custom_minimum_size = Vector2(352, 64)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 344.0
+offset_bottom = 64.0
+script = ExtResource("1_6nigr")
+
+[node name="Description" type="Label" parent="." unique_id=64411287]
+custom_minimum_size = Vector2(250, 64)
+layout_mode = 0
+offset_left = 3.0
+offset_right = 253.0
+offset_bottom = 64.0
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_o2t8u")
+theme_override_font_sizes/font_size = 24
+text = "ADBJAWBDAJSBDKAJWBDa"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Points" type="Label" parent="." unique_id=279143304]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 3.0
+offset_right = 344.0
+offset_bottom = 60.0
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_o2t8u")
+theme_override_font_sizes/font_size = 36
+text = "123"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BoopSFX" type="AudioStreamPlayer" parent="." unique_id=1570223457]
+stream = ExtResource("2_rob24")
+volume_db = -10.0
+
+[node name="ResultSFX" type="AudioStreamPlayer" parent="." unique_id=1381942332]
+stream = ExtResource("3_6nigr")
+volume_db = -10.0

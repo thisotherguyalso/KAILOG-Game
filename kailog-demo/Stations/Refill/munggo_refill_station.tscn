@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://sfx0q7csoyx3"]
+
+[ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_0mtl4"]
+[ext_resource type="Script" uid="uid://b0p6moybyptcp" path="res://Stations/Refill/refill_station.gd" id="2_e3dhe"]
+[ext_resource type="Texture2D" uid="uid://c33j3girhxdl4" path="res://Assets/Stations/Refilling/Tupperware and Munggo.png" id="3_0mtl4"]
+[ext_resource type="AudioStream" uid="uid://c7ufr1jbke4nr" path="res://Sounds/pouring.mp3" id="4_dtnrh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2sa2"]
+size = Vector2(256, 256)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2osfl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_68uxb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0mtl4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0mtl4")
+}],
+"loop": true,
+"name": &"refilling",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n2sa2"]
+radius = 64.0
+height = 256.0
+
+[node name="BigasRefill" unique_id=1300298490 instance=ExtResource("1_0mtl4")]
+script = ExtResource("2_e3dhe")
+fill_contents = "Munggo"
+required_container_name = Array[String](["Tupperware"])
+refill_duration = 2.0
+refill_price = 5.0
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1778666264]
+position = Vector2(64, -64)
+shape = SubResource("RectangleShape2D_n2sa2")
+
+[node name="Sprite2D" parent="." index="1" unique_id=760885286]
+visible = false
+modulate = Color(1, 1, 1, 1)
+texture = SubResource("CompressedTexture2D_2osfl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2" unique_id=279161307]
+texture_filter = 1
+position = Vector2(64.00001, -63.999992)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_68uxb")
+animation = &"refilling"
+
+[node name="CollisionShape2D" parent="StationWall" parent_id_path=PackedInt32Array(148367841) index="0" unique_id=346114296]
+position = Vector2(64, 0)
+shape = SubResource("CapsuleShape2D_n2sa2")
+
+[node name="PouringSFX" type="AudioStreamPlayer2D" parent="." index="4" unique_id=442930714]
+stream = ExtResource("4_dtnrh")
+
+[node name="ProgressBar" parent="." index="5" unique_id=575793761]
+offset_left = -40.0
+offset_top = 72.0
+offset_right = 168.0
+offset_bottom = 99.0

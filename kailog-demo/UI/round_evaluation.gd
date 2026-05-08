@@ -3,6 +3,7 @@ extends Control
 
 @export var round_results: RoundResults
 
+@onready var end_label : Label = $EndLabel
 @onready var grocery_results: Control = $GroceryListResults
 @onready var money_results: Control = $MoneyResults
 @onready var flood_results: Control = $FloodPointsResults
@@ -24,12 +25,11 @@ func _run_sequence():
 	await money_results.play()
 	await _wait_for_tap()
 	
-	flood_results.set_data(round_results.log_list)
+	flood_results.set_data(round_results.log_list, round_results.initial_points)
 	await flood_results.play()
 	await _wait_for_tap()
 	
-	summary.set_data(round_results)
-	await summary.play()
+	EventBus.next_level_requested.emit()
 
 func _wait_for_tap():
 	_show_prompt()
