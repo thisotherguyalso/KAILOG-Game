@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dlarhfcnsboi8"]
 
-[ext_resource type="Texture2D" uid="uid://bnkse1taix27b" path="res://Assets/Items/glass bottle suka.png" id="1_anle3"]
+[ext_resource type="Texture2D" uid="uid://bnkse1taix27b" path="res://Assets/Items/Old_Versions/glass bottle suka.png" id="1_anle3"]
 [ext_resource type="Script" uid="uid://df4ts7o2j1xuu" path="res://UI/Results/grocery_entry_result.gd" id="1_rryqn"]
 [ext_resource type="FontFile" uid="uid://brjli3qi7om10" path="res://Assets/Fonts/PixelDigivolve-mOm9.ttf" id="2_rryqn"]
 [ext_resource type="Texture2D" uid="uid://bvfd6iq556yfo" path="res://Assets/UI/pngtree-pixel-art-green-checkmark-label-icon-png-image_16876083.webp" id="3_sge56"]

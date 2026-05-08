@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="ItemContainer" format=3 uid="uid://cw6mafibssohk"]
 
-[ext_resource type="Texture2D" uid="uid://dgk0ooffg6sd8" path="res://Assets/Items/plastic bottle clean.png" id="1_ew4cb"]
-[ext_resource type="Texture2D" uid="uid://cre8qm8w7ao5c" path="res://Assets/Items/plastic bottle dirty.png" id="2_p261g"]
-[ext_resource type="Texture2D" uid="uid://snnih0w5wewj" path="res://Assets/Items/plastic bottle dishwashing bought.png" id="2_upsdv"]
+[ext_resource type="Texture2D" uid="uid://be25bbisvmftk" path="res://Assets/Items/plastic bottle_cleaned.png" id="1_h5vxg"]
+[ext_resource type="Texture2D" uid="uid://d1w0dgw2c5v1i" path="res://Assets/Items/plastic bottle_dishwashing bought.png" id="2_j13sv"]
+[ext_resource type="Texture2D" uid="uid://bqn4xqi64x0nf" path="res://Assets/Items/plastic bottle_oil bought.png" id="3_8xobs"]
 [ext_resource type="Script" uid="uid://cq05cnjdmwdea" path="res://Items/item_container.gd" id="3_upsdv"]
-[ext_resource type="Texture2D" uid="uid://bed48k4naf1q3" path="res://Assets/Items/plastic bottle dishwashing.png" id="4_3dw7i"]
+[ext_resource type="Texture2D" uid="uid://cey75qoiaug1o" path="res://Assets/Items/plastic bottle_dirty.png" id="4_sa1vc"]
+[ext_resource type="Texture2D" uid="uid://8e8mt1mfdkgb" path="res://Assets/Items/plastic bottle_dishwashing refilled.png" id="5_m7y80"]
+[ext_resource type="Texture2D" uid="uid://car0vsamn55yd" path="res://Assets/Items/plastic bottle_oil refilled.png" id="6_c64b6"]
 
 [resource]
 script = ExtResource("3_upsdv")
@@ -12,13 +14,15 @@ state = 2
 sell_price_clean = 5.0
 sell_price_dirty = 3.0
 icon_bought_map = Dictionary[String, Texture2D]({
-"Dishwashing Liquid": ExtResource("2_upsdv")
+"Dishwashing Liquid": ExtResource("2_j13sv"),
+"Mantika": ExtResource("3_8xobs")
 })
-icon_clean = ExtResource("1_ew4cb")
-icon_dirty = ExtResource("2_p261g")
+icon_clean = ExtResource("1_h5vxg")
+icon_dirty = ExtResource("4_sa1vc")
 icon_refilled_map = Dictionary[String, Texture2D]({
-"Dishwashing Liquid": ExtResource("4_3dw7i")
+"Dishwashing Liquid": ExtResource("5_m7y80"),
+"Mantika": ExtResource("6_c64b6")
 })
 item_name = "Plastic Bottle"
-icon = ExtResource("1_ew4cb")
+icon = ExtResource("1_h5vxg")
 metadata/_custom_type_script = "uid://cq05cnjdmwdea"

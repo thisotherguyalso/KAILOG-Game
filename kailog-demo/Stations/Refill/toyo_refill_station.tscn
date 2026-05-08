@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b0p6moybyptcp" path="res://Stations/Refill/refill_station.gd" id="2_kki4v"]
 [ext_resource type="Texture2D" uid="uid://dwep2snkwkcif" path="res://Assets/Stations/Refilling/Glass and Toyo.png" id="3_iqdbl"]
 [ext_resource type="AudioStream" uid="uid://c7ufr1jbke4nr" path="res://Sounds/pouring.mp3" id="4_6gdia"]
+[ext_resource type="Texture2D" uid="uid://dudfljym5romw" path="res://Assets/Stations/Rooftop.png" id="5_kki4v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n2sa2"]
 size = Vector2(256, 256)
@@ -67,3 +68,9 @@ offset_left = -40.0
 offset_top = 72.0
 offset_right = 168.0
 offset_bottom = 99.0
+
+[node name="Rooftop" type="Sprite2D" parent="." index="6" unique_id=1748188058]
+texture_filter = 1
+position = Vector2(64, -256)
+scale = Vector2(3.9999998, 4)
+texture = ExtResource("5_kki4v")

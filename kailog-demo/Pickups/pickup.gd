@@ -4,6 +4,7 @@ extends Area2D
 @export var item : Item
 
 func _ready():
+	item = item.duplicate()
 	item._update_visuals()
 	$Sprite2D.texture = item.icon
 	self.scale = Vector2.ZERO

@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://k7je6oq7fvk" path="res://Assets/Stations/Cleaning/faucet_running1.png" id="5_q43r7"]
 [ext_resource type="Texture2D" uid="uid://cu8re1kkamrk4" path="res://Assets/Stations/Cleaning/faucet_default.png" id="6_duauc"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogcsi"]
+size = Vector2(128, 128)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_47wtr"]
 animations = [{
 "frames": [{
@@ -42,7 +45,8 @@ script = ExtResource("2_ayto0")
 clean_duration = 3.0
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=1778666264]
-position = Vector2(0, -40)
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_ogcsi")
 
 [node name="Sprite2D" parent="." index="1" unique_id=760885286]
 visible = false

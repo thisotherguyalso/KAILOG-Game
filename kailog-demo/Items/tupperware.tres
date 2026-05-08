@@ -1,22 +1,26 @@
 [gd_resource type="Resource" script_class="ItemContainer" format=3 uid="uid://cls214sdx0dxj"]
 
-[ext_resource type="Texture2D" uid="uid://cpis6ya4s133s" path="res://Assets/Items/tupperware clean.png" id="1_kt6ue"]
-[ext_resource type="Texture2D" uid="uid://dvpy451uh53qm" path="res://Assets/Items/tupperware rice bought.png" id="2_cxnt5"]
-[ext_resource type="Texture2D" uid="uid://bjhqe5krrv1b3" path="res://Assets/Items/tupperware dirty.png" id="2_v2h2l"]
-[ext_resource type="Texture2D" uid="uid://dwq6at53ann6s" path="res://Assets/Items/tupperware rice.png" id="4_xlvfe"]
+[ext_resource type="Texture2D" uid="uid://dbm5mr765xjjj" path="res://Assets/Items/tupperware_clean.png" id="1_p1o7k"]
+[ext_resource type="Texture2D" uid="uid://cp5ndy8cq1ebj" path="res://Assets/Items/tupperware_rice bought.png" id="2_18pxe"]
+[ext_resource type="Texture2D" uid="uid://iay2r8il3p6k" path="res://Assets/Items/tupperware_munggo bought.png" id="3_fnigd"]
+[ext_resource type="Texture2D" uid="uid://b3ckfxdtkjhn7" path="res://Assets/Items/tupperware_dirty.png" id="4_mwqt4"]
 [ext_resource type="Script" uid="uid://cq05cnjdmwdea" path="res://Items/item_container.gd" id="5_fnigd"]
+[ext_resource type="Texture2D" uid="uid://buscys2o262v3" path="res://Assets/Items/tupperware_rice refilled.png" id="5_xxvhx"]
+[ext_resource type="Texture2D" uid="uid://b813ptm2fcnf6" path="res://Assets/Items/tupperware_munggo refilled.png" id="6_3spgi"]
 
 [resource]
 script = ExtResource("5_fnigd")
 state = 2
 icon_bought_map = Dictionary[String, Texture2D]({
-"Bigas": ExtResource("2_cxnt5")
+"Bigas": ExtResource("2_18pxe"),
+"Munggo": ExtResource("3_fnigd")
 })
-icon_clean = ExtResource("1_kt6ue")
-icon_dirty = ExtResource("2_v2h2l")
+icon_clean = ExtResource("1_p1o7k")
+icon_dirty = ExtResource("4_mwqt4")
 icon_refilled_map = Dictionary[String, Texture2D]({
-"Bigas": ExtResource("4_xlvfe")
+"Bigas": ExtResource("5_xxvhx"),
+"Munggo": ExtResource("6_3spgi")
 })
 item_name = "Tupperware"
-icon = ExtResource("1_kt6ue")
+icon = ExtResource("1_p1o7k")
 metadata/_custom_type_script = "uid://cq05cnjdmwdea"

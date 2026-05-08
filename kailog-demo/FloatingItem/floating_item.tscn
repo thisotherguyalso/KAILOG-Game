@@ -12,6 +12,8 @@ collision_mask = 8
 script = ExtResource("1_8frwa")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2005357338]
+texture_filter = 1
+scale = Vector2(4, 4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1810602279]
 shape = SubResource("CircleShape2D_sweiw")

@@ -1,30 +1,30 @@
 [gd_resource type="Resource" script_class="ItemContainer" format=3 uid="uid://b1nc8r44bf771"]
 
-[ext_resource type="Texture2D" uid="uid://dhwyuqnivxrj0" path="res://Assets/Items/glass bottle clean.png" id="1_f705m"]
-[ext_resource type="Texture2D" uid="uid://f0qtkpti2yjw" path="res://Assets/Items/glass bottle toyo bought.png" id="2_viow8"]
-[ext_resource type="Texture2D" uid="uid://w14b2728omkx" path="res://Assets/Items/glass bottle suka bought.png" id="3_ffjk4"]
-[ext_resource type="Texture2D" uid="uid://b7gvj14lck7pu" path="res://Assets/Items/glass bottle oil bought.png" id="4_1gr7q"]
-[ext_resource type="Texture2D" uid="uid://b4it642kqpl31" path="res://Assets/Items/glass bottle toyo.png" id="5_1m1y6"]
-[ext_resource type="Texture2D" uid="uid://bh7s6ueijtq6l" path="res://Assets/Items/glass bottle dirty.png" id="5_viow8"]
-[ext_resource type="Texture2D" uid="uid://bnkse1taix27b" path="res://Assets/Items/glass bottle suka.png" id="6_vjtkr"]
-[ext_resource type="Texture2D" uid="uid://civivny72dd6k" path="res://Assets/Items/glass bottle oil.png" id="7_td4ys"]
+[ext_resource type="Texture2D" uid="uid://dmd5hjykk2y7y" path="res://Assets/Items/glass bottle_clean.png" id="1_viow8"]
+[ext_resource type="Texture2D" uid="uid://ij7lb3fx2f0j" path="res://Assets/Items/glass bottle_suka bought.png" id="2_ffjk4"]
+[ext_resource type="Texture2D" uid="uid://dc2iiw1m3f3n6" path="res://Assets/Items/glass bottle_toyo bought.png" id="3_1gr7q"]
+[ext_resource type="Texture2D" uid="uid://bc417pheqiqge" path="res://Assets/Items/glass bottle_oil bought.png" id="4_1m1y6"]
+[ext_resource type="Texture2D" uid="uid://c7n3gsocwlc8d" path="res://Assets/Items/glass bottle_dirty.png" id="5_vjtkr"]
+[ext_resource type="Texture2D" uid="uid://b3l53uhvmrcc6" path="res://Assets/Items/glass bottle_oil refilled.png" id="6_td4ys"]
+[ext_resource type="Texture2D" uid="uid://6mcqrkkbngbw" path="res://Assets/Items/glass bottle_suka refilled.png" id="7_qvgii"]
+[ext_resource type="Texture2D" uid="uid://2d2vqb84kcqg" path="res://Assets/Items/glass bottle_toyo refilled.png" id="8_e43na"]
 [ext_resource type="Script" uid="uid://cq05cnjdmwdea" path="res://Items/item_container.gd" id="8_qvgii"]
 
 [resource]
 script = ExtResource("8_qvgii")
 state = 2
 icon_bought_map = Dictionary[String, Texture2D]({
-"Cooking Oil": ExtResource("4_1gr7q"),
-"Suka": ExtResource("3_ffjk4"),
-"Toyo": ExtResource("2_viow8")
+"Mantika": ExtResource("4_1m1y6"),
+"Suka": ExtResource("2_ffjk4"),
+"Toyo": ExtResource("3_1gr7q")
 })
-icon_clean = ExtResource("1_f705m")
-icon_dirty = ExtResource("5_viow8")
+icon_clean = ExtResource("1_viow8")
+icon_dirty = ExtResource("5_vjtkr")
 icon_refilled_map = Dictionary[String, Texture2D]({
-"Cooking Oil": ExtResource("7_td4ys"),
-"Suka": ExtResource("6_vjtkr"),
-"Toyo": ExtResource("5_1m1y6")
+"Mantika": ExtResource("6_td4ys"),
+"Suka": ExtResource("7_qvgii"),
+"Toyo": ExtResource("8_e43na")
 })
 item_name = "Glass Bottle"
-icon = ExtResource("1_f705m")
+icon = ExtResource("1_viow8")
 metadata/_custom_type_script = "uid://cq05cnjdmwdea"

@@ -9,6 +9,13 @@
 [ext_resource type="Resource" uid="uid://cw6mafibssohk" path="res://Items/plastic_bottle.tres" id="5_xix6u"]
 [ext_resource type="Resource" uid="uid://cls214sdx0dxj" path="res://Items/tupperware.tres" id="6_xlhe1"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnv5v"]
+size = Vector2(128, 128)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xix6u"]
+radius = 16.0
+height = 96.0
+
 [node name="TrashStation" unique_id=1300298490 instance=ExtResource("1_snipu")]
 script = ExtResource("2_8s2b4")
 dirty_pickups = Array[ExtResource("3_5754y")]([ExtResource("4_hnv5v"), ExtResource("5_xix6u"), ExtResource("6_xlhe1")])
@@ -16,6 +23,7 @@ wait_time = 1.0
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=1778666264]
 position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_hnv5v")
 
 [node name="Sprite2D" parent="." index="1" unique_id=760885286]
 modulate = Color(1, 1, 1, 1)
@@ -27,6 +35,7 @@ offset = Vector2(0, -8)
 
 [node name="CollisionShape2D" parent="StationWall" parent_id_path=PackedInt32Array(148367841) index="0" unique_id=346114296]
 position = Vector2(0, 16)
+shape = SubResource("CapsuleShape2D_xix6u")
 
 [node name="TrashSFX" type="AudioStreamPlayer2D" parent="." index="3" unique_id=796906363]
 stream = ExtResource("4_gtlbv")

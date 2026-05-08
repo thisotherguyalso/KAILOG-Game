@@ -11,7 +11,7 @@ height = 128.0
 [node name="RefillStation" unique_id=1300298490 instance=ExtResource("1_g7uyg")]
 script = ExtResource("2_wdgps")
 fill_contents = ""
-required_container_name = ""
+required_container_name = Array[String]([])
 refill_duration = 2.0
 refill_price = 5.0
 
@@ -20,9 +20,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "refill"
 
-[node name="CollisionShape2D" parent="StationWall" parent_id_path=PackedInt32Array(148367841) index="0" unique_id=1054573748]
-position = Vector2(0, 45)
-rotation = 1.5707964
+[node name="CollisionShape2D" parent="StationWall" parent_id_path=PackedInt32Array(148367841) index="0" unique_id=346114296]
 shape = SubResource("CapsuleShape2D_wdgps")
 
 [node name="PouringSFX" type="AudioStreamPlayer2D" parent="." index="4" unique_id=770487740]

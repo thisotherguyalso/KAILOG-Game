@@ -1,28 +1,10 @@
 [gd_scene format=3 uid="uid://doj87k5vv6hlq"]
 
 [ext_resource type="PackedScene" uid="uid://bmpp8rqiljegs" path="res://Pickups/pickup.tscn" id="1_mi22a"]
-[ext_resource type="Texture2D" uid="uid://dgk0ooffg6sd8" path="res://Assets/Items/plastic bottle clean.png" id="2_rjv2u"]
-[ext_resource type="Texture2D" uid="uid://snnih0w5wewj" path="res://Assets/Items/plastic bottle dishwashing bought.png" id="3_l3p0r"]
-[ext_resource type="Texture2D" uid="uid://cre8qm8w7ao5c" path="res://Assets/Items/plastic bottle dirty.png" id="4_tir4k"]
-[ext_resource type="Texture2D" uid="uid://bed48k4naf1q3" path="res://Assets/Items/plastic bottle dishwashing.png" id="5_v3trr"]
-[ext_resource type="Script" uid="uid://cq05cnjdmwdea" path="res://Items/item_container.gd" id="6_wgp72"]
-
-[sub_resource type="Resource" id="Resource_ys47t"]
-script = ExtResource("6_wgp72")
-state = 2
-sell_price_clean = 5.0
-sell_price_dirty = 3.0
-icon_bought_map = Dictionary[String, Texture2D]({
-"Dishwashing Liquid": ExtResource("3_l3p0r")
-})
-icon_clean = ExtResource("2_rjv2u")
-icon_dirty = ExtResource("4_tir4k")
-icon_refilled_map = Dictionary[String, Texture2D]({
-"Dishwashing Liquid": ExtResource("5_v3trr")
-})
-item_name = "plastic_bottle"
-icon = ExtResource("2_rjv2u")
-metadata/_custom_type_script = "uid://cq05cnjdmwdea"
+[ext_resource type="Texture2D" uid="uid://cey75qoiaug1o" path="res://Assets/Items/plastic bottle_dirty.png" id="5_ys47t"]
 
 [node name="Pickup_DirtyPlasticBottle" unique_id=258515556 instance=ExtResource("1_mi22a")]
-item = SubResource("Resource_ys47t")
+texture_filter = 1
+
+[node name="Sprite2D" parent="." index="1" unique_id=19652079]
+texture = ExtResource("5_ys47t")

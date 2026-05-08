@@ -2,8 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_tlsnc"]
 [ext_resource type="Script" uid="uid://b0p6moybyptcp" path="res://Stations/Refill/refill_station.gd" id="2_33arf"]
-[ext_resource type="Texture2D" uid="uid://dd1xj2bpgqcv7" path="res://Assets/Stations/Refilling/Glass and Oil.png" id="4_dhcun"]
+[ext_resource type="Texture2D" uid="uid://du6mwryuh3v6n" path="res://Assets/Stations/Refilling/Glass and Plastic and Oil.png" id="3_e5i6n"]
 [ext_resource type="AudioStream" uid="uid://c7ufr1jbke4nr" path="res://Sounds/pouring.mp3" id="5_bd3o1"]
+[ext_resource type="Texture2D" uid="uid://dudfljym5romw" path="res://Assets/Stations/Rooftop.png" id="5_rn1c8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n2sa2"]
 size = Vector2(256, 256)
@@ -14,7 +15,7 @@ size = Vector2(256, 256)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_dhcun")
+"texture": ExtResource("3_e5i6n")
 }],
 "loop": true,
 "name": &"default",
@@ -22,7 +23,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_dhcun")
+"texture": ExtResource("3_e5i6n")
 }],
 "loop": true,
 "name": &"refilling",
@@ -75,3 +76,9 @@ offset_right = 168.0
 offset_bottom = 99.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="Rooftop" type="Sprite2D" parent="." index="6" unique_id=403946411]
+texture_filter = 1
+position = Vector2(64, -256)
+scale = Vector2(3.9999998, 4)
+texture = ExtResource("5_rn1c8")
