@@ -16,6 +16,7 @@
 
 [node name="MainScene" type="Node2D" unique_id=129317555]
 y_sort_enabled = true
+texture_filter = 1
 
 [node name="GameManager" type="Node" parent="." unique_id=2012746634]
 
@@ -50,6 +51,7 @@ offset_top = 36.0
 offset_right = -56.0
 offset_bottom = 91.0
 grow_horizontal = 0
+theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("9_b6ixm")
 theme_override_font_sizes/font_size = 40
 text = "₱100"
@@ -89,6 +91,7 @@ offset_top = 35.0
 offset_right = 63.0
 offset_bottom = 111.0
 grow_horizontal = 2
+theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("9_b6ixm")
 theme_override_font_sizes/font_size = 64
 text = "1:00"

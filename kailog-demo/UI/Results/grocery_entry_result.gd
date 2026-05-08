@@ -16,10 +16,10 @@ const BOOP_STAGGER := 0.30
 const CHECK_DELAY := 0.5
 const CHECK_DURATION := 0.4
 
-const YAY_IMG = preload("uid://bvfd6iq556yfo")
-const AWW_IMG = preload("uid://bvfd6iq556yfo")
+const X_MARK = preload("uid://qq7hlfas5cej")
+const CHECK_MARK = preload("uid://c8xulmt2bn8nc")
 const SMALL_WIN = preload("uid://bwmaxw0t0yqbn")
-const SMALL_LOSE = preload("uid://bwmaxw0t0yqbn")
+const SMALL_LOSE = preload("uid://2qqqiloma0m5")
 
 func _ready():
 	for node in [texture_rect, current, slash, maximum, check]:
@@ -36,7 +36,7 @@ func set_data(entry: GroceryEntry):
 	current.text = str(entry.current_quantity)
 	maximum.text = str(entry.needed_quantity)
 	var won = entry.current_quantity >= entry.needed_quantity
-	check.texture = YAY_IMG if won else AWW_IMG
+	check.texture = CHECK_MARK if won else X_MARK
 	result_sfx.stream = SMALL_WIN if won else SMALL_LOSE
 
 func _set_initial_states():

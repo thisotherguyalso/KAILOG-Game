@@ -20,6 +20,7 @@ expand_mode = 2
 [node name="Current" type="Label" parent="." unique_id=1768193435]
 custom_minimum_size = Vector2(32, 64)
 layout_mode = 2
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_rryqn")
 theme_override_font_sizes/font_size = 50
 text = "0"
@@ -29,6 +30,7 @@ vertical_alignment = 1
 [node name="Slash" type="Label" parent="." unique_id=1507373122]
 custom_minimum_size = Vector2(32, 64)
 layout_mode = 2
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_rryqn")
 theme_override_font_sizes/font_size = 50
 text = "/"
@@ -38,6 +40,7 @@ vertical_alignment = 1
 [node name="Maximum" type="Label" parent="." unique_id=785388152]
 custom_minimum_size = Vector2(32, 64)
 layout_mode = 2
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_rryqn")
 theme_override_font_sizes/font_size = 50
 text = "0"

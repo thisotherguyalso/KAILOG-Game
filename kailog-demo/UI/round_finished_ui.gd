@@ -66,3 +66,4 @@ func _spawn_evaluation_screen():
 	add_child(eval)
 	eval.end_label.text = end_label.text
 	eval.round_results = self.round_results
+	eval.run_sequence()

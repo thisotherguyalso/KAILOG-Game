@@ -13,8 +13,8 @@
 size = Vector2(128, 128)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xix6u"]
-radius = 16.0
-height = 96.0
+radius = 32.0
+height = 128.0
 
 [node name="TrashStation" unique_id=1300298490 instance=ExtResource("1_snipu")]
 script = ExtResource("2_8s2b4")
@@ -34,7 +34,7 @@ texture = ExtResource("4_7uqlk")
 offset = Vector2(0, -8)
 
 [node name="CollisionShape2D" parent="StationWall" parent_id_path=PackedInt32Array(148367841) index="0" unique_id=346114296]
-position = Vector2(0, 16)
+position = Vector2(0, 0)
 shape = SubResource("CapsuleShape2D_xix6u")
 
 [node name="TrashSFX" type="AudioStreamPlayer2D" parent="." index="3" unique_id=796906363]

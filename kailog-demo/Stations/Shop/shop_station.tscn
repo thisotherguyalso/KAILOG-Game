@@ -3,36 +3,36 @@
 [ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_d5fem"]
 [ext_resource type="Script" uid="uid://btxvkhako7h7j" path="res://Stations/Shop/shop_station.gd" id="2_bvvwf"]
 [ext_resource type="AudioStream" uid="uid://bo1ysylxr0fwy" path="res://Sounds/cha ching.mp3" id="3_bvvwf"]
-[ext_resource type="Texture2D" uid="uid://dhwyuqnivxrj0" path="res://Assets/Items/Old_Versions/glass bottle clean.png" id="3_xqido"]
-[ext_resource type="Texture2D" uid="uid://b7gvj14lck7pu" path="res://Assets/Items/Old_Versions/glass bottle oil bought.png" id="4_3f1rb"]
-[ext_resource type="Texture2D" uid="uid://w14b2728omkx" path="res://Assets/Items/Old_Versions/glass bottle suka bought.png" id="5_c822b"]
-[ext_resource type="Texture2D" uid="uid://f0qtkpti2yjw" path="res://Assets/Items/Old_Versions/glass bottle toyo bought.png" id="6_a2iwf"]
+[ext_resource type="Texture2D" uid="uid://dmd5hjykk2y7y" path="res://Assets/Items/glass bottle_clean.png" id="3_pcj85"]
+[ext_resource type="Texture2D" uid="uid://ij7lb3fx2f0j" path="res://Assets/Items/glass bottle_suka bought.png" id="4_02466"]
+[ext_resource type="Texture2D" uid="uid://dc2iiw1m3f3n6" path="res://Assets/Items/glass bottle_toyo bought.png" id="5_g4u7b"]
+[ext_resource type="Texture2D" uid="uid://bc417pheqiqge" path="res://Assets/Items/glass bottle_oil bought.png" id="6_2lbt8"]
 [ext_resource type="Texture2D" uid="uid://d36tenhtsagfp" path="res://Assets/Tags/price_tag_suka.png" id="6_vyort"]
-[ext_resource type="Texture2D" uid="uid://bh7s6ueijtq6l" path="res://Assets/Items/Old_Versions/glass bottle dirty.png" id="7_6db20"]
-[ext_resource type="Texture2D" uid="uid://civivny72dd6k" path="res://Assets/Items/Old_Versions/glass bottle oil.png" id="8_5pkmj"]
-[ext_resource type="Texture2D" uid="uid://bnkse1taix27b" path="res://Assets/Items/Old_Versions/glass bottle suka.png" id="9_284yv"]
-[ext_resource type="Texture2D" uid="uid://b4it642kqpl31" path="res://Assets/Items/Old_Versions/glass bottle toyo.png" id="10_nam6m"]
+[ext_resource type="Texture2D" uid="uid://c7n3gsocwlc8d" path="res://Assets/Items/glass bottle_dirty.png" id="7_l5wbx"]
+[ext_resource type="Texture2D" uid="uid://6mcqrkkbngbw" path="res://Assets/Items/glass bottle_suka refilled.png" id="8_folh0"]
+[ext_resource type="Texture2D" uid="uid://2d2vqb84kcqg" path="res://Assets/Items/glass bottle_toyo refilled.png" id="9_kt4xo"]
+[ext_resource type="Texture2D" uid="uid://b3l53uhvmrcc6" path="res://Assets/Items/glass bottle_oil refilled.png" id="10_vpvi8"]
 [ext_resource type="Script" uid="uid://cq05cnjdmwdea" path="res://Items/item_container.gd" id="11_hgva3"]
 [ext_resource type="Texture2D" uid="uid://cmbdd43lagnim" path="res://Assets/Stations/Shop/Shop.png" id="12_thm8b"]
 [ext_resource type="Texture2D" uid="uid://dudfljym5romw" path="res://Assets/Stations/Rooftop.png" id="15_pcj85"]
 
-[sub_resource type="Resource" id="Resource_xqido"]
+[sub_resource type="Resource" id="Resource_cb1th"]
 script = ExtResource("11_hgva3")
 contents = "Suka"
 icon_bought_map = Dictionary[String, Texture2D]({
-"Cooking Oil": ExtResource("4_3f1rb"),
-"Suka": ExtResource("5_c822b"),
-"Toyo": ExtResource("6_a2iwf")
+"Mantika": ExtResource("6_2lbt8"),
+"Suka": ExtResource("4_02466"),
+"Toyo": ExtResource("5_g4u7b")
 })
-icon_clean = ExtResource("3_xqido")
-icon_dirty = ExtResource("7_6db20")
+icon_clean = ExtResource("3_pcj85")
+icon_dirty = ExtResource("7_l5wbx")
 icon_refilled_map = Dictionary[String, Texture2D]({
-"Cooking Oil": ExtResource("8_5pkmj"),
-"Suka": ExtResource("9_284yv"),
-"Toyo": ExtResource("10_nam6m")
+"Mantika": ExtResource("10_vpvi8"),
+"Suka": ExtResource("8_folh0"),
+"Toyo": ExtResource("9_kt4xo")
 })
-item_name = "glass_bottle"
-icon = ExtResource("3_xqido")
+item_name = "Glass Bottle"
+icon = ExtResource("3_pcj85")
 metadata/_custom_type_script = "uid://cq05cnjdmwdea"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ku5vk"]
@@ -45,7 +45,7 @@ height = 256.0
 [node name="ShopStation" unique_id=1300298490 instance=ExtResource("1_d5fem")]
 texture_filter = 1
 script = ExtResource("2_bvvwf")
-item_for_sale = SubResource("Resource_xqido")
+item_for_sale = SubResource("Resource_cb1th")
 buy_price = 15.0
 points_sold = -10
 points_bought = 25

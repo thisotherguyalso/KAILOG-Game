@@ -40,11 +40,10 @@ func receive_item(item: Item) -> void:
 	var container = item as ItemContainer
 	var contents = container.contents
 	var grocery_entry = find_grocery_entry(contents)
-	add_grocery(grocery_entry)
-	
 	var points = check_points(item)
 	EventBus.points_changed.emit(points)
 	EventBus.add_log_entry.emit(new_log_entry(parse_description(item), points))
+	add_grocery(grocery_entry)
 	# TODO: show floating "+Points" feedback.
 
 func add_grocery(grocery_entry: GroceryEntry):

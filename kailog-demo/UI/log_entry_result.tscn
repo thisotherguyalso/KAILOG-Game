@@ -21,10 +21,11 @@ offset_right = 253.0
 offset_bottom = 64.0
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("1_o2t8u")
-theme_override_font_sizes/font_size = 24
-text = "ADBJAWBDAJSBDKAJWBDa"
+theme_override_font_sizes/font_size = 16
+text = "ADBJAWBDAJSBDKAJWBDaadwasdwqadawjvdhgadu"
 vertical_alignment = 1
 autowrap_mode = 3
+text_overrun_behavior = 3
 
 [node name="Points" type="Label" parent="." unique_id=279143304]
 layout_mode = 0

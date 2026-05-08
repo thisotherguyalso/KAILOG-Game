@@ -13,10 +13,7 @@ extends Control
 var awaiting_tap: bool = false
 var prompt_pulse_tween: Tween
 
-func _ready():
-	_run_sequence()
-
-func _run_sequence():
+func run_sequence():
 	grocery_results.set_data(round_results.grocery_list)
 	await grocery_results.play()
 	await _wait_for_tap()

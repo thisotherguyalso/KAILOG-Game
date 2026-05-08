@@ -49,6 +49,7 @@ log_list = Array[ExtResource("5_73ej4")]([SubResource("Resource_8veop"), SubReso
 metadata/_custom_type_script = "uid://doi2w0qvt0xsj"
 
 [node name="RoundEvaluation" type="Control" unique_id=1604905510]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,23 +66,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.55644524, 0.6038054, 0.5425363, 1)
+color = Color(0.4689529, 0.66929054, 0.5308123, 1)
 
 [node name="EndLabel" type="Label" parent="." unique_id=27712352]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -480.0
+offset_left = -544.0
 offset_top = 32.0
-offset_right = -43.0
+offset_right = 512.0
 offset_bottom = 127.0
 grow_horizontal = 2
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("1_rolft")
 theme_override_font_sizes/font_size = 80
 text = "Time's up!"
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PromptLabel" type="Label" parent="." unique_id=1026193313]
@@ -111,12 +111,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -576.0
-offset_top = -164.0
+offset_top = -197.0
 offset_right = -32.0
-offset_bottom = 124.0
+offset_bottom = 91.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.17004329, 0.36730996, 0.259738, 1)
+color = Color(1, 1, 1, 0)
 script = ExtResource("3_qc6s0")
 grocery_entry_result_scene = ExtResource("7_5nrtf")
 
@@ -142,9 +142,9 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 32.0
-offset_top = -200.0
+offset_top = -233.0
 offset_right = 517.0
-offset_bottom = -96.0
+offset_bottom = -129.0
 grow_vertical = 0
 
 [node name="FloodPointsResults" type="Control" parent="." unique_id=1730869750]

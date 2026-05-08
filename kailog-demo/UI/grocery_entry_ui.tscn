@@ -22,18 +22,21 @@ text = "   "
 
 [node name="Current" type="Label" parent="." unique_id=1483496820]
 layout_mode = 2
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_1pahe")
 theme_override_font_sizes/font_size = 32
 text = "0"
 
 [node name="Slash" type="Label" parent="." unique_id=343385224]
 layout_mode = 2
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_1pahe")
 theme_override_font_sizes/font_size = 32
 text = "/"
 
 [node name="Maximum" type="Label" parent="." unique_id=1858458488]
 layout_mode = 2
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_1pahe")
 theme_override_font_sizes/font_size = 32
 text = "0"

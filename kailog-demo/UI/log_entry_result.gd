@@ -4,7 +4,7 @@ extends Control
 signal animation_finished
 
 const SMALL_WIN = preload("uid://bwmaxw0t0yqbn")
-const SMALL_LOSE = preload("uid://bwmaxw0t0yqbn")
+const SMALL_LOSE = preload("uid://2qqqiloma0m5")
 
 const WIN_COLOR := Color("6ee7a8")
 const LOSE_COLOR := Color("ff7a8a")
