@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_frnkm"]
 [ext_resource type="Script" uid="uid://b0p6moybyptcp" path="res://Stations/Refill/refill_station.gd" id="2_p0iq6"]
 [ext_resource type="Texture2D" uid="uid://b43q856eco5c6" path="res://Assets/Stations/Refilling/Plastic and Dishwashing Liquid.png" id="3_frnkm"]
+[ext_resource type="Texture2D" uid="uid://b6eh8u4fpbr68" path="res://Assets/Items/Contents/dishwashign.png" id="3_qxeyn"]
 [ext_resource type="AudioStream" uid="uid://c7ufr1jbke4nr" path="res://Sounds/pouring.mp3" id="4_sfpuu"]
 [ext_resource type="Texture2D" uid="uid://dudfljym5romw" path="res://Assets/Stations/Rooftop.png" id="5_p0iq6"]
 
@@ -40,6 +41,7 @@ fill_contents = "Dishwashing Liquid"
 required_container_name = Array[String](["Plastic Bottle"])
 refill_duration = 2.0
 refill_price = 5.0
+particle_texture = ExtResource("3_qxeyn")
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=1778666264]
 position = Vector2(64, -64)

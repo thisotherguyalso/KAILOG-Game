@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_tlsnc"]
 [ext_resource type="Script" uid="uid://b0p6moybyptcp" path="res://Stations/Refill/refill_station.gd" id="2_33arf"]
 [ext_resource type="Texture2D" uid="uid://du6mwryuh3v6n" path="res://Assets/Stations/Refilling/Glass and Plastic and Oil.png" id="3_e5i6n"]
+[ext_resource type="Texture2D" uid="uid://bbgi1lg50duse" path="res://Assets/Items/Contents/mantika.png" id="3_i8sss"]
 [ext_resource type="AudioStream" uid="uid://c7ufr1jbke4nr" path="res://Sounds/pouring.mp3" id="5_bd3o1"]
 [ext_resource type="Texture2D" uid="uid://dudfljym5romw" path="res://Assets/Stations/Rooftop.png" id="5_rn1c8"]
 
@@ -40,6 +41,7 @@ fill_contents = "Mantika"
 required_container_name = Array[String](["Glass Bottle", "Plastic Bottle"])
 refill_duration = 2.0
 refill_price = 5.0
+particle_texture = ExtResource("3_i8sss")
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=1778666264]
 position = Vector2(64, -64)

@@ -11,6 +11,9 @@ const TWEEN_DURATION := 0.15
 var _hover_tween: Tween = null
 var _is_hovered := false
 
+@export var money_down_texture : Texture2D
+@export var money_up_texture : Texture2D
+
 ## For mouse hovering
 func _ready() -> void:
 	mouse_entered.connect(func(): _tween_scale(HOVER_SCALE))
@@ -56,3 +59,10 @@ func receive_item(_item: Item) -> void:
 
 func interact() -> void:
 	pass
+
+func spawn_particles(texture : Texture2D):
+	var feedback_particle : FeedbackParticle = preload("res://feedback_particle.tscn").instantiate()
+	feedback_particle.set_particle_texture(texture)
+	feedback_particle.position = Vector2(randf_range(-32.0, 32.0), randf_range(-32.0, 32.0))
+	add_child(feedback_particle)
+	feedback_particle.emit_feedback()

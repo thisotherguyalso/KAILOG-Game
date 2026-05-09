@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_mqdyq"]
 [ext_resource type="Script" uid="uid://d4bht54jje4cf" path="res://Stations/Cleaning/cleaning_station.gd" id="2_ayto0"]
+[ext_resource type="Texture2D" uid="uid://bh7houviu5nbu" path="res://Assets/UI/FeedbackParticles/Cleaning.png" id="3_1doqa"]
 [ext_resource type="AudioStream" uid="uid://dtd42ape1rj3u" path="res://Sounds/cleaning.mp3" id="3_ayto0"]
 [ext_resource type="Texture2D" uid="uid://d1nr7pmdv72cn" path="res://Assets/Stations/Cleaning/faucet_running3.png" id="3_ogcsi"]
 [ext_resource type="Texture2D" uid="uid://b7pyehgf4h583" path="res://Assets/Stations/Cleaning/faucet_running2.png" id="4_1doqa"]
@@ -43,6 +44,7 @@ height = 112.0
 [node name="CleaningStation" unique_id=1300298490 instance=ExtResource("1_mqdyq")]
 script = ExtResource("2_ayto0")
 clean_duration = 3.0
+particle_texture = ExtResource("3_1doqa")
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=1778666264]
 position = Vector2(0, -32)

@@ -10,9 +10,31 @@
 [ext_resource type="PackedScene" uid="uid://bjx5ug00ial51" path="res://level_1.tscn" id="5_4gito"]
 [ext_resource type="PackedScene" uid="uid://bpmjjcr8561l7" path="res://UI/grocery_list_ui.tscn" id="7_8k62k"]
 [ext_resource type="Script" uid="uid://bttyxyat6461" path="res://grocery_button_ui.gd" id="7_akknq"]
+[ext_resource type="Texture2D" uid="uid://dyv4w7cx0ggdm" path="res://Assets/Tilemaps/Spritesheet_UI_Flat.png" id="7_ykxp3"]
+[ext_resource type="Shader" uid="uid://dkqttyu0h4onm" path="res://flood.gdshader" id="9_0k8yu"]
+[ext_resource type="Script" uid="uid://e8xlsvfxjvj1" path="res://money_indicator.gd" id="9_2dw41"]
 [ext_resource type="FontFile" uid="uid://brjli3qi7om10" path="res://Assets/Fonts/PixelDigivolve-mOm9.ttf" id="9_b6ixm"]
 [ext_resource type="Script" uid="uid://coww2l327ow7s" path="res://round_timer_ui.gd" id="9_pknf1"]
+[ext_resource type="Texture2D" uid="uid://difdjt53xf3y8" path="res://Assets/UI/FloodBar.png" id="11_hiucn"]
 [ext_resource type="PackedScene" uid="uid://bvltlsgqu0xi6" path="res://UI/round_finished_ui.tscn" id="11_lvjxf"]
+[ext_resource type="Texture2D" uid="uid://60fqv3ajkh55" path="res://Assets/UI/GroceryNoteNormal.png" id="14_hiucn"]
+[ext_resource type="Script" uid="uid://ddp80opy4x767" path="res://points_indicator.gd" id="17_k6its"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k6its"]
+shader = ExtResource("9_0k8yu")
+shader_parameter/frequency = 0.10000000405148
+shader_parameter/amplitude = 2.000000095
+shader_parameter/speed = 3.0000001425
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2dw41"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ykxp3"]
+bg_color = Color(0.3052816, 1, 0.14306965, 0.6784314)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k6its"]
+texture = ExtResource("14_hiucn")
 
 [node name="MainScene" type="Node2D" unique_id=129317555]
 y_sort_enabled = true
@@ -42,44 +64,82 @@ main_scene = NodePath("../..")
 [node name="InventoryUI" parent="PlayerUICanvas" unique_id=67015634 instance=ExtResource("1_ia1lp")]
 mouse_filter = 2
 
+[node name="TextureRect2" type="Sprite2D" parent="PlayerUICanvas" unique_id=1312818122]
+texture_filter = 1
+position = Vector2(112, 325.43332)
+scale = Vector2(2.4999998, 2.4729166)
+texture = ExtResource("7_ykxp3")
+region_enabled = true
+region_rect = Rect2(320, 64, 64, 32)
+
 [node name="MoneyUI" type="Label" parent="PlayerUICanvas" unique_id=848103878]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -125.0
-offset_top = 36.0
-offset_right = -56.0
-offset_bottom = 91.0
+offset_left = -1118.0
+offset_top = 288.0
+offset_right = -960.0
+offset_bottom = 359.0
 grow_horizontal = 0
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("9_b6ixm")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 52
 text = "₱100"
+horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("2_7kp7o")
 
+[node name="MoneyIndicator" type="Label" parent="PlayerUICanvas/MoneyUI" unique_id=1571504587]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 54.0
+offset_right = 195.0
+offset_bottom = 118.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("9_b6ixm")
+theme_override_font_sizes/font_size = 36
+text = "-5"
+script = ExtResource("9_2dw41")
+
 [node name="FloodMeterUI" type="ProgressBar" parent="PlayerUICanvas" unique_id=124495635]
-offset_left = 72.0
-offset_top = 223.0
-offset_right = 248.30081
-offset_bottom = 309.9749
-rotation = -1.5707964
+texture_filter = 1
+material = SubResource("ShaderMaterial_k6its")
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 160.0
+offset_bottom = 255.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_2dw41")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ykxp3")
+value = 50.0
+fill_mode = 3
 show_percentage = false
 script = ExtResource("5_2nf64")
 
+[node name="TextureRect" type="TextureRect" parent="PlayerUICanvas" unique_id=687698506]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 160.0
+offset_bottom = 256.0
+texture = ExtResource("11_hiucn")
+
 [node name="GroceryButtonUI" type="Button" parent="PlayerUICanvas" unique_id=1768813795 node_paths=PackedStringArray("grocery_list_ui")]
-visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -123.0
-offset_top = 109.0
-offset_right = -45.0
-offset_bottom = 191.0
+offset_left = -128.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = 128.0
 grow_horizontal = 0
 script = ExtResource("7_akknq")
 grocery_list_ui = NodePath("../GroceryListUI")
 
 [node name="GroceryListUI" parent="PlayerUICanvas" unique_id=658338672 node_paths=PackedStringArray("open_button") instance=ExtResource("7_8k62k")]
+offset_left = -447.99994
+offset_top = 32.000004
+offset_right = -25.142822
+offset_bottom = 351.99997
+theme_override_styles/normal = SubResource("StyleBoxTexture_k6its")
 open_button = NodePath("../GroceryButtonUI")
 
 [node name="RoundTimerUI" type="Label" parent="PlayerUICanvas" unique_id=1221307739]
@@ -99,5 +159,16 @@ script = ExtResource("9_pknf1")
 
 [node name="RoundFinishedUI" parent="PlayerUICanvas" unique_id=914914103 instance=ExtResource("11_lvjxf")]
 visible = false
+
+[node name="PointsIndicator" type="Label" parent="PlayerUICanvas" unique_id=1710193301]
+offset_left = 135.0
+offset_top = 220.0
+offset_right = 176.0
+offset_bottom = 259.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("9_b6ixm")
+theme_override_font_sizes/font_size = 32
+text = "-5"
+script = ExtResource("17_k6its")
 
 [connection signal="pressed" from="PlayerUICanvas/GroceryButtonUI" to="PlayerUICanvas/GroceryButtonUI" method="_on_pressed"]

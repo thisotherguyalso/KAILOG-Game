@@ -3,6 +3,7 @@ class_name CleaningStation
 extends Station
 
 @export var clean_duration: float = 3.0
+@export var particle_texture : Texture2D
 
 var _is_busy := false
 
@@ -18,13 +19,16 @@ func receive_item(item: Item) -> void:
 	
 	$CleaningSFX.play(2.0)
 	$AnimatedSprite2D.play("cleaning")
+	spawn_particles(particle_texture)
 	
 	_show_progress(clean_duration)
 	await get_tree().create_timer(clean_duration).timeout
 	
+	$FinishedSFX.play()
 	$AnimatedSprite2D.play("default")
 	$CleaningSFX.stop()
 	container.clean()
+	spawn_particles(particle_texture)
 	_spawn_pickup(container)
 	_is_busy = false
 	item_processed.emit(container)

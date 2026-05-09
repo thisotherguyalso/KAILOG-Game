@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_dmdvi"]
 [ext_resource type="Script" uid="uid://b0p6moybyptcp" path="res://Stations/Refill/refill_station.gd" id="2_4d0ye"]
 [ext_resource type="Texture2D" uid="uid://brplx8115t7ux" path="res://Assets/Stations/Refilling/Tupperware and Rice.png" id="3_dmdvi"]
+[ext_resource type="Texture2D" uid="uid://dxjpdbcso8krd" path="res://Assets/Items/Contents/bigas.png" id="3_kx11p"]
 [ext_resource type="AudioStream" uid="uid://c7ufr1jbke4nr" path="res://Sounds/pouring.mp3" id="4_krtrk"]
 [ext_resource type="Texture2D" uid="uid://dudfljym5romw" path="res://Assets/Stations/Rooftop.png" id="5_4d0ye"]
 
@@ -40,6 +41,7 @@ fill_contents = "Bigas"
 required_container_name = Array[String](["Tupperware"])
 refill_duration = 2.0
 refill_price = 5.0
+particle_texture = ExtResource("3_kx11p")
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=1778666264]
 position = Vector2(64, -64)
@@ -63,6 +65,7 @@ shape = SubResource("CapsuleShape2D_n2sa2")
 
 [node name="PouringSFX" type="AudioStreamPlayer2D" parent="." index="4" unique_id=442930714]
 stream = ExtResource("4_krtrk")
+volume_db = 2.0
 
 [node name="ProgressBar" parent="." index="5" unique_id=575793761]
 offset_left = -40.0

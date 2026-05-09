@@ -11,6 +11,8 @@ extends Station
 
 var _is_busy := false
 
+@export var particle_texture : Texture2D
+
 func can_receive(item: Item) -> bool:
 	if _is_busy:
 		return false
@@ -28,14 +30,18 @@ func receive_item(item: Item) -> void:
 	var container := item as ItemContainer
 	
 	EventBus.item_refilled.emit(refill_price)
-	$PouringSFX.play()
+	$PouringSFX.play(0.2)
 	$AnimatedSprite2D.play("refilling")
-
+	$MoneySFX.play(0.5)
+	spawn_particles(money_down_texture)
+	
 	_show_progress(refill_duration)
 	await get_tree().create_timer(refill_duration).timeout
-
+	
+	$FinishedSFX.play()
 	$PouringSFX.stop()
 	$AnimatedSprite2D.play("default")
+	spawn_particles(particle_texture)
 
 	container.refill(fill_contents)
 	_spawn_pickup(container)

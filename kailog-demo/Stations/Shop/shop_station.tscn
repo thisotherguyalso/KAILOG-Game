@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_d5fem"]
 [ext_resource type="Script" uid="uid://btxvkhako7h7j" path="res://Stations/Shop/shop_station.gd" id="2_bvvwf"]
-[ext_resource type="AudioStream" uid="uid://bo1ysylxr0fwy" path="res://Sounds/cha ching.mp3" id="3_bvvwf"]
 [ext_resource type="Texture2D" uid="uid://dmd5hjykk2y7y" path="res://Assets/Items/glass bottle_clean.png" id="3_pcj85"]
 [ext_resource type="Texture2D" uid="uid://ij7lb3fx2f0j" path="res://Assets/Items/glass bottle_suka bought.png" id="4_02466"]
 [ext_resource type="Texture2D" uid="uid://dc2iiw1m3f3n6" path="res://Assets/Items/glass bottle_toyo bought.png" id="5_g4u7b"]
@@ -68,16 +67,13 @@ input_pickable = true
 position = Vector2(64, 0)
 shape = SubResource("CapsuleShape2D_ku5vk")
 
-[node name="MoneySFX" type="AudioStreamPlayer2D" parent="." index="3" unique_id=2105323708]
-stream = ExtResource("3_bvvwf")
-
-[node name="Tag" type="Sprite2D" parent="." index="4" unique_id=1020311856]
+[node name="Tag" type="Sprite2D" parent="." index="3" unique_id=1020311856]
 texture_filter = 1
 position = Vector2(160, -133)
 scale = Vector2(4.460938, 4.4609375)
 texture = ExtResource("6_vyort")
 
-[node name="Rooftop" type="Sprite2D" parent="." index="6" unique_id=1333059365]
+[node name="Rooftop" type="Sprite2D" parent="." index="5" unique_id=1333059365]
 texture_filter = 1
 position = Vector2(64, -256)
 scale = Vector2(3.9999998, 4)

@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://deiishaer4hmn" path="res://UI/money_results.tscn" id="10_gvlwq"]
 [ext_resource type="Script" uid="uid://2yu8ejnxpbee" path="res://UI/flood_points_results.gd" id="11_umv3i"]
 [ext_resource type="PackedScene" uid="uid://bfjk8epb18thh" path="res://UI/log_entry_result.tscn" id="12_73ej4"]
+[ext_resource type="Texture2D" uid="uid://difdjt53xf3y8" path="res://Assets/UI/FloodBar.png" id="13_6fx3h"]
+[ext_resource type="Shader" uid="uid://dkqttyu0h4onm" path="res://flood.gdshader" id="13_d186w"]
 
 [sub_resource type="Resource" id="Resource_d186w"]
 script = ExtResource("2_8veop")
@@ -48,6 +50,19 @@ initial_points = 50
 log_list = Array[ExtResource("5_73ej4")]([SubResource("Resource_8veop"), SubResource("Resource_gvlwq")])
 metadata/_custom_type_script = "uid://doi2w0qvt0xsj"
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ds4wt"]
+shader = ExtResource("13_d186w")
+shader_parameter/frequency = 0.10000000405148
+shader_parameter/amplitude = 2.000000095
+shader_parameter/speed = 3.0000001425
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ecwiu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5fsyx"]
+bg_color = Color(0.3052816, 1, 0.14306965, 0.6784314)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
 [node name="RoundEvaluation" type="Control" unique_id=1604905510]
 texture_filter = 1
 layout_mode = 3
@@ -66,14 +81,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.4689529, 0.66929054, 0.5308123, 1)
+color = Color(0.5413831, 0.858371, 0.8928515, 1)
 
 [node name="EndLabel" type="Label" parent="." unique_id=27712352]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -544.0
+offset_left = -512.0
 offset_top = 32.0
 offset_right = 512.0
 offset_bottom = 127.0
@@ -141,7 +156,7 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 32.0
+offset_left = 64.0
 offset_top = -233.0
 offset_right = 517.0
 offset_bottom = -129.0
@@ -163,24 +178,47 @@ grow_vertical = 2
 script = ExtResource("11_umv3i")
 log_entry_result_scene = ExtResource("12_73ej4")
 
-[node name="FloodBar" type="ProgressBar" parent="FloodPointsResults" unique_id=251929111]
+[node name="FloodBar" type="ProgressBar" parent="FloodPointsResults" unique_id=1691532214]
+texture_filter = 1
+material = SubResource("ShaderMaterial_ds4wt")
 layout_mode = 1
-anchors_preset = 11
+anchors_preset = 6
 anchor_left = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -160.0
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -220.0
+offset_right = -40.0
+offset_bottom = 127.0
 grow_horizontal = 0
 grow_vertical = 2
-value = 28.67
+theme_override_styles/background = SubResource("StyleBoxEmpty_ecwiu")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5fsyx")
+value = 67.87
 fill_mode = 3
 show_percentage = false
+
+[node name="TextureRect" type="TextureRect" parent="FloodPointsResults/FloodBar" unique_id=258398291]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -172.5
+offset_bottom = 173.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("13_6fx3h")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="FloodPointsResults" unique_id=1019419356]
 clip_contents = false
 layout_mode = 0
-offset_right = 360.0
-offset_bottom = 442.0
+offset_top = -28.0
+offset_right = 320.0
+offset_bottom = 356.0
 horizontal_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="FloodPointsResults/ScrollContainer" unique_id=434099321]

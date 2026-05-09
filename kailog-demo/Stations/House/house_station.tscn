@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://csoxlnffae0gv" path="res://Stations/House/house_station.gd" id="2_vqtvr"]
 [ext_resource type="Script" uid="uid://yg8s3x6dm10j" path="res://Misc/grocery_entry.gd" id="3_l7o6p"]
 [ext_resource type="Texture2D" uid="uid://dabn3ul4u830p" path="res://Assets/Stations/House/House.png" id="4_scc4o"]
+[ext_resource type="Texture2D" uid="uid://c8xulmt2bn8nc" path="res://Assets/UI/Symbols/CheckMark.png" id="4_yt3o6"]
 [ext_resource type="Texture2D" uid="uid://dudfljym5romw" path="res://Assets/Stations/Rooftop.png" id="5_gosfb"]
+[ext_resource type="AudioStream" uid="uid://4xick35hno1e" path="res://Sounds/smaller_win.mp3" id="7_vm2di"]
 
 [sub_resource type="Resource" id="Resource_l7o6p"]
 script = ExtResource("3_l7o6p")
@@ -23,6 +25,7 @@ script = ExtResource("2_vqtvr")
 grocery_list = Array[ExtResource("3_l7o6p")]([SubResource("Resource_l7o6p")])
 points_refilled = -4
 points_bought = 2
+particle_texture = ExtResource("4_yt3o6")
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=1778666264]
 position = Vector2(64, -64)
@@ -43,3 +46,7 @@ texture_filter = 1
 position = Vector2(64, -256)
 scale = Vector2(3.9999998, 4)
 texture = ExtResource("5_gosfb")
+
+[node name="WinSFX" type="AudioStreamPlayer2D" parent="." index="5" unique_id=714646155]
+stream = ExtResource("7_vm2di")
+max_polyphony = 5

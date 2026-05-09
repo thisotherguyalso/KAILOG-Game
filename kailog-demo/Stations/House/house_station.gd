@@ -10,6 +10,9 @@ extends Station
 @export var points_refilled : int = -4
 @export var points_bought : int = 2
 
+## Particle_Textures:
+@export var particle_texture : Texture2D
+
 func _ready() -> void:
 	super._ready()
 	EventBus.grocery_list_updated.emit(grocery_list)
@@ -44,6 +47,8 @@ func receive_item(item: Item) -> void:
 	EventBus.points_changed.emit(points)
 	EventBus.add_log_entry.emit(new_log_entry(parse_description(item), points))
 	add_grocery(grocery_entry)
+	spawn_particles(particle_texture)
+	$WinSFX.play()
 	# TODO: show floating "+Points" feedback.
 
 func add_grocery(grocery_entry: GroceryEntry):

@@ -26,4 +26,5 @@ func _spawn_floating_item():
 	$Icon.hide()
 
 func _on_drag_cancelled(_index: int) -> void:
+	$"../../DragCancelledSFX".play()
 	$Icon.show()

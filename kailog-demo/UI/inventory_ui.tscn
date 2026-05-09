@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://d02jojpjak33d" path="res://UI/inventory_slot.gd" id="2_dk10o"]
 [ext_resource type="Texture2D" uid="uid://bpy77fiybtxqo" path="res://Assets/UI/inventory_bag_back.png" id="2_t6nog"]
 [ext_resource type="Texture2D" uid="uid://0edh3ou8gguq" path="res://Assets/UI/inventory_bag_front.png" id="4_6128g"]
+[ext_resource type="AudioStream" uid="uid://crpjqsgyoh66h" path="res://Sounds/smaller_lose.mp3" id="5_6128g"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t6nog"]
 
@@ -163,3 +164,7 @@ grow_vertical = 0
 scale = Vector2(4, 4)
 mouse_filter = 2
 texture = ExtResource("4_6128g")
+
+[node name="DragCancelledSFX" type="AudioStreamPlayer" parent="." unique_id=1889467032]
+stream = ExtResource("5_6128g")
+volume_db = -10.0

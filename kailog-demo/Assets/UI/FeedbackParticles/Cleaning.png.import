@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvfd6iq556yfo"
-path="res://.godot/imported/pngtree-pixel-art-green-checkmark-label-icon-png-image_16876083.webp-641dee2cd84b28a1fef323840e283b2f.ctex"
+uid="uid://bh7houviu5nbu"
+path="res://.godot/imported/Cleaning.png-8a240edf8fe20aae537617ab9f98279a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/pngtree-pixel-art-green-checkmark-label-icon-png-image_16876083.webp"
-dest_files=["res://.godot/imported/pngtree-pixel-art-green-checkmark-label-icon-png-image_16876083.webp-641dee2cd84b28a1fef323840e283b2f.ctex"]
+source_file="res://Assets/UI/FeedbackParticles/Cleaning.png"
+dest_files=["res://.godot/imported/Cleaning.png-8a240edf8fe20aae537617ab9f98279a.ctex"]
 
 [params]
 

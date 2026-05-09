@@ -11,7 +11,7 @@ func can_receive(_item: Item) -> bool:
 	return true
 
 func receive_item(_item: Item) -> void:
-	$TrashSFX.play(0.74)
+	$TrashSFX.play(0.9)
 	EventBus.points_changed.emit(check_points(_item))
 	# TODO: play destruction particles
 
@@ -35,9 +35,11 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 
 func interact() -> void:
 	_is_busy = true
-	$TrashSFX.play(0.0)
+	$FindingTrashSFX.play()
 	_show_progress(wait_time)
 	await get_tree().create_timer(wait_time).timeout
+	$FindingTrashSFX.stop()
+	$TrashSFX.play(0.9)
 	_hide_progress()
 	_spawn_pickup(dirty_pickups.pick_random())
 	_is_busy = false

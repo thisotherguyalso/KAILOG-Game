@@ -26,6 +26,7 @@ func receive_item(item: Item) -> void:
 	EventBus.item_sold.emit(price)
 	EventBus.points_changed.emit(points_sold)
 	EventBus.add_log_entry.emit(new_log_entry(parse_description(item), points_sold))
+	spawn_particles(money_up_texture)
 	$MoneySFX.play(0.50)
 	# TODO: show floating "+$X" feedback.
 
@@ -56,6 +57,8 @@ func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> vo
 func interact() -> void:
 	if item_for_sale == null:
 		return
+	$MoneySFX.play(0.58)
+	spawn_particles(money_down_texture)
 	EventBus.item_purchase_requested.emit(buy_price)
 	var description = "Bought " + item_for_sale.item_name
 	EventBus.add_log_entry.emit(new_log_entry(description, points_bought))
