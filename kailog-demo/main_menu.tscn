@@ -1,69 +1,62 @@
 [gd_scene format=3 uid="uid://clkrj8b2qapyq"]
 
-[ext_resource type="Script" uid="uid://cfk75862kquki" path="res://main_menu.gd" id="1_06t4h"]
-[ext_resource type="FontFile" uid="uid://dsn5vn2lq43nb" path="res://Assets/Fonts/SuperPixel-m2L8j.ttf" id="2_7vrkn"]
-[ext_resource type="PackedScene" uid="uid://bjx5ug00ial51" path="res://level_1.tscn" id="2_jix8l"]
-[ext_resource type="FontFile" uid="uid://dsn5vn2lq43nb" path="res://Assets/Fonts/SuperPixel-m2L8j.ttf" id="3_fu7sn"]
-[ext_resource type="Texture2D" uid="uid://b6qju5nw71l5p" path="res://Assets/UI/Endscreen.png" id="3_glbon"]
+[ext_resource type="PackedScene" uid="uid://bfb24xudxvwdw" path="res://sky_bg.tscn" id="1_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://bo114l8htbh41" path="res://Assets/UI/MenuBG.png" id="2_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://cc8pyc8vmw6uu" path="res://Assets/UI/MenuGuy.png" id="3_jix8l"]
+[ext_resource type="Texture2D" uid="uid://b3l53uhvmrcc6" path="res://Assets/Items/glass bottle_oil refilled.png" id="4_glbon"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlkkf"]
-texture = ExtResource("3_glbon")
-
-[node name="MainMenu" type="Control" unique_id=799832283]
+[node name="MainMenu" type="Control" unique_id=1273732884]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_06t4h")
-game_scene = ExtResource("2_jix8l")
 
-[node name="Panel" type="Panel" parent="." unique_id=1767145757]
-custom_minimum_size = Vector2(1080, 720)
+[node name="SkyBG" parent="." unique_id=1510992681 instance=ExtResource("1_7vrkn")]
+modulate = Color(0.8226427, 0.8226427, 0.8226427, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1539276994]
+modulate = Color(0.6190818, 0.6190819, 0.6190818, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_nlkkf")
+texture = ExtResource("2_fu7sn")
+expand_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=679666372]
+[node name="PointLight2D" type="PointLight2D" parent="TextureRect" unique_id=721739116]
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=2133286460]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 6
+anchor_left = 1.0
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -356.0
-offset_top = -232.0
-offset_right = 356.0
-offset_bottom = 232.0
-grow_horizontal = 2
+offset_left = -801.0
+offset_top = -298.0
+offset_right = -157.0
+offset_bottom = 346.0
+grow_horizontal = 0
 grow_vertical = 2
-theme_override_constants/separation = 20
-alignment = 1
-metadata/_edit_use_anchors_ = true
+texture = ExtResource("3_jix8l")
+expand_mode = 2
 
-[node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=1087194768]
-texture_filter = 1
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_7vrkn")
-theme_override_font_sizes/font_size = 64
-text = "KAILOG ECORUN!"
-horizontal_alignment = 1
-
-[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=1251068019]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_fu7sn")
-theme_override_font_sizes/font_size = 40
-text = "PLAY"
-
-[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1058934445]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_7vrkn")
-theme_override_font_sizes/font_size = 40
-text = "QUIT"
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1608909265]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -401.0
+offset_top = -425.0
+offset_right = -17.0
+offset_bottom = -41.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("4_glbon")

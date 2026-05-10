@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bfjk8epb18thh" path="res://UI/log_entry_result.tscn" id="12_73ej4"]
 [ext_resource type="Texture2D" uid="uid://difdjt53xf3y8" path="res://Assets/UI/FloodBar.png" id="13_6fx3h"]
 [ext_resource type="Shader" uid="uid://dkqttyu0h4onm" path="res://flood.gdshader" id="13_d186w"]
+[ext_resource type="PackedScene" uid="uid://bfb24xudxvwdw" path="res://sky_bg.tscn" id="15_ds4wt"]
 
 [sub_resource type="Resource" id="Resource_d186w"]
 script = ExtResource("2_8veop")
@@ -74,7 +75,11 @@ grow_vertical = 2
 script = ExtResource("1_lwtm4")
 round_results = SubResource("Resource_ecwiu")
 
+[node name="SkyBG" parent="." unique_id=1510992681 instance=ExtResource("15_ds4wt")]
+modulate = Color(0.63866097, 0.638661, 0.63866097, 1)
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1450399107]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

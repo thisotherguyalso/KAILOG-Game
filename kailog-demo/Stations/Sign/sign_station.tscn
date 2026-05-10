@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://xtlr2ado4iyg" path="res://Stations/station.tscn" id="1_g0yde"]
 [ext_resource type="FontFile" uid="uid://brjli3qi7om10" path="res://Assets/Fonts/PixelDigivolve-mOm9.ttf" id="2_d4g4t"]
 [ext_resource type="Script" uid="uid://c1dhikhctef04" path="res://Stations/Sign/sign_station.gd" id="2_px3ka"]
+[ext_resource type="Texture2D" uid="uid://gq8hoorlm47m" path="res://Assets/Stations/SignStation.png" id="3_5f5kx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_px3ka"]
 size = Vector2(128, 128)
@@ -22,7 +23,9 @@ shape = SubResource("RectangleShape2D_px3ka")
 
 [node name="Sprite2D" parent="." index="1" unique_id=760885286]
 modulate = Color(1, 1, 1, 1)
-position = Vector2(0, -32)
+position = Vector2(4.887581e-06, -31.999998)
+scale = Vector2(0.0625, 0.0625)
+texture = ExtResource("3_5f5kx")
 
 [node name="CollisionShape2D" parent="StationWall" parent_id_path=PackedInt32Array(148367841) index="0" unique_id=346114296]
 position = Vector2(0, 0)
