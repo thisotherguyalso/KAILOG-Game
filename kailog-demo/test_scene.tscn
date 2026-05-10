@@ -8,9 +8,11 @@
 [ext_resource type="Script" uid="uid://y4fiac1u2xor" path="res://level_manager.gd" id="4_1ufot"]
 [ext_resource type="Script" uid="uid://di64p5phgnj43" path="res://flood_meter_ui.gd" id="5_2nf64"]
 [ext_resource type="PackedScene" uid="uid://bjx5ug00ial51" path="res://level_1.tscn" id="5_4gito"]
+[ext_resource type="Texture2D" uid="uid://b3rjj1bmqtiok" path="res://addons/versatile-mobile-joystick/default_textures/BaseJoystickTest.png" id="7_6h1ut"]
 [ext_resource type="PackedScene" uid="uid://bpmjjcr8561l7" path="res://UI/grocery_list_ui.tscn" id="7_8k62k"]
 [ext_resource type="Script" uid="uid://bttyxyat6461" path="res://grocery_button_ui.gd" id="7_akknq"]
 [ext_resource type="Texture2D" uid="uid://dyv4w7cx0ggdm" path="res://Assets/Tilemaps/Spritesheet_UI_Flat.png" id="7_ykxp3"]
+[ext_resource type="Texture2D" uid="uid://dlgmq4q7t23o8" path="res://addons/versatile-mobile-joystick/default_textures/TipJoystickTest.png" id="8_6m80x"]
 [ext_resource type="Shader" uid="uid://dkqttyu0h4onm" path="res://flood.gdshader" id="9_0k8yu"]
 [ext_resource type="Script" uid="uid://e8xlsvfxjvj1" path="res://money_indicator.gd" id="9_2dw41"]
 [ext_resource type="FontFile" uid="uid://brjli3qi7om10" path="res://Assets/Fonts/PixelDigivolve-mOm9.ttf" id="9_b6ixm"]
@@ -19,6 +21,21 @@
 [ext_resource type="PackedScene" uid="uid://bvltlsgqu0xi6" path="res://UI/round_finished_ui.tscn" id="11_lvjxf"]
 [ext_resource type="Texture2D" uid="uid://60fqv3ajkh55" path="res://Assets/UI/GroceryNoteNormal.png" id="14_hiucn"]
 [ext_resource type="Script" uid="uid://ddp80opy4x767" path="res://points_indicator.gd" id="17_k6its"]
+[ext_resource type="PackedScene" uid="uid://btf0iccai10qr" path="res://addons/versatile-mobile-joystick/joystick.tscn" id="20_g6y4b"]
+[ext_resource type="Script" uid="uid://b1vd4jqexrr8h" path="res://sprint_button.gd" id="23_6m80x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cqn77"]
+radius = 29.14
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_22oil"]
+radius = 134.41
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7tmn"]
+size = Vector2(400, 400)
+
+[sub_resource type="Curve" id="Curve_b11sm"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k6its"]
 shader = ExtResource("9_0k8yu")
@@ -61,7 +78,23 @@ main_scene = NodePath("../..")
 
 [node name="PlayerUICanvas" type="CanvasLayer" parent="." unique_id=863897339]
 
+[node name="JoystickController" parent="PlayerUICanvas" unique_id=225091308 instance=ExtResource("20_g6y4b")]
+position = Vector2(200, 448)
+base_texture = ExtResource("7_6h1ut")
+tip_texture = ExtResource("8_6m80x")
+deadzone_circle = SubResource("CircleShape2D_cqn77")
+tip_limit_circle = SubResource("CircleShape2D_22oil")
+touch_detection_region = SubResource("RectangleShape2D_p7tmn")
+strength_curve = SubResource("Curve_b11sm")
+
 [node name="InventoryUI" parent="PlayerUICanvas" unique_id=67015634 instance=ExtResource("1_ia1lp")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+offset_left = 160.0
+offset_right = 160.0
+grow_vertical = 0
 mouse_filter = 2
 
 [node name="TextureRect2" type="Sprite2D" parent="PlayerUICanvas" unique_id=1312818122]
@@ -171,4 +204,14 @@ theme_override_font_sizes/font_size = 32
 text = "-5"
 script = ExtResource("17_k6its")
 
+[node name="SprintButton" type="Button" parent="PlayerUICanvas" unique_id=814751255]
+offset_left = 928.0
+offset_top = 352.0
+offset_right = 1056.0
+offset_bottom = 480.0
+text = "sprint"
+script = ExtResource("23_6m80x")
+
 [connection signal="pressed" from="PlayerUICanvas/GroceryButtonUI" to="PlayerUICanvas/GroceryButtonUI" method="_on_pressed"]
+[connection signal="button_down" from="PlayerUICanvas/SprintButton" to="PlayerUICanvas/SprintButton" method="_on_button_down"]
+[connection signal="button_up" from="PlayerUICanvas/SprintButton" to="PlayerUICanvas/SprintButton" method="_on_button_up"]

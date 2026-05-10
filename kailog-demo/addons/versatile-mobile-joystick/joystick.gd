@@ -104,7 +104,6 @@ var mobile_operating_systems = ["iOS", "Android"]
 
 ## Touch index to handle multitouch.
 var joystick_touch_index: int = -1
-const MOUSE_TOUCH_INDEX := -2
 
 # Touch state management
 var being_touched: bool = false:
@@ -191,30 +190,6 @@ func _input(event: InputEvent) -> void:
 	elif event is InputEventScreenDrag:
 		# Touch drag
 		if event.index == joystick_touch_index:
-			if _is_inside_touch_detector(event.position):
-				being_touched = true
-				_move_and_calculate(event)
-			else:
-				being_touched = false
-				%Tip.global_position = %Base.global_position
-				_update_input_actions(Vector2.ZERO)
-	elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.pressed and not being_touched:
-			if _is_inside_touch_detector(event.position):
-				joystick_touch_index = MOUSE_TOUCH_INDEX
-				being_touched = true
-				%Touch.disabled = false
-				if joystick_mode == JoystickMode.DYNAMIC:
-					%Joystick.global_position = event.position
-				_move_and_calculate(event)
-		elif joystick_touch_index == MOUSE_TOUCH_INDEX:
-			being_touched = false
-			%Touch.disabled = true
-			%Tip.global_position = %Base.global_position
-			_update_input_actions(Vector2.ZERO)
-			joystick_touch_index = -1
-	elif event is InputEventMouseMotion and joystick_touch_index == MOUSE_TOUCH_INDEX:
-		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			if _is_inside_touch_detector(event.position):
 				being_touched = true
 				_move_and_calculate(event)
