@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bvltlsgqu0xi6" path="res://UI/round_finished_ui.tscn" id="11_lvjxf"]
 [ext_resource type="Texture2D" uid="uid://60fqv3ajkh55" path="res://Assets/UI/GroceryNoteNormal.png" id="14_hiucn"]
 [ext_resource type="Script" uid="uid://ddp80opy4x767" path="res://points_indicator.gd" id="17_k6its"]
+[ext_resource type="Texture2D" uid="uid://pqcbnghdsjau" path="res://Assets/UI/GroceryNoteHovered.png" id="20_cqn77"]
 [ext_resource type="PackedScene" uid="uid://btf0iccai10qr" path="res://addons/versatile-mobile-joystick/joystick.tscn" id="20_g6y4b"]
 [ext_resource type="Script" uid="uid://b1vd4jqexrr8h" path="res://sprint_button.gd" id="23_6m80x"]
 
@@ -52,6 +53,9 @@ corner_radius_top_right = 10
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k6its"]
 texture = ExtResource("14_hiucn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_22oil"]
+texture = ExtResource("20_cqn77")
 
 [node name="MainScene" type="Node2D" unique_id=129317555]
 y_sort_enabled = true
@@ -173,6 +177,7 @@ offset_top = 32.000004
 offset_right = -25.142822
 offset_bottom = 351.99997
 theme_override_styles/normal = SubResource("StyleBoxTexture_k6its")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_22oil")
 open_button = NodePath("../GroceryButtonUI")
 
 [node name="RoundTimerUI" type="Label" parent="PlayerUICanvas" unique_id=1221307739]

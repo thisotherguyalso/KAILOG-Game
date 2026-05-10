@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://brxn5puuj7g2l" path="res://Assets/Items/Contents/suka.png" id="17_kb5eu"]
 [ext_resource type="PackedScene" uid="uid://dso3mgafdk2v0" path="res://Pickups/pickup_dirty_glass_bottle.tscn" id="18_3i87y"]
 [ext_resource type="Texture2D" uid="uid://bbgi1lg50duse" path="res://Assets/Items/Contents/mantika.png" id="18_lfy8a"]
+[ext_resource type="PackedScene" uid="uid://c01vx0fx70qmb" path="res://Stations/Sign/sign_station.tscn" id="22_lfy8a"]
 [ext_resource type="PackedScene" uid="uid://doj87k5vv6hlq" path="res://Pickups/pickup_dirty_plastic_bottle.tscn" id="26_qbpgg"]
 [ext_resource type="PackedScene" uid="uid://bedkowog44pxi" path="res://Pickups/pickup_dirty_tupperware.tscn" id="31_hlf5m"]
 
@@ -742,5 +743,8 @@ position = Vector2(-160, -219)
 
 [node name="Pickup_DirtyTupperware" parent="." unique_id=1767278146 instance=ExtResource("31_hlf5m")]
 position = Vector2(-480, 96)
+
+[node name="SignStation" parent="." unique_id=1300298490 instance=ExtResource("22_lfy8a")]
+position = Vector2(-192, -320)
 
 [connection signal="timeout" from="RoundManager" to="RoundManager" method="_on_timeout"]
