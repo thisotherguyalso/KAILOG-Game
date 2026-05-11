@@ -1,9 +1,29 @@
 [gd_scene format=3 uid="uid://clkrj8b2qapyq"]
 
 [ext_resource type="PackedScene" uid="uid://bfb24xudxvwdw" path="res://UI/sky_bg.tscn" id="1_7vrkn"]
+[ext_resource type="Script" uid="uid://cfk75862kquki" path="res://main_menu.gd" id="1_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://bo114l8htbh41" path="res://Assets/UI/MenuBG.png" id="2_fu7sn"]
+[ext_resource type="PackedScene" uid="uid://djoreradn574t" path="res://Levels/main_scene.tscn" id="2_qe12f"]
 [ext_resource type="Texture2D" uid="uid://cc8pyc8vmw6uu" path="res://Assets/UI/MenuGuy.png" id="3_jix8l"]
 [ext_resource type="Texture2D" uid="uid://b3l53uhvmrcc6" path="res://Assets/Items/glass bottle_oil refilled.png" id="4_glbon"]
+[ext_resource type="FontFile" uid="uid://brjli3qi7om10" path="res://Assets/Fonts/PixelDigivolve-mOm9.ttf" id="5_glbon"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlkkf"]
+bg_color = Color(0.21694586, 0.50831616, 0.24750018, 1)
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe12f"]
+bg_color = Color(0.3837326, 0.72830015, 0.5020478, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [node name="MainMenu" type="Control" unique_id=1273732884]
 texture_filter = 1
@@ -13,9 +33,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nlkkf")
+game_scene = ExtResource("2_qe12f")
 
 [node name="SkyBG" parent="." unique_id=1510992681 instance=ExtResource("1_7vrkn")]
 modulate = Color(0.85348755, 0.85348773, 0.8534877, 1)
+z_index = 0
 scroll_offset = Vector2(-1101, -213)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1539276994]
@@ -58,3 +81,40 @@ offset_bottom = -41.0
 grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("4_glbon")
+
+[node name="Button" type="Button" parent="." unique_id=558255157]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 256.0
+offset_right = 384.0
+offset_bottom = 384.0
+theme_override_fonts/font = ExtResource("5_glbon")
+theme_override_font_sizes/font_size = 65
+theme_override_styles/normal = SubResource("StyleBoxFlat_nlkkf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qe12f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nlkkf")
+text = "PLAY"
+
+[node name="Label2" type="Label" parent="." unique_id=597437920]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 52.0
+offset_right = 470.0
+offset_bottom = 165.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("5_glbon")
+theme_override_font_sizes/font_size = 42
+text = "Kailog"
+
+[node name="Label" type="Label" parent="." unique_id=986123203]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 82.0
+offset_right = 472.0
+offset_bottom = 195.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("5_glbon")
+theme_override_font_sizes/font_size = 96
+text = "ECORUN!"
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

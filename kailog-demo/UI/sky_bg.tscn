@@ -6,7 +6,7 @@
 z_index = 2
 repeat_size = Vector2(512, 512)
 autoscroll = Vector2(24, -8)
-repeat_times = 7
+repeat_times = 50
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=37665049]
 offset_left = -1500.0

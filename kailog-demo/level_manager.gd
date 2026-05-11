@@ -15,7 +15,8 @@ func _ready():
 	next_level()
 
 func next_level():
-	if !levels[current_level_index]:
+	if current_level_index >= levels.size():
+		get_tree().change_scene_to_file("res://main_menu.tscn")
 		EventBus.end_game.emit()
 		return
 	if current_level:
