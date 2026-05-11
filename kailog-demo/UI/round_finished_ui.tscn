@@ -36,10 +36,14 @@ offset_right = 428.0
 offset_bottom = 57.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/line_spacing = -67
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("1_il8ny")
 theme_override_font_sizes/font_size = 160
-text = "TIME'S UP!"
+text = "GROCERIES DONE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="PromptLabel" type="Label" parent="." unique_id=45118379]
 layout_mode = 1

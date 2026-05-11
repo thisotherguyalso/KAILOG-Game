@@ -1,0 +1,264 @@
+[gd_scene format=3 uid="uid://djoreradn574t"]
+
+[ext_resource type="Script" uid="uid://xdb8r0rbno84" path="res://Player/money_component.gd" id="1_o7u2a"]
+[ext_resource type="Script" uid="uid://vqpown3x2nmd" path="res://UI/points_component.gd" id="2_ijoax"]
+[ext_resource type="Script" uid="uid://bgddhomjf8guf" path="res://log_component.gd" id="3_j8kkg"]
+[ext_resource type="Script" uid="uid://y4fiac1u2xor" path="res://level_manager.gd" id="4_yh4yk"]
+[ext_resource type="PackedScene" uid="uid://f35d7syfcpck" path="res://Levels/tutorial.tscn" id="5_060w0"]
+[ext_resource type="PackedScene" uid="uid://b1rixyjfmck8s" path="res://Levels/level_2.tscn" id="5_h7sml"]
+[ext_resource type="PackedScene" uid="uid://bjx5ug00ial51" path="res://Levels/level_1.tscn" id="5_p8s74"]
+[ext_resource type="PackedScene" uid="uid://btf0iccai10qr" path="res://addons/versatile-mobile-joystick/joystick.tscn" id="6_o4fqm"]
+[ext_resource type="Texture2D" uid="uid://b3rjj1bmqtiok" path="res://addons/versatile-mobile-joystick/default_textures/BaseJoystickTest.png" id="7_gfmxp"]
+[ext_resource type="Texture2D" uid="uid://dlgmq4q7t23o8" path="res://addons/versatile-mobile-joystick/default_textures/TipJoystickTest.png" id="8_1n88h"]
+[ext_resource type="PackedScene" uid="uid://dnu7owqmlf0q4" path="res://UI/inventory_ui.tscn" id="9_opjno"]
+[ext_resource type="Texture2D" uid="uid://dyv4w7cx0ggdm" path="res://Assets/Tilemaps/Spritesheet_UI_Flat.png" id="10_meb7l"]
+[ext_resource type="FontFile" uid="uid://brjli3qi7om10" path="res://Assets/Fonts/PixelDigivolve-mOm9.ttf" id="11_w30ff"]
+[ext_resource type="Script" uid="uid://dk4q5v5ffjahw" path="res://UI/money_ui.gd" id="12_xy6fp"]
+[ext_resource type="Script" uid="uid://e8xlsvfxjvj1" path="res://UI/money_indicator.gd" id="13_uws2o"]
+[ext_resource type="Shader" uid="uid://dkqttyu0h4onm" path="res://UI/flood.gdshader" id="14_iylel"]
+[ext_resource type="Script" uid="uid://di64p5phgnj43" path="res://UI/flood_meter_ui.gd" id="15_yj5sn"]
+[ext_resource type="Texture2D" uid="uid://difdjt53xf3y8" path="res://Assets/UI/FloodBar.png" id="16_jtbqm"]
+[ext_resource type="Script" uid="uid://ddp80opy4x767" path="res://UI/points_indicator.gd" id="17_ek5vw"]
+[ext_resource type="Texture2D" uid="uid://d0puohyjamra5" path="res://Assets/UI/SprintNormal.png" id="18_jip8q"]
+[ext_resource type="Texture2D" uid="uid://bntukdjq3u6n8" path="res://Assets/UI/SprintPressed.png" id="19_euc68"]
+[ext_resource type="Script" uid="uid://b1vd4jqexrr8h" path="res://sprint_button.gd" id="20_38t8r"]
+[ext_resource type="Texture2D" uid="uid://q8v4nfiqs8ra" path="res://Assets/UI/GroceryNoteButton_Normal.png" id="21_jef5d"]
+[ext_resource type="Texture2D" uid="uid://crfntg86wy3il" path="res://Assets/UI/GroceryNoteButton_Pressed.png" id="22_q1yuq"]
+[ext_resource type="Script" uid="uid://bttyxyat6461" path="res://UI/grocery_button_ui.gd" id="23_uacds"]
+[ext_resource type="PackedScene" uid="uid://bpmjjcr8561l7" path="res://UI/grocery_list_ui.tscn" id="24_y0lqw"]
+[ext_resource type="Texture2D" uid="uid://60fqv3ajkh55" path="res://Assets/UI/GroceryNoteNormal.png" id="25_c5xsv"]
+[ext_resource type="Texture2D" uid="uid://pqcbnghdsjau" path="res://Assets/UI/GroceryNoteHovered.png" id="26_84x1k"]
+[ext_resource type="Script" uid="uid://coww2l327ow7s" path="res://UI/round_timer_ui.gd" id="27_0hwxg"]
+[ext_resource type="PackedScene" uid="uid://bvltlsgqu0xi6" path="res://UI/round_finished_ui.tscn" id="28_si2mt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cqn77"]
+radius = 29.14
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_22oil"]
+radius = 134.41
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7tmn"]
+size = Vector2(400, 400)
+
+[sub_resource type="Curve" id="Curve_b11sm"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k6its"]
+shader = ExtResource("14_iylel")
+shader_parameter/frequency = 0.10000000405148
+shader_parameter/amplitude = 2.000000095
+shader_parameter/speed = 3.0000001425
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2dw41"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ykxp3"]
+bg_color = Color(0.3052816, 1, 0.14306965, 0.6784314)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7kp7o"]
+texture = ExtResource("18_jip8q")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8fq6b"]
+texture = ExtResource("19_euc68")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oy8sc"]
+texture = ExtResource("19_euc68")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2nf64"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mfkbt"]
+texture = ExtResource("21_jef5d")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_077gh"]
+texture = ExtResource("22_q1yuq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5qgi0"]
+texture = ExtResource("22_q1yuq")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5qgi0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k6its"]
+texture = ExtResource("25_c5xsv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_22oil"]
+texture = ExtResource("26_84x1k")
+
+[node name="MainScene" type="Node2D" unique_id=129317555]
+texture_filter = 1
+
+[node name="GameManager" type="Node" parent="." unique_id=2012746634]
+
+[node name="MoneyComponent" type="Node" parent="GameManager" unique_id=1971624313]
+script = ExtResource("1_o7u2a")
+
+[node name="PointsComponent" type="Node" parent="GameManager" unique_id=666897618]
+script = ExtResource("2_ijoax")
+
+[node name="LogComponent" type="Node" parent="GameManager" unique_id=1997887250]
+script = ExtResource("3_j8kkg")
+
+[node name="LevelManager" type="Node" parent="GameManager" unique_id=1416144353 node_paths=PackedStringArray("money_component", "points_component", "log_component", "main_scene")]
+script = ExtResource("4_yh4yk")
+levels = Array[PackedScene]([ExtResource("5_060w0"), ExtResource("5_p8s74"), ExtResource("5_h7sml")])
+money_component = NodePath("../MoneyComponent")
+points_component = NodePath("../PointsComponent")
+log_component = NodePath("../LogComponent")
+main_scene = NodePath("../..")
+
+[node name="PlayerUICanvas" type="CanvasLayer" parent="." unique_id=863897339]
+
+[node name="JoystickController" parent="PlayerUICanvas" unique_id=225091308 instance=ExtResource("6_o4fqm")]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(200, 448)
+base_texture = ExtResource("7_gfmxp")
+tip_texture = ExtResource("8_1n88h")
+deadzone_circle = SubResource("CircleShape2D_cqn77")
+tip_limit_circle = SubResource("CircleShape2D_22oil")
+touch_detection_region = SubResource("RectangleShape2D_p7tmn")
+strength_curve = SubResource("Curve_b11sm")
+
+[node name="InventoryUI" parent="PlayerUICanvas" unique_id=67015634 instance=ExtResource("9_opjno")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+offset_left = 96.0
+offset_right = 96.0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="TextureRect2" type="Sprite2D" parent="PlayerUICanvas" unique_id=1312818122]
+texture_filter = 1
+position = Vector2(112, 325.43332)
+scale = Vector2(2.4999998, 2.4729166)
+texture = ExtResource("10_meb7l")
+region_enabled = true
+region_rect = Rect2(320, 64, 64, 32)
+
+[node name="MoneyUI" type="Label" parent="PlayerUICanvas" unique_id=848103878]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1118.0
+offset_top = 288.0
+offset_right = -960.0
+offset_bottom = 359.0
+grow_horizontal = 0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("11_w30ff")
+theme_override_font_sizes/font_size = 52
+text = "₱100"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("12_xy6fp")
+
+[node name="MoneyIndicator" type="Label" parent="PlayerUICanvas/MoneyUI" unique_id=1571504587]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 54.0
+offset_right = 195.0
+offset_bottom = 118.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("11_w30ff")
+theme_override_font_sizes/font_size = 36
+text = "-5"
+script = ExtResource("13_uws2o")
+
+[node name="FloodMeterUI" type="ProgressBar" parent="PlayerUICanvas" unique_id=124495635]
+texture_filter = 1
+material = SubResource("ShaderMaterial_k6its")
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 160.0
+offset_bottom = 255.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_2dw41")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ykxp3")
+value = 50.0
+fill_mode = 3
+show_percentage = false
+script = ExtResource("15_yj5sn")
+
+[node name="TextureRect" type="TextureRect" parent="PlayerUICanvas" unique_id=687698506]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 160.0
+offset_bottom = 256.0
+texture = ExtResource("16_jtbqm")
+
+[node name="PointsIndicator" type="Label" parent="PlayerUICanvas" unique_id=1710193301]
+offset_left = 135.0
+offset_top = 220.0
+offset_right = 176.0
+offset_bottom = 259.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("11_w30ff")
+theme_override_font_sizes/font_size = 32
+text = "-5"
+script = ExtResource("17_ek5vw")
+
+[node name="SprintButton" type="Button" parent="PlayerUICanvas" unique_id=814751255]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = 18.0
+offset_right = -128.0
+offset_bottom = 146.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_7kp7o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8fq6b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oy8sc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2nf64")
+script = ExtResource("20_38t8r")
+
+[node name="GroceryButtonUI" type="Button" parent="PlayerUICanvas" unique_id=1768813795 node_paths=PackedStringArray("grocery_list_ui")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = 128.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_mfkbt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_077gh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5qgi0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5qgi0")
+script = ExtResource("23_uacds")
+grocery_list_ui = NodePath("../GroceryListUI")
+
+[node name="GroceryListUI" parent="PlayerUICanvas" unique_id=658338672 node_paths=PackedStringArray("open_button") instance=ExtResource("24_y0lqw")]
+offset_left = -447.99994
+offset_top = 32.000004
+offset_right = -25.142822
+offset_bottom = 351.99997
+theme_override_styles/normal = SubResource("StyleBoxTexture_k6its")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_22oil")
+open_button = NodePath("../GroceryButtonUI")
+
+[node name="RoundTimerUI" type="Label" parent="PlayerUICanvas" unique_id=1221307739]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 35.0
+offset_right = 63.0
+offset_bottom = 111.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("11_w30ff")
+theme_override_font_sizes/font_size = 64
+text = "1:00"
+script = ExtResource("27_0hwxg")
+
+[node name="RoundFinishedUI" parent="PlayerUICanvas" unique_id=914914103 instance=ExtResource("28_si2mt")]
+visible = false
+
+[connection signal="button_down" from="PlayerUICanvas/SprintButton" to="PlayerUICanvas/SprintButton" method="_on_button_down"]
+[connection signal="button_up" from="PlayerUICanvas/SprintButton" to="PlayerUICanvas/SprintButton" method="_on_button_up"]
+[connection signal="pressed" from="PlayerUICanvas/GroceryButtonUI" to="PlayerUICanvas/GroceryButtonUI" method="_on_pressed"]

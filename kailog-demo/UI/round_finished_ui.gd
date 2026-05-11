@@ -13,10 +13,17 @@ func _ready():
 	hide()
 	prompt_label.hide()
 	EventBus.round_finished.connect(_on_round_finished)
+	EventBus.next_level_requested.connect(_on_next_level)
+
+func _on_next_level():
+	hide()
 
 func _on_round_finished(label_text: String, round_results : RoundResults):
 	self.round_results = round_results
 	show()
+	$Background.show()
+	$EndLabel.show()
+	$PromptLabel.show()
 	_animate_background_in()
 	_set_end_label(label_text)
 	_animate_end_label_in()
@@ -62,6 +69,9 @@ func _input(event: InputEvent):
 		_spawn_evaluation_screen()
 
 func _spawn_evaluation_screen():
+	$Background.hide()
+	$EndLabel.hide()
+	$PromptLabel.hide()
 	var eval : RoundEvaluation = round_evaluation_scene.instantiate()
 	add_child(eval)
 	eval.end_label.text = end_label.text

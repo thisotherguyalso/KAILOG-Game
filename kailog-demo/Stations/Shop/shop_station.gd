@@ -61,6 +61,7 @@ func interact() -> void:
 	spawn_particles(money_down_texture)
 	EventBus.item_purchase_requested.emit(buy_price)
 	var description = "Bought " + item_for_sale.item_name
+	EventBus.points_changed.emit(points_bought)
 	EventBus.add_log_entry.emit(new_log_entry(description, points_bought))
 
 func _on_item_bought():

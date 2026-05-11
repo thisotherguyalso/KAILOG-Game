@@ -3,11 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://cpmwnuetx4arl" path="res://Assets/UI/SkyBG.png" id="1_ueey8"]
 
 [node name="SkyBG" type="Parallax2D" unique_id=1510992681]
-repeat_size = Vector2(128, 128)
+z_index = 2
+repeat_size = Vector2(512, 512)
 autoscroll = Vector2(24, -8)
-repeat_times = 10
+repeat_times = 7
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=743954553]
-position = Vector2(640, 384)
-scale = Vector2(0.062499996, 0.062499996)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=37665049]
+offset_left = -1500.0
+offset_right = -988.0
+offset_bottom = 512.0
 texture = ExtResource("1_ueey8")
+expand_mode = 2

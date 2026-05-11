@@ -6,9 +6,17 @@ class_name MovementComponent extends Node
 var isSprinting: bool = false
 var speed: float = 0.0
 var player: Player
+var can_move : bool = true
 
 func _ready():
+	restrict_movement()
 	player = owner
+
+func allow_movement():
+	can_move = true
+
+func restrict_movement():
+	can_move = false
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
@@ -33,8 +41,10 @@ func _physics_process(delta: float) -> void:
 		$"../Sprite2D".play('down')
 	else:
 		$"../Sprite2D".play('idle')
-
-	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	
+	var direction = Vector2.ZERO
+	if can_move:
+		direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	player.velocity = direction * speed 
 		
 	if Input.get_action_strength("sprint"):

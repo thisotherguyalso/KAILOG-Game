@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7pc4j0gxmnkx"
-path="res://.godot/imported/GroceryNoteButtonNormal.png-2e559bc2531161a18008190508888734.ctex"
+uid="uid://q8v4nfiqs8ra"
+path="res://.godot/imported/GroceryNoteButton_Normal.png-0c71514446349ebc57bf58d529a13494.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/GroceryNoteButtonNormal.png"
-dest_files=["res://.godot/imported/GroceryNoteButtonNormal.png-2e559bc2531161a18008190508888734.ctex"]
+source_file="res://Assets/UI/GroceryNoteButton_Normal.png"
+dest_files=["res://.godot/imported/GroceryNoteButton_Normal.png-0c71514446349ebc57bf58d529a13494.ctex"]
 
 [params]
 

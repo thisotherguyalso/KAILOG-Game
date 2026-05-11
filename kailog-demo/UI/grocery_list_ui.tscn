@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bpmjjcr8561l7"]
 
 [ext_resource type="Texture2D" uid="uid://60fqv3ajkh55" path="res://Assets/UI/GroceryNoteNormal.png" id="1_1mjaa"]
-[ext_resource type="Script" uid="uid://duoeqwphqi6do" path="res://grocery_list_ui.gd" id="1_yc7ko"]
+[ext_resource type="Script" uid="uid://duoeqwphqi6do" path="res://UI/grocery_list_ui.gd" id="1_yc7ko"]
 [ext_resource type="Texture2D" uid="uid://dyaee74h8qq3e" path="res://Assets/UI/GroceryNotePressed.png" id="2_42gom"]
 [ext_resource type="PackedScene" uid="uid://bwejh4dtxn2tf" path="res://UI/grocery_entry_ui.tscn" id="2_lx8tb"]
 [ext_resource type="Texture2D" uid="uid://pqcbnghdsjau" path="res://Assets/UI/GroceryNoteHovered.png" id="3_y3ysw"]

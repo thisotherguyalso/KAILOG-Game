@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cbpuerdkojrs8"]
 
 [ext_resource type="Texture2D" uid="uid://brxn5puuj7g2l" path="res://Assets/Items/Contents/suka.png" id="1_od8j7"]
-[ext_resource type="Script" uid="uid://ucsmfeha5hsr" path="res://feedback_particle.gd" id="2_e1elm"]
+[ext_resource type="Script" uid="uid://ucsmfeha5hsr" path="res://UI/feedback_particle.gd" id="2_e1elm"]
 
 [sub_resource type="Curve" id="Curve_e1elm"]
 _data = [Vector2(0.057692304, 0), 0.0, 0.0, 0, 0, Vector2(0.13461539, 0.42696637), -0.21462964, -0.21462964, 0, 0, Vector2(0.99999, 0), 0.0, 0.0, 0, 0]

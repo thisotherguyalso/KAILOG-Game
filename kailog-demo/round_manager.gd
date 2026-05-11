@@ -14,9 +14,11 @@ var initial_points : int
 func _ready():
 	initial_money = money_component.amount
 	initial_points = points_component.points
-	EventBus.points_changed.connect(check_flood)
+	EventBus.flood_meter_changed.connect(check_flood)
 	EventBus.grocery_list_updated.connect(check_groceries)
 	await get_parent().ready
+	await $"../CanvasLayer/Countdown".countdown_finished
+	start_round()
 	start()
 
 func check_groceries(grocery_list : Array[GroceryEntry]):
@@ -25,8 +27,9 @@ func check_groceries(grocery_list : Array[GroceryEntry]):
 			return
 	finish_round("Groceries done!")
 
-func check_flood(amount):
-	if amount >= points_component.maximum:
+func check_flood(points):
+	print(points)
+	if points >= points_component.maximum:
 		finish_round("It flooded!")
 
 func _on_timeout():
@@ -48,3 +51,6 @@ func create_round_results():
 	round_results.grocery_list = house_station.grocery_list.duplicate()
 	round_results.log_list = log_component.log_entries.duplicate()
 	return round_results
+
+func start_round():
+	$"../Player".movement.allow_movement()

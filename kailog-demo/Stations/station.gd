@@ -61,7 +61,7 @@ func interact() -> void:
 	pass
 
 func spawn_particles(texture : Texture2D):
-	var feedback_particle : FeedbackParticle = preload("res://feedback_particle.tscn").instantiate()
+	var feedback_particle : FeedbackParticle = preload("res://UI/feedback_particle.tscn").instantiate()
 	feedback_particle.set_particle_texture(texture)
 	feedback_particle.position = Vector2(randf_range(-32.0, 32.0), randf_range(-32.0, 32.0))
 	add_child(feedback_particle)

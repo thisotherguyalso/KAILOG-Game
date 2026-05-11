@@ -1,10 +1,13 @@
 [gd_scene format=4 uid="uid://bjx5ug00ial51"]
 
 [ext_resource type="Script" uid="uid://kdl4yg08abaq" path="res://round_manager.gd" id="1_4p6gt"]
+[ext_resource type="Script" uid="uid://bfspnsr3w4tyd" path="res://UI/countdown.gd" id="2_3o2xh"]
 [ext_resource type="Texture2D" uid="uid://xqlrcm0al2tt" path="res://Assets/Tilemaps/LandTileset.png" id="2_4p6gt"]
 [ext_resource type="PackedScene" uid="uid://djbhktkxeugd" path="res://Player/player.tscn" id="2_27bay"]
+[ext_resource type="FontFile" uid="uid://brjli3qi7om10" path="res://Assets/Fonts/PixelDigivolve-mOm9.ttf" id="2_ethxx"]
 [ext_resource type="Texture2D" uid="uid://dhnachuujuhyd" path="res://Assets/Tilemaps/SL001.png" id="3_84ct4"]
 [ext_resource type="PackedScene" uid="uid://688p861i1tfi" path="res://Stations/Cleaning/cleaning_station.tscn" id="3_sof0w"]
+[ext_resource type="AudioStream" uid="uid://b6m2wmy62jobr" path="res://Sounds/countdown.mp3" id="4_duihb"]
 [ext_resource type="Texture2D" uid="uid://ckryud6abiuph" path="res://Assets/Tilemaps/CP_V1.0.4.png" id="4_i5xja"]
 [ext_resource type="PackedScene" uid="uid://sfx0q7csoyx3" path="res://Stations/Refill/munggo_refill_station.tscn" id="5_notaq"]
 [ext_resource type="PackedScene" uid="uid://dw4334y6fxos" path="res://Stations/Refill/toyo_refill_station.tscn" id="6_ett8d"]
@@ -700,6 +703,42 @@ wait_time = 240.0
 one_shot = true
 script = ExtResource("1_4p6gt")
 house_station = NodePath("../HouseStation")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1270045594]
+
+[node name="Countdown" type="Control" parent="CanvasLayer" unique_id=541579875]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_3o2xh")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Countdown" unique_id=1324043973]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.23529412, 0.49411765, 0.29411766, 0.23921569)
+
+[node name="Label" type="Label" parent="CanvasLayer/Countdown" unique_id=1842474163]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 128.0
+offset_right = 768.0
+offset_bottom = 448.0
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("2_ethxx")
+theme_override_font_sizes/font_size = 200
+text = "go!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CountDownSFX" type="AudioStreamPlayer" parent="CanvasLayer/Countdown" unique_id=39817061]
+stream = ExtResource("4_duihb")
 
 [node name="LandTileMapLayer" type="TileMapLayer" parent="." unique_id=1964281672]
 z_index = -2

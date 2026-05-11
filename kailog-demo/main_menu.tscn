@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://clkrj8b2qapyq"]
 
-[ext_resource type="PackedScene" uid="uid://bfb24xudxvwdw" path="res://sky_bg.tscn" id="1_7vrkn"]
+[ext_resource type="PackedScene" uid="uid://bfb24xudxvwdw" path="res://UI/sky_bg.tscn" id="1_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://bo114l8htbh41" path="res://Assets/UI/MenuBG.png" id="2_fu7sn"]
 [ext_resource type="Texture2D" uid="uid://cc8pyc8vmw6uu" path="res://Assets/UI/MenuGuy.png" id="3_jix8l"]
 [ext_resource type="Texture2D" uid="uid://b3l53uhvmrcc6" path="res://Assets/Items/glass bottle_oil refilled.png" id="4_glbon"]
@@ -15,10 +15,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SkyBG" parent="." unique_id=1510992681 instance=ExtResource("1_7vrkn")]
-modulate = Color(0.8226427, 0.8226427, 0.8226427, 1)
+modulate = Color(0.85348755, 0.85348773, 0.8534877, 1)
+scroll_offset = Vector2(-1101, -213)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1539276994]
-modulate = Color(0.6190818, 0.6190819, 0.6190818, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,8 +27,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_fu7sn")
 expand_mode = 2
-
-[node name="PointLight2D" type="PointLight2D" parent="TextureRect" unique_id=721739116]
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=2133286460]
 layout_mode = 1

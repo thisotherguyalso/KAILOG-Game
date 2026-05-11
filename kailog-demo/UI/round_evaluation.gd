@@ -27,6 +27,7 @@ func run_sequence():
 	await _wait_for_tap()
 	
 	EventBus.next_level_requested.emit()
+	queue_free()
 
 func _wait_for_tap():
 	_show_prompt()
