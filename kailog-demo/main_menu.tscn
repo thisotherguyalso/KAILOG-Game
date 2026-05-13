@@ -83,6 +83,7 @@ grow_vertical = 0
 texture = ExtResource("4_glbon")
 
 [node name="Button" type="Button" parent="." unique_id=558255157]
+visible = false
 layout_mode = 0
 offset_left = 128.0
 offset_top = 256.0
